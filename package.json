@@ -1,0 +1,24 @@
+{
+  "name": "claude-course-ai-growth",
+  "version": "1.0.0",
+  "description": "**Complete suite of 6 expert marketing skills** for scaling tech companies covering content creation, demand generation, and product marketing strategy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristina-barbosa-sabagh/Claude-Course-AI-Growth.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cristina-barbosa-sabagh/Claude-Course-AI-Growth/issues"
+  },
+  "homepage": "https://github.com/cristina-barbosa-sabagh/Claude-Course-AI-Growth#readme",
+  "dependencies": {
+    "pptxgenjs": "^4.0.1"
+  }
+}
