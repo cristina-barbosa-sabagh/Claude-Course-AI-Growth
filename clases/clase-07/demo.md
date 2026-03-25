@@ -1,200 +1,160 @@
-# Demo en Vivo — Calculadora de CAC/LTV desde cero en menos de 10 minutos
-**Clase 07 · Instructor C · Segmento: 9:00–13:00 del guión**
+# DEMO PASO A PASO — Script de análisis de CAC por canal con Claude
 
 ---
 
-## Objetivo del demo
+**Paso 1.** Abre claude.ai en tu navegador y haz clic en "New conversation".
 
-Mostrar el loop completo de Claude Code para un Chief of Growth: describir una herramienta de Growth en lenguaje natural, ver cómo Claude la construye en tiempo real, iterar una vez sobre el resultado y terminar con una herramienta funcional lista para usar y compartir.
-
-Tiempo de ejecución en pantalla: **< 4 minutos** (la instalación ya está hecha — el demo empieza con Claude Code activo).
+- Deberías ver esto en pantalla: campo de texto vacío, cursor parpadeando, barra lateral izquierda con conversaciones anteriores.
 
 ---
 
-## Setup antes de grabar
-
-- [ ] Claude Code ya instalado y autenticado — no instalar en vivo durante el demo
-- [ ] Carpeta `Growth Tools` creada y Terminal abierta en esa carpeta
-- [ ] Escribir `claude` y verificar que Claude Code inicia sin errores antes de grabar
-- [ ] Tener el prompt del demo (Instrucción 01 del entregable) en un archivo de texto aparte para copiar sin errores de tipeo
-- [ ] Pantalla compartida activa con fuente de Terminal legible (tamaño 14pt mínimo, fondo oscuro recomendado)
-- [ ] Navegador abierto y listo para abrir el archivo HTML resultante (Chrome o Safari recomendado)
-- [ ] Carpeta `Growth Tools` abierta en Finder/Explorer para mostrar el archivo creado en tiempo real
-- [ ] Modo "No molestar" activo
-
----
-
-## El demo: paso a paso exacto
-
----
-
-### PASO 1 — Mostrar el punto de partida [30 seg]
-
-*(Instructor muestra la Terminal con Claude Code activo y la carpeta Growth Tools vacía en Finder al lado)*
-
-**Narración:**
-> "Esto es lo que tienes después de completar los 5 pasos de instalación. Claude Code activo. Una carpeta vacía. Nada más."
-
-> "Lo que voy a hacer ahora es pedirle a Claude Code que construya una calculadora de CAC/LTV. No voy a escribir código. Voy a describir lo que quiero como si se lo explicara a un colega."
-
----
-
-### PASO 2 — Escribir y enviar el prompt [1 min]
-
-*(Instructor pega el prompt directamente en Claude Code — NO lo escribe letra por letra para mantener el tiempo)*
-
-**Narración mientras pega:**
-> "Noten cómo está escrito el prompt: le digo qué construir, le doy los inputs exactos con sus tipos de dato, le digo qué outputs quiero y le digo cómo quiero que se vea. No en términos técnicos — en términos de negocio."
-
-**El prompt que se pega:**
+**Paso 2.** Pega este prompt completo en Claude y presiona Enter:
 
 ```
-Construye una calculadora de CAC/LTV interactiva en HTML que funcione en el navegador.
+Tengo un CSV con datos de campañas de marketing con estas columnas: fecha, canal, inversión, conversiones.
 
-La calculadora debe tener estos inputs:
-- Gasto mensual en adquisición (campo numérico, en dólares o la moneda que ponga el usuario)
-- Nuevos clientes por mes (campo numérico)
-- Ticket promedio mensual o MRR por cliente (campo numérico)
-- Margen bruto del negocio en porcentaje (campo numérico, por defecto 70%)
-- Churn mensual en porcentaje (campo numérico)
+Te voy a pegar los datos aquí abajo. Necesito que:
 
-Y debe mostrar estos outputs calculados automáticamente:
-- CAC (Costo de Adquisición de Cliente)
-- LTV (valor de vida del cliente, usando la fórmula LTV = ARPU × margen / churn)
-- Ratio LTV:CAC (con indicador visual: rojo si < 3x, amarillo si 3x-5x, verde si > 5x)
-- Payback period en meses
+1. Calcules el CAC (Costo de Adquisición de Cliente) por canal — fórmula: inversión total del canal / conversiones totales del canal
+2. Me digas qué canal tiene el CAC más bajo (el más eficiente)
+3. Me muestres un resumen en tabla con: Canal | Inversión Total | Conversiones Totales | CAC
 
-Diseño: limpio, sin librerías externas, todo en un solo archivo HTML.
-Guarda el resultado como "cac-ltv-calculator.html" en la carpeta actual.
+Aquí están los datos:
+fecha,canal,inversión,conversiones
+2024-01-01,Meta Ads,4500,38
+2024-01-01,Google Ads,3200,29
+2024-01-01,Email,800,22
+2024-01-08,Meta Ads,4800,41
+2024-01-08,Google Ads,3100,27
+2024-01-08,Email,750,24
+2024-01-15,Meta Ads,5200,43
+2024-01-15,Google Ads,2900,26
+2024-01-15,Email,820,23
 ```
 
-*(Presiona Enter. Pausa. Sin hablar mientras Claude Code trabaja.)*
+- Deberías ver esto en pantalla: Claude genera una tabla con tres filas (Meta Ads, Google Ads, Email), muestra el CAC calculado por canal e identifica Email como el canal más eficiente con el CAC más bajo (~$34).
 
 ---
 
-### PASO 3 — Observar el proceso en tiempo real [1 min]
-
-*(Instructor no habla mientras Claude Code muestra el código siendo generado y ejecutado)*
-
-*(Cuando Claude Code termina — aproximadamente 45–60 segundos — el instructor retoma)*
-
-**Narración:**
-> "Fíjense en lo que acaba de pasar. Claude Code no solo escribió el código — lo ejecutó y confirmó que el archivo fue creado."
-
-*(Señala en Finder/Explorer que el archivo `cac-ltv-calculator.html` ya aparece en la carpeta)*
-
-> "Ese archivo existe ahora mismo. Sin que yo escribiera una línea de código."
-
----
-
-### PASO 4 — Abrir el resultado en el navegador [30 seg]
-
-*(Instructor hace doble clic en `cac-ltv-calculator.html` — se abre en el navegador)*
-
-**Narración:**
-> "La abro en el navegador como cualquier archivo. Sin instalar nada. Sin servidor. Sin configuración."
-
-*(Instructor ingresa números de ejemplo en la calculadora en vivo)*
-
-> "Pongo: gasto mensual $10,000, 50 clientes nuevos, ticket promedio $200, margen 70%, churn 5%."
-
-*(La calculadora muestra los resultados automáticamente)*
-
-> "CAC: $200. LTV: $2,800. Ratio LTV:CAC: 14x — verde. Payback: 1.4 meses."
-
-> "Esa es la herramienta. Funcional. En menos de 2 minutos desde que pegué el prompt."
-
----
-
-### PASO 5 — Iterar: pedir una mejora en lenguaje natural [1 min]
-
-*(Instructor vuelve a la Terminal donde Claude Code sigue activo)*
-
-**Narración:**
-> "Ahora voy a mostrarles el loop de iteración. Hay algo que quiero cambiar: quiero que la calculadora también muestre cuánto MRR proyectado tengo a 12 meses si mantengo este nivel de adquisición y este churn. Eso no estaba en el prompt original."
-
-*(Instructor escribe en Claude Code)*
-
-**Lo que escribe:**
+**Paso 3.** En la misma conversación, pega este segundo prompt:
 
 ```
-Agrega un output adicional a la calculadora: MRR proyectado a 12 meses.
+Perfecto. Ahora crea un script en Python que haga este mismo cálculo de forma automática.
 
-El cálculo debe considerar:
-- Los clientes que ya tengo (campo nuevo: "clientes actuales" — por defecto 0)
-- Los nuevos clientes por mes (ya existe en la calculadora)
-- El churn mensual (ya existe)
+El script debe:
+1. Leer un archivo CSV llamado "campañas.csv" desde la misma carpeta donde está el script
+2. Verificar que el CSV tiene las columnas: fecha, canal, inversión, conversiones (si falta alguna, que muestre un error claro)
+3. Calcular el CAC por canal
+4. Mostrar la tabla de resultados en la terminal con formato limpio
+5. Guardar los resultados en un archivo "reporte_cac.csv" en la misma carpeta
 
-Muestra el MRR al mes 1, al mes 6 y al mes 12 en una mini-tabla debajo de los otros resultados.
+El script debe funcionar con Python 3 sin instalar librerías adicionales — solo usar pandas si está disponible, o csv y collections si no.
+
+Al final del script, agrega comentarios que expliquen cómo ejecutarlo desde la terminal.
 ```
 
-*(Presiona Enter. Pausa mientras Claude actualiza el archivo.)*
-
-*(Cuando termina, instructor recarga el navegador)*
-
-**Narración:**
-> "Refresco el navegador. La calculadora ahora tiene la tabla de MRR proyectado a 12 meses."
-
-*(Señala la nueva sección en pantalla)*
-
-> "Eso es iteración en Claude Code. No expliqué código. Describí el problema de negocio. Claude modificó la herramienta."
+- Deberías ver esto en pantalla: un bloque de código Python con fondo oscuro, botón "Copy code" en la esquina superior derecha del bloque, comentarios en español al final del código explicando cómo ejecutarlo.
 
 ---
 
-### PASO 6 — El remate: mostrar lo que tienes [30 seg]
+**Paso 4.** Haz clic en el botón "Copy code" del bloque de código.
 
-*(Instructor cierra la Terminal y el navegador, mira a cámara)*
-
-**Narración:**
-> "En menos de 4 minutos de pantalla — que en tu caso van a ser entre 8 y 12 minutos incluyendo escribir el prompt — tienen una calculadora de CAC/LTV que pueden compartir con su equipo enviando un archivo."
-
-> "Sin dev. Sin esperar. Sin reunión de requerimientos."
-
-> "En el entregable hay 9 instrucciones más con este mismo nivel de detalle. Cópialas, pégalas en Claude Code y tengan sus herramientas de Growth."
+- Deberías ver esto en pantalla: el botón cambia brevemente a "Copied!" con un ícono de check.
 
 ---
 
-## Cómo manejar si Claude Code tarda más de lo esperado
+**Paso 5.** Abre un editor de texto en tu computadora.
+- Mac: abre TextEdit → Formato → Convertir a texto sin formato
+- Windows: abre Bloc de notas
+- O usa VS Code si lo tienes instalado.
 
-Si en el demo en vivo Claude Code tarda más de 90 segundos en responder:
+Pega el código copiado. Guarda el archivo como `cac_calculator.py` en tu Escritorio.
 
-**Narración de puente:**
-> "Ven que está trabajando — a veces el tiempo varía dependiendo de la complejidad de lo que pedimos. En la práctica, herramientas simples tardan entre 30 segundos y 2 minutos. Las más complejas pueden tardar 5. Pero recuerden: antes esto tardaba días."
-
-No hay que rellenar con explicaciones técnicas. El silencio mientras Claude trabaja refuerza el punto de que el trabajo lo está haciendo Claude.
-
----
-
-## Variantes del demo (si el instructor prefiere otra herramienta)
-
-El demo funciona igual con cualquiera de las 10 instrucciones del entregable. Las más visuales y que dan el mejor efecto en pantalla:
-
-- **Instrucción 03** (Tracker de experimentos): muestra storage persistente — los datos no se pierden al cerrar
-- **Instrucción 07** (Dashboard de KPIs): el más visual — tarjetas de colores que el equipo reconoce inmediatamente
-- **Instrucción 09** (Generador de hipótesis): muestra el framework de Growth más claramente
-
-**Regla para elegir la variante:** elige la herramienta que más usarías tú mismo. Eso se nota en la narración y convierte mejor.
+- Deberías ver esto en pantalla: el archivo `cac_calculator.py` visible en el Escritorio, el código de Python con indentación correcta en el editor.
 
 ---
 
-## Qué NO hacer en el demo
+**Paso 6.** Crea el archivo de datos. Abre un segundo archivo de texto y pega esto:
 
-| No hacer | Por qué |
-|---|---|
-| Instalar Claude Code en vivo durante el demo | Consume tiempo impredecible y convierte el demo en una clase de Terminal |
-| Escribir el prompt letra por letra en lugar de pegarlo | Aumenta el riesgo de error de tipeo y consume tiempo del demo |
-| Explicar el código que genera Claude Code | No es el punto. El punto es que no necesitas entenderlo. |
-| Mostrar un output que necesita muchas iteraciones para funcionar | Prepara el prompt con suficiente detalle para que el primer output sea sólido — practica antes |
-| Disculparse por la simplicidad del approach (copy-paste, sin API) | La simplicidad es la ventaja, no una limitación. Nunca disculparse. |
-| Saltarse el paso de iteración | La iteración es la mitad del valor del demo — muestra que el loop funciona |
+```
+fecha,canal,inversión,conversiones
+2024-01-01,Meta Ads,4500,38
+2024-01-01,Google Ads,3200,29
+2024-01-01,Email,800,22
+2024-01-08,Meta Ads,4800,41
+2024-01-08,Google Ads,3100,27
+2024-01-08,Email,750,24
+2024-01-15,Meta Ads,5200,43
+2024-01-15,Google Ads,2900,26
+2024-01-15,Email,820,23
+```
+
+Guárdalo como `campañas.csv` en el mismo Escritorio.
+
+- Deberías ver esto en pantalla: dos archivos en el Escritorio: `cac_calculator.py` y `campañas.csv`.
 
 ---
 
-## Métricas de éxito del demo
+**Paso 7.** Abre la Terminal (Mac: Cmd + Espacio → escribe "Terminal") o el CMD (Windows: tecla Windows → escribe "cmd").
 
-El demo funcionó si al final el estudiante piensa:
-- "Puedo instalar esto esta tarde y hacer esto mismo"
-- "Entiendo que no necesito saber programar para usar Claude Code"
-- "Ya sé cuál de las 10 instrucciones voy a probar primero"
+Escribe estos dos comandos, uno por uno:
 
-Si hay esas tres reacciones, el demo cumplió su objetivo.
+```
+cd ~/Desktop
+python3 cac_calculator.py
+```
+
+- Deberías ver esto en pantalla: una tabla en la terminal con tres filas mostrando CAC por canal, y un mensaje que dice que se guardó el archivo `reporte_cac.csv`.
+
+---
+
+**Paso 8.** Haz doble clic en el archivo `reporte_cac.csv` que apareció en el Escritorio.
+
+- Deberías ver esto en pantalla: el archivo se abre en Excel o Numbers mostrando la tabla de resultados: tres canales con su inversión total, conversiones y CAC calculado.
+
+---
+
+**Paso 9.** Vuelve a Claude y pega este prompt para iterar:
+
+```
+Explícame qué hace este script en términos de negocio, no en términos técnicos.
+
+Quiero entender:
+1. Qué pasa si el CSV tiene filas con inversión 0 — ¿rompe el cálculo?
+2. Qué pasa si hay un canal nuevo que no estaba antes — ¿lo incluye automáticamente?
+3. ¿Qué tendría que cambiar si quisiera calcular ROAS en lugar de CAC? (ROAS = ingresos / inversión — necesitaría una columna "ingresos" en el CSV)
+```
+
+- Deberías ver esto en pantalla: Claude responde cada una de las tres preguntas en párrafos cortos, sin código, en español.
+
+---
+
+**Paso 10.** Pide la mejora final — comparación entre períodos:
+
+```
+Modifica el script para que acepte opcionalmente un segundo argumento: el CSV del mes anterior.
+
+Si se ejecuta así: python3 cac_calculator.py campañas_enero.csv campañas_diciembre.csv
+
+El script debe mostrar una tercera columna en la tabla: "Variación CAC vs mes anterior" con el porcentaje de cambio. Positivo = CAC subió (malo). Negativo = CAC bajó (bien).
+
+Si no se pasa el segundo argumento, el script funciona igual que antes.
+```
+
+- Deberías ver esto en pantalla: un bloque de código nuevo con el script modificado, una columna adicional visible en el ejemplo de output que Claude muestra en la respuesta.
+
+---
+
+**Paso 11.** Copia el nuevo código, reemplaza el archivo `cac_calculator.py` con el contenido nuevo y ejecuta:
+
+```
+python3 cac_calculator.py campañas.csv
+```
+
+- Deberías ver esto en pantalla: la misma tabla de antes, funcionando exactamente igual — el script es retrocompatible.
+
+---
+
+**Paso 12.** Guarda la conversación de Claude con el nombre "Script CAC por canal" usando la opción de renombrar en la barra lateral.
+
+- Deberías ver esto en pantalla: la conversación aparece renombrada en el historial, lista para reutilizar cuando necesites modificar el script.

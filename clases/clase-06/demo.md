@@ -1,190 +1,220 @@
-# Demo en Vivo — War Room en acción: diagnóstico real en menos de 2 minutos
-**Clase 06 · Instructor A · Segmento: 11:00–15:00 del guión**
+# DEMO PASO A PASO — War Room de Growth: diagnóstico de métricas en menos de 2 minutos
 
 ---
 
-## Objetivo del demo
+**Paso 1 — Crea el War Room en Google Sheets**
 
-Mostrar el flujo completo del War Room en tiempo real: desde las métricas pegadas en Google Sheets hasta el diagnóstico de Claude — incluyendo un caso donde el problema visible (CPC subiendo) no es el problema real (activación cayendo).
+- Abre Google Sheets → crea un nuevo archivo
+- Nómbralo: `War Room de Growth — [Tu Empresa]`
+- Crea 3 pestañas: `War Room`, `Histórico`, `Experimentos`
+- En la pestaña `War Room`, crea estas dos zonas con los encabezados exactos:
 
-Tiempo de ejecución en pantalla: **< 4 minutos**.
-
----
-
-## Setup antes de grabar
-
-- [ ] Google Sheets abierto con el War Room ya cargado con datos del ejemplo (no llenarlo en vivo — las métricas ya deben estar en el Sheet)
-- [ ] El Sheet debe tener datos de 3 días consecutivos en Zona 1 y Zona 2 para que la variación sea visible
-- [ ] Claude abierto en el Project de Growth con el prompt de sistema ya cargado y guardado
-- [ ] Abrir una conversación nueva dentro del Project — no usar una conversación previa con contexto acumulado
-- [ ] Pantalla compartida activa con zoom suficiente para que el Sheet sea legible (zoom al 125% en Sheets, fuente tamaño 11 mínimo)
-- [ ] Tener el rango de celdas a copiar ya identificado — no buscar en vivo qué seleccionar
-- [ ] Modo "No molestar" activo en la computadora
-
----
-
-## Los datos del demo
-
-Usa exactamente estos números. Están diseñados para que el patrón sea claro: el CPC sube (distractor) pero el problema real es la caída de activación.
-
-**Zona 1 — Adquisición (3 días)**
-
+**ZONA 1 — ADQUISICIÓN** (fondo azul claro #D9EAF7):
 ```
-FECHA       | CANAL  | IMPR    | CLICS | CTR   | CPM   | CPC   | GASTO  | CONV | COSTO/CONV
-22/03/2026  | Meta   | 51,200  | 1,126 | 2.2%  | $8.0  | $0.37 | $410   | 38   | $10.79
-23/03/2026  | Meta   | 49,800  | 1,046 | 2.1%  | $8.4  | $0.40 | $419   | 31   | $13.52
-24/03/2026  | Meta   | 48,200  | 965   | 2.0%  | $8.7  | $0.44 | $384   | 22   | $17.45
-
-22/03/2026  | Google | 13,100  | 393   | 3.0%  | $5.6  | $0.17 | $68    | 21   | $3.24
-23/03/2026  | Google | 12,800  | 371   | 2.9%  | $5.7  | $0.18 | $67    | 20   | $3.35
-24/03/2026  | Google | 12,400  | 380   | 3.1%  | $5.8  | $0.18 | $69    | 19   | $3.63
+FECHA | CANAL | IMPRESIONES | CLICS | CTR | CPM | CPC | GASTO | CONVERSIONES | COSTO/CONV | NOTA
 ```
 
-**Zona 2 — Activación (3 días)**
-
+**ZONA 2 — ACTIVACIÓN + RETENCIÓN** (fondo verde claro #D9F2E6, dejar 2 filas en blanco entre zonas):
 ```
-FECHA       | REGISTROS | ONBOARDING | % ACT DÍA 1 | ACTIVOS 7d | CHURN | NOTA
-22/03/2026  | 59        | 20         | 33.9%       | 348        | 8     | —
-23/03/2026  | 51        | 13         | 25.5%       | 344        | 10    | Nuevo diseño landing activo
-24/03/2026  | 41        | 8          | 19.5%       | 340        | 12    | —
+FECHA | REGISTROS | ONBOARDING | % ACT DÍA 1 | ACTIVOS 7d | CHURN | NOTA DEL DÍA
 ```
 
-**El patrón que Claude debe detectar:**
-- Meta: conversiones cayendo (38 → 22) y costo por conversión subiendo (+62% en 3 días)
-- Activación día 1: cayó de 33.9% a 19.5% — casi a la mitad
-- Google: estable, sin cambios significativos
-- Churn: subiendo ligeramente (8 → 12)
-- Coincidencia: el nuevo diseño de landing entró el 23/03 — mismo día en que empezó la caída de activación
+- Deberías ver esto en pantalla: un Sheet con dos bloques de color diferente, encabezados en negrita, espacio visual claro entre las dos zonas
 
 ---
 
-## El demo: paso a paso exacto
+**Paso 2 — Carga los datos del demo en el Sheet**
 
----
-
-### PASO 1 — Mostrar el War Room con datos cargados [30 seg]
-
-*(Instructor muestra el Google Sheet con las tres zonas visibles)*
-
-**Narración:**
-> "Esto es el War Room con los datos de los últimos tres días. No los voy a cargar en vivo — ya están. En la práctica real esto te toma 5 minutos cada mañana. Lo que quiero que vean es el patrón antes de que Claude lo analice."
-
-*(Instructor señala en pantalla)*
-
-> "Miren Zona 1. Meta: el CPC subió de $0.37 a $0.44 en tres días. Las conversiones cayeron de 38 a 22. El instinto natural es: problema de Meta, hay que ajustar pujas o creativos."
-
-*(Pausa de un segundo.)*
-
-> "Ahora miren Zona 2. Activación día 1: de 33.9% a 19.5%. En el mismo período. Y el 23 de marzo entró un nuevo diseño de landing."
-
-*(Señala la nota del 23/03.)*
-
-> "¿El problema es Meta o es el landing? Eso es lo que Claude va a diagnosticar. Vamos a verlo."
-
----
-
-### PASO 2 — Copiar los datos y pegarlos en Claude [45 seg]
-
-*(Instructor selecciona el rango completo — Zona 1 + encabezados + Zona 2 + notas)*
-
-**Narración:**
-> "Selecciono todo. Zona 1, Zona 2, encabezados incluidos. Copio."
-
-*(Ctrl+C / Cmd+C — sin hablar mientras selecciona. Que el silencio muestre que el proceso es simple.)*
-
-> "Abro Claude. Mi Project de Growth. Nueva conversación — el prompt de sistema ya está cargado, no tengo que escribir nada más que los datos."
-
-*(Abre Claude, hace clic en nueva conversación dentro del Project)*
-
-> "Pego."
-
-*(Ctrl+V / Cmd+V — los datos aparecen en el campo de texto)*
-
-> "Envío."
-
-*(Enter. Pausa. Sin hablar mientras Claude responde — que el tiempo de respuesta hable solo.)*
-
----
-
-### PASO 3 — Mostrar y leer el output de Claude [1 min 30 seg]
-
-*(Cuando el output aparece, instructor lo lee en voz alta, señalando cada sección en pantalla)*
-
-**Output esperado de Claude (texto de referencia para el instructor):**
+- En la Zona 1, pega exactamente estos datos (3 días consecutivos):
 
 ```
-DIAGNÓSTICO: Caída sostenida en activación día 1 de 33.9% a 19.5% en 72 horas
-— el tráfico de Meta entra pero casi la mitad no completa el primer valor.
+22/03/2026 | Meta   | 51200 | 1126 | 2.2% | $8.0  | $0.37 | $410 | 38 | $10.79 | —
+23/03/2026 | Meta   | 49800 | 1046 | 2.1% | $8.4  | $0.40 | $419 | 31 | $13.52 | —
+24/03/2026 | Meta   | 48200 | 965  | 2.0% | $8.7  | $0.44 | $384 | 22 | $17.45 | —
+
+22/03/2026 | Google | 13100 | 393  | 3.0% | $5.6  | $0.17 | $68  | 21 | $3.24  | —
+23/03/2026 | Google | 12800 | 371  | 2.9% | $5.7  | $0.18 | $67  | 20 | $3.35  | —
+24/03/2026 | Google | 12400 | 380  | 3.1% | $5.8  | $0.18 | $69  | 19 | $3.63  | —
+```
+
+- En la Zona 2, pega estos datos:
+
+```
+22/03/2026 | 59 | 20 | 33.9% | 348 | 8  | —
+23/03/2026 | 51 | 13 | 25.5% | 344 | 10 | Nuevo diseño landing activo
+24/03/2026 | 41 | 8  | 19.5% | 340 | 12 | —
+```
+
+- Deberías ver esto en pantalla: el Sheet con 6 filas en Zona 1 y 3 filas en Zona 2, la nota del 23/03 visible en la última columna de la Zona 2
+
+---
+
+**Paso 3 — Identifica el patrón antes de pegar en Claude**
+
+- Antes de copiar los datos, observa estas dos columnas en paralelo:
+  - Zona 1: columna COSTO/CONV → $10.79, $13.52, $17.45 (sube +62% en 3 días)
+  - Zona 2: columna % ACT DÍA 1 → 33.9%, 25.5%, 19.5% (cae casi a la mitad)
+- La nota del 23/03 en Zona 2 dice "Nuevo diseño landing activo"
+- El instinto es ajustar Meta. La hipótesis correcta es que el landing es el problema.
+
+- Deberías ver esto en pantalla: las dos columnas con tendencias opuestas visibles a simple vista
+
+---
+
+**Paso 4 — Carga el prompt de sistema en tu Project de Claude**
+
+- Ve a claude.ai → entra a tu Project de Growth → "Project Instructions"
+- Pega este prompt completo (reemplaza los campos entre corchetes con tus datos reales):
+
+```
+Eres el estratega de Growth de [NOMBRE DE TU EMPRESA].
+
+Tu rol en esta conversación es analizar las métricas diarias del War Room
+y producir exactamente UNA recomendación accionable para hoy.
+
+CONTEXTO DEL NEGOCIO:
+- Producto: SalesFlow — automatiza reportes de ventas para equipos que usan Salesforce
+- Modelo de negocio: SaaS B2B
+- Etapa: growth stage
+- Canales de adquisición activos: Meta Ads, Google Ads
+- Métrica norte: activación día 1 (% de usuarios que corren su primer reporte en las primeras 24 horas)
+- Presupuesto semanal de adquisición: $3.000
+- MRR objetivo: $50.000
+
+CONTEXTO DEL FUNNEL:
+- El usuario llega desde el anuncio a una landing page con formulario de registro
+- "Primer valor" = correr el primer reporte automático en SalesFlow (Paso 2 del onboarding)
+- Punto de mayor caída histórica: Paso 1 — conexión de Salesforce (requiere credenciales de admin)
+
+INSTRUCCIONES DE ANÁLISIS:
+Cuando recibas datos del War Room, sigue este proceso:
+1. Lee Zona 1 (adquisición) y Zona 2 (activación/retención) juntas
+2. Identifica el punto de mayor ruptura en el funnel: ¿dónde se pierde más valor?
+3. Determina si el problema es de adquisición, de mensaje o de producto/onboarding
+4. Produce UNA recomendación concreta: específica, con canal y magnitud
+5. Si falta un dato clave, pídelo antes de dar la recomendación
+
+FORMATO DE OUTPUT — usar siempre:
+
+DIAGNÓSTICO: [1-2 líneas: qué está cayendo y dónde]
+
+CAUSA PROBABLE: [1 línea: por qué, basado en los datos]
+
+RECOMENDACIÓN: [1 línea concreta — canal, ajuste, magnitud]
+
+EXPERIMENTO OPCIONAL: [1 línea: qué testear esta semana si se quiere ir más lejos]
+
+RESTRICCIONES:
+- No hagas recomendaciones sin datos que las soporten
+- Si falta un dato necesario, pide exactamente cuál es
+- No repitas la misma recomendación dos días seguidos sin justificación en los datos
+- Incorpora siempre las notas cualitativas de la columna NOTA DEL DÍA al diagnóstico
+- Responde siempre en español
+- Nunca uses más palabras de las necesarias
+```
+
+- Guarda las instrucciones del Project
+- Deberías ver esto en pantalla: el prompt guardado en las instrucciones del Project, visible en la barra lateral o sección de configuración
+
+---
+
+**Paso 5 — Selecciona los datos del Sheet y cópialos**
+
+- En el Sheet, selecciona todo el rango: desde el encabezado de Zona 1 hasta la última fila de Zona 2 incluyendo la columna NOTA DEL DÍA
+- Presiona Cmd+C / Ctrl+C
+
+- Deberías ver esto en pantalla: el rango completo seleccionado (borde azul alrededor de las dos zonas)
+
+---
+
+**Paso 6 — Pega en Claude y envía**
+
+- Abre Claude → tu Project de Growth → "New Chat" (conversación nueva cada vez que hagas el diagnóstico diario)
+- Haz clic en el campo de texto
+- Presiona Cmd+V / Ctrl+V — los datos aparecen como texto tabulado
+- Presiona Enter sin escribir nada más
+
+- Deberías ver esto en pantalla: los datos pegados en el campo de texto de Claude como texto con tabulaciones, y el botón de envío activo
+
+---
+
+**Paso 7 — Lee el output de Claude**
+
+- Espera la respuesta (5 a 15 segundos)
+- El output esperado para estos datos es:
+
+```
+DIAGNÓSTICO: Caída sostenida en activación día 1 de 33.9% a 19.5% en 72 horas —
+el tráfico de Meta entra pero casi la mitad no completa el primer valor.
 El costo por conversión sube como consecuencia, no como causa.
 
 CAUSA PROBABLE: El nuevo diseño de landing activado el 23/03 está generando
 desconexión entre la promesa del anuncio y la experiencia de llegada.
-El usuario llega con una expectativa que el nuevo flujo no cumple inmediatamente.
 
 RECOMENDACIÓN: Revertir temporalmente al diseño anterior de landing y medir
-activación día 1 mañana — si sube a >28%, el nuevo diseño es el problema.
+activación día 1 mañana — si sube a más del 28%, el nuevo diseño es el problema.
 No ajustar pujas ni creativos de Meta hasta confirmar.
 
-EXPERIMENTO OPCIONAL: Crear un test A/B del landing nuevo vs. anterior
-con tráfico dividido 50/50 esta semana para confirmar la hipótesis
-antes de descartar el nuevo diseño definitivamente.
+EXPERIMENTO OPCIONAL: Test A/B del landing nuevo vs. anterior con tráfico 50/50
+esta semana para confirmar la hipótesis antes de descartarlo definitivamente.
 ```
 
-**Narración mientras lee:**
-> "Fíjense en lo que dice Claude: el costo por conversión sube como consecuencia, no como causa. Esa es la distinción que importa. Si hubiéramos ajustado pujas en Meta sin revisar activación, habríamos resuelto el síntoma y dejado el problema intacto."
-
-*(Señala la recomendación)*
-
-> "Y la recomendación es específica: qué hacer, cuándo medir, qué métrica confirma o descarta la hipótesis. No hay ambigüedad."
-
-*(Señala el experimento opcional)*
-
-> "El experimento opcional es para quien quiere ir más lejos esta semana. No es obligatorio para la decisión de hoy."
+- Deberías ver esto en pantalla: los 4 campos del formato (DIAGNÓSTICO, CAUSA PROBABLE, RECOMENDACIÓN, EXPERIMENTO OPCIONAL) claramente separados, con texto conciso en cada uno
 
 ---
 
-### PASO 4 — El remate: mostrar la velocidad total [30 seg]
+**Paso 8 — Pide más detalle si la recomendación necesita contexto**
 
-*(Instructor cierra Claude y mira a cámara)*
+- Si necesitas más detalle para ejecutar la recomendación, escribe en el mismo chat:
 
-**Narración:**
-> "Eso tomó menos de dos minutos desde que abrí el Sheet. La decisión está clara: revierten el landing, miden mañana, y no tocan Meta hasta tener la respuesta."
+```
+¿Cómo revierto el landing anterior sin afectar el tráfico en curso?
+¿Qué debo medir exactamente mañana para confirmar o descartar la hipótesis?
+```
 
-> "Sin el War Room, la conversación de equipo hubiera sido: 'Meta está mal, subamos el presupuesto' o 'cambiemos los creativos'. Con dos días de trabajo en la dirección equivocada."
-
-> "Ese es el valor del War Room. No los datos — eso ya lo tenían. El análisis conjunto de adquisición y activación en un solo lugar."
-
----
-
-## Variantes del demo (si los números del instructor son diferentes)
-
-El patrón del demo puede adaptarse a cualquier negocio cambiando:
-- **El canal problemático:** puede ser Google o email en lugar de Meta
-- **El punto de caída:** puede ser retención en lugar de activación
-- **El distractor:** puede ser CTR cayendo en lugar de CPC subiendo
-
-**Regla para construir el demo:** siempre diseña los datos para que el problema visible (el que dispara el instinto) sea diferente del problema real que Claude detecta. Esa es la demostración de valor más poderosa.
+- Deberías ver esto en pantalla: instrucciones concretas de implementación con los pasos específicos y la métrica de confirmación (activación día 1 > 28% confirma que el landing nuevo es el problema)
 
 ---
 
-## Qué NO hacer en el demo
+**Paso 9 — Registra el experimento en la hoja "Experimentos" del Sheet**
 
-| No hacer | Por qué |
-|---|---|
-| Cargar los datos en vivo (abrir Meta Ads Manager, exportar, etc.) | Consume 5 minutos y distrae del punto — los datos ya deben estar en el Sheet |
-| Mostrar un Sheet desordenado o sin colores de zona | El estudiante tiene que entender la estructura visual de un vistazo |
-| Leer el output de Claude sin señalar las partes clave | El formato de 4 campos es parte del aprendizaje — explicar qué significa cada uno |
-| Usar datos donde el problema sea obvio sin necesidad de Claude | El demo tiene que mostrar que Claude detecta lo que el instinto no detecta |
-| Hacer scroll innecesario o buscar cosas en pantalla | Practica el demo dos veces antes de grabar — cada clic tiene que ser deliberado |
-| Justificar el copy-paste como "solución temporal" | Es una solución real. No disculparse por la simplicidad. |
+- Ve a la pestaña "Experimentos" del Sheet
+- Añade una fila con estos datos:
+
+```
+FECHA INICIO: [hoy]
+HIPÓTESIS: Revertir el landing anterior recuperará la activación día 1 a más del 28%
+CANAL: Landing page (impacta Meta y Google)
+MÉTRICA: % Activación día 1
+RESULTADO: [rellenar mañana]
+DECISIÓN: [Escalar / Descartar / Iterar — rellenar cuando tengas el dato]
+```
+
+- Deberías ver esto en pantalla: la fila del experimento registrada con la hipótesis clara y la métrica de éxito definida antes de ejecutar
 
 ---
 
-## Métricas de éxito del demo
+**Paso 10 — Configura el flujo semanal del viernes**
 
-El demo funcionó si al final el estudiante piensa:
-- "Puedo configurar esto esta tarde"
-- "Entiendo por qué el War Room necesita Zona 1 y Zona 2 juntas"
-- "Claude encontró algo que yo no hubiera visto solo mirando las métricas de Meta"
+- Cada viernes, en una nueva conversación del mismo Project, pega los datos de la semana completa (lunes a viernes de Zona 1 y Zona 2) y añade este prompt:
 
-Si hay esas tres reacciones, el demo cumplió su objetivo.
+```
+Aquí están los datos del War Room de esta semana completa (lunes a viernes).
+
+Analiza la semana y dime:
+1. ¿Cuál fue el punto de mayor ruptura del funnel esta semana y qué lo causó?
+2. ¿Qué experimento mostró señal positiva?
+3. ¿Qué NO debemos repetir la próxima semana?
+4. ¿Cuáles son los 3 experimentos que recomiendas priorizar la próxima semana?
+
+Para cada experimento:
+---
+EXPERIMENTO [número]
+Hipótesis: [qué esperas que pase]
+Canal: [dónde se ejecuta]
+Métrica de éxito: [qué número tiene que moverse]
+Tiempo para tener resultado: [días]
+---
+```
+
+- Deberías ver esto en pantalla: un análisis semanal con 4 secciones y 3 experimentos en el formato solicitado, listos para priorizar en la reunión de planning de la siguiente semana

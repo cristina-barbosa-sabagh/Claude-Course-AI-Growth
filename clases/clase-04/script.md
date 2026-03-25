@@ -1,223 +1,192 @@
-# Clase 04 — Máquina de adquisición: copies de Meta, Google y email en minutos
+# Máquina de adquisición: copies de Meta, Google y email en minutos — GUIÓN EN PANTALLA
 **Instructor B · 16 minutos · Módulo 02**
 
 ---
 
-## GUIÓN COMPLETO
+## 1. ABRO CLAUDE Y MUESTRO EL PROJECT
+
+Abro Claude.ai y entro directamente al Project de Growth que ya tenemos configurado.
+
+[ACCIÓN EN PANTALLA: abrir claude.ai en el navegador, hacer clic en el Project "Growth — [Empresa]", mostrar las instrucciones de sistema cargadas con el ICP y el contexto del producto]
+
+Fíjate que el Project ya tiene el contexto del negocio. No voy a explicarle a Claude quién soy cada vez que abro una conversación. Eso está resuelto. Lo que sí voy a hacer ahora es darle los datos de campaña de esta semana.
+
+[ACCIÓN EN PANTALLA: abrir nueva conversación dentro del Project con clic en "New Chat"]
 
 ---
 
-### INTRO — [0:00–1:00]
+## 2. PEGO LOS DATOS DE CAMPAÑA
 
-*(Pantalla: slide con título de la clase. Instructor en cámara.)*
+Tengo aquí un archivo de texto con los datos de los últimos 14 días en Meta Ads. Lo abro y pego el contenido completo en Claude.
 
-Esta clase es sobre velocidad.
+[ACCIÓN EN PANTALLA: abrir el archivo de texto con datos de campaña, seleccionar todo (Cmd+A), copiar, pegar en el campo de texto de Claude]
 
-No sobre cómo escribir mejor copy. Sobre cómo producir en minutos lo que hoy tarda días.
+Lo que estoy pegando incluye el copy de los anuncios que están corriendo ahora mismo: el que gana y el que pierde. Esa diferencia es lo más valioso que le puedo dar a Claude para que analice qué está funcionando y por qué.
 
-Si tienes campañas activas en Meta o Google — y casi seguro que sí — al final de estos 16 minutos vas a tener un flujo que puedes aplicar esta semana. No la próxima. Esta.
-
-Vamos directo al grano.
-
----
-
-### DESARROLLO 1 — El flujo de producción de copies: de métricas a variaciones en 3 minutos [1:00–6:00]
-
-*(Pantalla: slide "El problema real: el cuello de botella no es el presupuesto — es el copy")*
-
-Cuántos equipos de Growth conozco que tienen el presupuesto de Meta desbloqueado pero no escalan porque no tienen suficientes variaciones creativas para testear. El algoritmo las quema en 3 días. El equipo tarda una semana en producir las siguientes.
-
-Eso es lo que rompemos hoy.
-
----
-
-**El flujo tiene tres pasos. Son siempre los mismos.**
-
-*(Pantalla: diagrama — Paso 1: Métricas → Paso 2: Contexto → Paso 3: Variaciones)*
-
-**Paso 1 — Pega tus métricas.**
-
-No necesitas todas. Necesitas las que importan:
-— ¿Qué campañas están corriendo?
-— ¿Cuál es el CTR de cada una?
-— ¿Cuál es el costo por resultado?
-— ¿Qué copy o ángulo está ganando?
-
-Si usas Meta Ads Manager: exportas el resumen de la última semana. Si usas Google Ads: el informe de grupos de anuncios. Si no tienes datos — usas el copy de los anuncios actuales como punto de partida.
-
-Eso es todo lo que Claude necesita para empezar.
-
----
-
-**Paso 2 — Le das el contexto que Claude no tiene.**
-
-*(Pantalla: lista de los 5 elementos de contexto)*
-
-Hay cinco elementos que nunca pueden faltar:
-
-Uno — Tu ICP. No genérico. Específico. No "emprendedores". "Fundadores de SaaS B2B en etapa seed con 2 a 10 personas en el equipo".
-
-Dos — El objetivo de la campaña. Clicks, conversiones, ROAS, costo por lead. Un número concreto.
-
-Tres — El canal. Meta, Google Search, Google Display, email frío — cada uno tiene su gramática. Claude lo sabe, pero tú debes especificarlo.
-
-Cuatro — Las restricciones. Límite de caracteres, palabras prohibidas, si hay una oferta específica activa, si tienes un precio que no quieres mencionar.
-
-Cinco — Qué está ganando ahora y por qué. Si sabes por qué una campaña funciona, se lo dices. Si no lo sabes, se lo preguntas a Claude primero.
-
----
-
-**Paso 3 — Le pides las variaciones con formato exacto.**
-
-Aquí está el error que comete el 80% de los equipos: le piden a Claude "ideas" o "variaciones" sin especificar el formato de entrega.
-
-El resultado: bloques de texto que hay que reformatear, titulares que nadie pide, CTAs que no caben en el campo de la plataforma.
-
-La regla es simple: si sabes cómo se ve el output correcto, descríbelo. Headline de 7 palabras máximo. Texto de 125 caracteres. CTA de 3 palabras. Claude trabaja con ese molde y te entrega algo que puedes pegar directamente.
-
----
-
-*(Pantalla: slide "El principio que lo cambia todo")*
-
-Lo que hace que este flujo funcione no es Claude. Es que por primera vez estás alimentando el proceso creativo con datos reales en tiempo real.
-
-Antes: el equipo creativo trabajaba con un brief estático que describía el ICP desde hace 6 meses.
-
-Ahora: Claude ve las métricas de esta semana y genera la siguiente iteración basada en lo que realmente está funcionando.
-
-Eso no es automatización. Es inteligencia de mercado aplicada a velocidad de ejecución.
-
----
-
-### DESARROLLO 2 — Análisis de campañas ganadoras y generación de la siguiente iteración [6:00–11:00]
-
-*(Pantalla: slide "No solo generar — analizar y escalar lo que funciona")*
-
-Producir copy más rápido está bien. Pero el juego real es este: entender por qué algo funciona y replicar ese patrón a escala.
-
-Claude puede hacer eso. Te voy a mostrar cómo.
-
----
-
-**La pregunta que debes hacerle a Claude antes de pedir variaciones:**
-
-*(Pantalla: bloque de prompt en pantalla)*
+Después de pegar los datos, añado este prompt justo debajo:
 
 ```
-Tengo estos datos de mis últimas campañas en Meta:
+Antes de generar copy nuevo, analiza los datos que te compartí y dime:
 
-[pega aquí los datos: nombre de campaña, CTR, CPC, copy de los anuncios]
+1. ¿Qué patrón tienen los anuncios con mejor CTR? (ángulo, estructura, punto de entrada del copy)
+2. ¿Qué ángulo o hook está resonando más con mi audiencia según los datos?
+3. ¿Por qué crees que el anuncio con peor performance no está funcionando? ¿Qué cambiarías primero?
+4. ¿Cuál es el siguiente ángulo que recomendarías testear y por qué?
 
-Antes de generar variaciones nuevas, quiero que me expliques:
-1. ¿Qué patrón tienen las campañas con mejor CTR?
-2. ¿Qué ángulo o hook parece estar resonando más con mi audiencia?
-3. ¿Qué cambiarías del anuncio con peor performance para intentar recuperarlo?
-
-Sé específico. Usa los datos que te doy.
+Sé específico. Usa los datos que te di. No me des respuestas genéricas.
 ```
 
-*(Pausa de un segundo.)*
-
-Esa pregunta cambia todo. En vez de pedirle a Claude que genere en el vacío, lo estás convirtiendo en analista. Le estás pidiendo que razone sobre evidencia real antes de crear.
+[ACCIÓN EN PANTALLA: escribir el prompt debajo de los datos pegados, presionar Enter, esperar en silencio mientras Claude genera la respuesta]
 
 ---
 
-**Qué hace Claude con eso:**
+## 3. LEO EL ANÁLISIS EN VOZ ALTA
 
-Claude identifica patrones — no por magia, sino porque ha procesado millones de ejemplos de copy y puede reconocer qué estructuras tienen mayor probabilidad de generar clicks en qué contextos.
+Mira lo que está identificando Claude.
 
-Puede decirte que tus anuncios con mejor CTR todos empiezan con una pregunta que nombra el dolor específico del ICP. O que los que fracasan empiezan con el nombre del producto.
+[ACCIÓN EN PANTALLA: hacer scroll lentamente por el output de Claude, señalar con el cursor los puntos clave mientras se habla]
 
-Eso es una hipótesis accionable. Y de ahí generas las siguientes variaciones con un ángulo claro.
-
----
-
-**La secuencia completa para una campaña real:**
-
-*(Pantalla: slide con los 4 momentos de la secuencia)*
-
-Momento 1 — Análisis: "¿Qué está ganando y por qué?"
-Momento 2 — Hipótesis: "¿Cuál es el siguiente ángulo a probar?"
-Momento 3 — Generación: "Dame 5 variaciones con ese ángulo, en este formato"
-Momento 4 — Refinamiento: "La variación 3 está bien pero el hook es genérico — reescríbelo con el dolor más específico"
-
-Cuatro momentos. En Meta puede tomar 10 minutos. En Google, igual. En email, igual.
-
-El canal cambia. La lógica no.
+El patrón del anuncio ganador es una pregunta que nombra el dolor exacto del ICP: "¿Tu equipo pierde 3 horas por semana en reportes?". El que no funciona empieza con el nombre del producto. Claude detecta ese patrón en 40 segundos. Un analista humano revisando esos mismos datos tardaría una reunión de 45 minutos y probablemente llegaría a la misma conclusión.
 
 ---
 
-**Diferencias por canal — lo que Claude sabe que tú debes confirmarle:**
+## 4. PIDO LAS 5 VARIACIONES PARA META
 
-*(Pantalla: tabla de 3 columnas — Meta / Google / Email)*
+Ahora, sin salir de este chat, pego el siguiente prompt:
 
-Meta Ads:
-— El hook visual es el 70% del trabajo, pero el texto de los primeros 2 líneas decide si leen el resto
-— Los mejores anuncios en Meta abren con el dolor o con una afirmación provocadora
-— Claude sabe esto, pero necesita saber si tu campaña es para awareness, consideración o conversión
+```
+Con base en tu análisis, genera 5 variaciones de anuncio para Meta Ads.
 
-Google Search:
-— Aquí el usuario ya tiene intención. El copy compite con 3 anuncios más en el mismo instante
-— Los titulares de Google tienen 30 caracteres por campo — si no le dices esto, Claude genera titulares que no entran
-— La clave es incluir las palabras clave de la búsqueda sin que suene robótico
+Objetivo de campaña: conversiones (registro a prueba gratuita)
+Audiencia: fría — Sales Managers en empresas B2B de 50 a 200 empleados que no conocen el producto
 
-Email de adquisición:
-— El asunto y el preheader son el 80% de la apertura
-— Claude puede generar 10 variaciones de asunto en un minuto — con y sin emojis, con y sin personalización, con pregunta y con afirmación
-— Para el cuerpo: estructura de 4 párrafos que Claude conoce perfectamente si le das el contexto correcto
+Formato exacto para cada variación:
+---
+VARIACIÓN [número]
+Ángulo: [describe el ángulo en 1 línea — para que yo sepa qué estoy testeando]
+Headline (máx. 40 caracteres): [texto]
+Texto principal (máx. 3 líneas):
+[línea 1 — el hook]
+[línea 2 — el desarrollo]
+[línea 3 — el cierre o prueba social]
+CTA (máx. 20 caracteres): [texto]
+---
+
+Reglas:
+- Cada variación con ángulo diferente al anuncio ganador actual
+- El hook no puede empezar con el nombre del producto
+- Sin frases como "descubre", "transforma", "potencia"
+- El copy debe leerse como algo que un humano escribiría, no como publicidad corporativa
+```
+
+[ACCIÓN EN PANTALLA: pegar el prompt en el campo de texto de Claude, presionar Enter, esperar el output sin hablar]
 
 ---
 
-*(Pantalla: vuelve a slide de flujo completo)*
+## 5. LEO LAS VARIACIONES Y SEÑALO LOS ÁNGULOS
 
-Esto es la máquina. No es complicada. Es consistente.
+[ACCIÓN EN PANTALLA: hacer scroll por las 5 variaciones, señalar con el cursor el campo "Ángulo" de cada una mientras se lee en voz alta]
 
-Y la consistencia es lo que separa los equipos que escalan de los que corren sin sistema.
+Fíjate en los ángulos. Variación 1: entra con un dato de la industria. Variación 2: empieza con la objeción directa — "Ya probamos automatización y no funcionó". Variación 3: historia de un solo rep del equipo. Variación 4: pregunta sobre el lunes de reportes. Variación 5: afirmación sobre lo que hacen los competidores.
 
----
-
-### DEMO / EJERCICIO EN VIVO — Campaña real → plan de acción esta semana [11:00–15:00]
-
-*(Pantalla: pantalla completa — Project de Growth en Claude.ai abierto)*
-
-*(Instructor muestra su Project con contexto ya cargado — ver demo.md para los pasos exactos)*
-
-Voy a tomar una campaña real — datos anonimizados — y vamos a hacer exactamente lo que acabo de describir.
-
-Métricas pegadas. Análisis. Hipótesis. Cinco variaciones por canal. En pantalla. En tiempo real.
-
-*(Instructor ejecuta el demo — ver archivo demo.md para narración y prompts exactos)*
-
-*(Mientras ejecuta)*
-
-Fíjate en el tiempo. Este análisis con un equipo humano tomaría una reunión de 45 minutos. Claude lo hace en 90 segundos.
-
-Lo que acabas de ver es el entregable de la clase: la plantilla que vas a llevar contigo, con tus datos, y que te va a dar 5 variaciones por canal listas para subir.
+Cinco ángulos distintos. Ninguno es una variación cosmética del otro. Eso es lo que necesito para aprender rápido qué resuena con mi audiencia.
 
 ---
 
-### CIERRE — [15:00–16:00]
+## 6. REFINO UNA VARIACIÓN EN TIEMPO REAL
 
-*(Instructor en cámara. Slide con entregable visible.)*
+La variación 2 me interesa pero el headline es largo. Pego esto:
 
-Tu tarea es una sola:
+```
+La variación 2 me interesa pero el headline es demasiado largo.
+Dame 3 versiones del headline en máximo 35 caracteres, manteniendo el ángulo de la objeción.
+Explica en 1 línea por qué cada versión podría funcionar.
+```
 
-Abre el entregable de esta clase. Llena los campos con tu campaña actual — la que más te importa esta semana. Pega el prompt en Claude y trae el output a la siguiente sesión.
+[ACCIÓN EN PANTALLA: escribir el prompt de refinamiento, presionar Enter, esperar el output]
 
-No lo analices demasiado. No esperes tener los datos perfectos. Usa lo que tienes ahora.
-
-El siguiente paso del módulo es retención. Cómo convertir a los usuarios que ya adquiriste en revenue recurrente. Te espero ahí.
+Treinta segundos. Tres opciones. Cada una con una lógica distinta. Ahora puedo tomar una decisión sin tener que pensar en cómo redactarlo. Solo tengo que elegir.
 
 ---
 
-## NOTAS DE PRODUCCIÓN
+## 7. PASO A GOOGLE SEARCH ADS
 
-| Elemento | Detalle |
-|---|---|
-| Duración objetivo | 16 minutos exactos |
-| Slides necesarios | 5: título, diagrama flujo 3 pasos, principio clave, secuencia 4 momentos, tabla por canal |
-| Demo | Pantalla completa — ver demo.md |
-| Ritmo | Denso. El DESARROLLO 1 es explicación de sistema — ir despacio. DESARROLLO 2 es más técnico — mantener energía alta. |
-| Tono | Operativo. Como alguien que ha corrido campañas de pago y sabe exactamente dónde se pierde el tiempo. |
-| Énfasis | Marcar con pausa los 5 elementos de contexto y los 4 momentos de la secuencia. |
-| Prop necesario | Datos de campaña anonimizados listos para pegar en el demo — preparar antes de grabar. |
+Abro una nueva conversación en el mismo Project y pego este prompt directamente:
+
+```
+Con base en el contexto de mi negocio que ya conoces, genera 5 variaciones de anuncio para Google Search.
+
+Contexto de intención de búsqueda:
+- Palabras clave principales: "software reportes ventas", "automatizar reportes Salesforce", "reportes equipo ventas"
+- Etapa del funnel: intención de compra alta — el usuario está buscando una solución activamente
+- Competidores que también aparecen en esa búsqueda: Clari, Gong, Tableau
+
+Formato exacto para cada variación:
+---
+VARIACIÓN [número]
+Ángulo: [describe en 1 línea]
+Título 1 (máx. 30 caracteres): [texto]
+Título 2 (máx. 30 caracteres): [texto]
+Título 3 (máx. 30 caracteres): [texto]
+Descripción 1 (máx. 90 caracteres): [texto]
+Descripción 2 (máx. 90 caracteres): [texto]
+---
+
+Reglas:
+- Al menos un título por variación debe incluir una de las palabras clave principales
+- Las descripciones deben terminar con una acción implícita o explícita
+- No repitas el mismo beneficio en Título 1 y Descripción 1
+- Cada variación debe tener estructura diferente en los titulares
+```
+
+[ACCIÓN EN PANTALLA: abrir nueva conversación en el Project, pegar el prompt completo, presionar Enter, mostrar el output cuando aparece]
+
+---
+
+## 8. TERMINO CON EL EMAIL FRÍO
+
+Último canal. Mismo Project, nueva conversación:
+
+```
+Con base en el contexto de mi negocio, genera 3 variaciones de email frío para outbound.
+
+ICP objetivo: Sales Managers en empresas B2B de 50 a 200 empleados. Usan Salesforce. Equipo de 5 a 15 reps. Odian hacer reportes manuales los lunes.
+Objetivo del email: conseguir una respuesta o un clic — no vender en el primer contacto.
+Longitud: corto, máximo 120 palabras por email.
+
+Formato exacto para cada variación:
+---
+VARIACIÓN [número]
+Ángulo: [describe en 1 línea]
+Asunto (máx. 50 caracteres): [texto]
+Preheader (máx. 90 caracteres): [texto]
+Cuerpo:
+[Párrafo 1 — hook: conecta con el dolor o contexto del lector]
+[Párrafo 2 — puente: cómo resuelves ese dolor en términos concretos]
+[Párrafo 3 — CTA: una sola acción, no dos]
+---
+
+Reglas:
+- El cuerpo no puede empezar con el nombre de la empresa ni con "Hola [nombre]"
+- Sin frases de relleno: "espero que estés bien", "me permito contactarte"
+- El tono debe sonar como un mensaje de un colega, no de un vendedor
+- El CTA debe ser una sola pregunta o una sola acción — no ambas
+```
+
+[ACCIÓN EN PANTALLA: abrir nueva conversación en el Project, pegar el prompt completo, presionar Enter, esperar el output y hacer scroll por las 3 variaciones mientras se leen en voz alta]
+
+---
+
+## 9. RESUMEN DE LO QUE ACABA DE PASAR
+
+[ACCIÓN EN PANTALLA: mostrar las tres conversaciones abiertas en el Project — Meta, Google, Email — haciendo clic entre pestañas]
+
+En menos de 12 minutos: análisis de campañas activas, 5 variaciones para Meta con ángulos distintos, 5 variaciones para Google con límites de caracteres correctos, y 3 emails fríos listos para cargar.
+
+Todo esto partió de los datos reales de esta semana, no de un brief genérico.
+
+Tu tarea está en el entregable. Lleva tus propios datos de campaña, usa los prompts que acabas de ver, y tráete el output a la siguiente sesión.
+
+---
+
+*Duración estimada del guión: 14–16 minutos de grabación en pantalla*

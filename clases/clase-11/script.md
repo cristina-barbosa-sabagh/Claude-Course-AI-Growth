@@ -1,349 +1,289 @@
-# Clase 11 — Tu equipo de agentes: roles especializados que trabajan en paralelo
+# Tu equipo de agentes: roles especializados que trabajan en paralelo — GUIÓN EN PANTALLA
 **Instructor B · 16 minutos · Módulo 04**
 
 ---
 
-## GUIÓN COMPLETO
+## 1. Configuro el Agente de Adquisición desde cero
 
----
+Abro Claude. Voy a crear un nuevo Project — este será el Agente de Adquisición.
 
-### INTRO — [0:00–1:00]
+[ACCIÓN EN PANTALLA: abrir claude.ai, hacer clic en "New Project", escribir el nombre "Acme — Agente Adquisición" y confirmar la creación]
 
-*(Pantalla: slide con título de la clase. Instructor en cámara.)*
+Dentro del Project, hago clic en "Project Instructions". Aquí es donde vive el cerebro del agente — sus instrucciones de sistema. Lo que ponga aquí define qué piensa, cómo responde y, tan importante como eso, qué se niega a responder.
 
-Un equipo de Growth de elite tiene especialistas.
-Alguien que piensa solo en adquisición. Alguien que piensa solo en retención. Alguien en los datos. Alguien en revenue.
+[ACCIÓN EN PANTALLA: hacer clic en "Project Instructions" o el ícono de configuración del Project, mostrar el campo de texto vacío de instrucciones]
 
-Pero la mayoría de equipos de Growth tiene una, dos, quizás tres personas intentando cubrir los cuatro frentes.
-Y cuando cubres todo, no profundizas en nada.
-
-La solución no es contratar más gente. Es crear más especialistas.
-
-Hoy te voy a mostrar cómo construir cuatro agentes de Growth en Claude Projects:
-cada uno con su rol, su contexto y sus restricciones.
-Cada uno especializado. Trabajando en paralelo.
-
-Y cómo coordinarlos en Notion para que los outputs de los cuatro se conviertan en decisiones de negocio, no en más información que procesar.
-
-16 minutos. Vamos.
-
----
-
-### DESARROLLO 1 — Los 4 agentes de Growth: roles, contexto y restricciones [1:00–6:00]
-
-*(Pantalla: slide "Tu equipo de 4 agentes — Arquitectura")*
-
-Un agente en Claude Projects es un Project configurado con instrucciones de sistema específicas para un rol y una misión.
-No es un chat de propósito general. Es un especialista.
-
-La diferencia está en cómo lo configuras.
-Un Project genérico responde a cualquier cosa con contexto general.
-Un agente responde desde un rol específico, con prioridades específicas, y se niega a salirse de su especialidad.
-
-Esa negativa es una feature, no un bug.
-Cuando le preguntas al Agente de Adquisición sobre retención, te dice: "eso es territorio del Agente de Retención."
-Eso mantiene el pensamiento limpio y los outputs enfocados.
-
----
-
-**Agente 1 — Agente de Adquisición**
-
-Rol: piensa como Head de Paid + Growth Hacker de canales orgánicos.
-Su única pregunta es: ¿cómo traemos más usuarios calificados al menor costo posible?
-
-Lo que hace:
-— Analiza el rendimiento de campañas y propone optimizaciones
-— Genera copies y creatividades para tests
-— Identifica canales sin explotar para el ICP
-— Calcula CAC objetivo y propone ajustes de presupuesto
-
-Lo que NO hace:
-— No habla de retención ni de onboarding
-— No propone cambios de producto
-— No analiza revenue de usuarios existentes
-
-*(Pausa.)*
-
-Un agente con restricciones claras produce mejor que uno sin restricciones.
-Cuando Claude no tiene límites, tiende a dar respuestas completas pero superficiales.
-Cuando tiene límites, profundiza en su área.
-
----
-
-**Agente 2 — Agente de Retención**
-
-Rol: piensa como Head de Customer Success + especialista en onboarding y lifecycle.
-Su única pregunta es: ¿cómo hacemos que los usuarios que ya tenemos se queden más tiempo y obtengan más valor?
-
-Lo que hace:
-— Diseña y optimiza flujos de onboarding
-— Analiza patrones de churn y propone intervenciones
-— Crea secuencias de email de activación y rescate
-— Propone cambios de UX de baja fricción para mejorar la experiencia
-
-Lo que NO hace:
-— No trabaja en adquisición de nuevos usuarios
-— No propone estrategias de pricing o upsell activo
-— No analiza el rendimiento de campañas pagas
-
----
-
-**Agente 3 — Agente de Análisis**
-
-Rol: piensa como analista de datos con foco en Growth y decisiones accionables.
-Su única pregunta es: ¿qué dicen los datos y qué deberíamos hacer con esa información?
-
-Lo que hace:
-— Interpreta métricas y detecta anomalías
-— Calcula el impacto de mejorar cada parte del funnel
-— Prioriza experimentos por ROI potencial
-— Genera el diagnóstico semanal del funnel
-
-Lo que NO hace:
-— No genera copies ni contenido
-— No hace recomendaciones de canal sin datos que las soporten
-— No interpreta datos que no le hayas proporcionado — pregunta antes de asumir
-
----
-
-**Agente 4 — Agente de Revenue**
-
-Rol: piensa como Revenue Manager + especialista en monetización y expansión.
-Su única pregunta es: ¿cómo extraemos más valor del negocio que ya existe?
-
-Lo que hace:
-— Identifica oportunidades de upsell y cross-sell en la base activa
-— Diseña flujos de expansión de revenue
-— Analiza el pricing y propone ajustes
-— Construye el modelo de LTV y proyecciones de MRR
-
-Lo que NO hace:
-— No trabaja en adquisición de nuevos usuarios
-— No analiza campañas pagas
-— No propone estrategias de retención genéricas — su foco es expansión de valor, no reducción de churn
-
----
-
-*(Pantalla: slide con los 4 agentes en cuadrícula — cada uno con su nombre, rol y misión)*
-
-Cuatro especialistas. Cuatro focos. Cero solapamiento.
-En el entregable tienes los system prompts completos — listos para pegar en Claude Projects.
-
----
-
-### DESARROLLO 2 — Sala de guerra en Notion: cómo coordinar los 4 agentes sin reuniones [6:00–11:00]
-
-*(Pantalla: slide "El tablero de coordinación en Notion")*
-
-El problema de tener cuatro agentes sin sistema de coordinación es que los outputs se acumulan sin convertirse en decisiones.
-
-El tablero de Notion resuelve eso.
-No es un repositorio de outputs. Es una sala de guerra donde los cuatro agentes convergen.
-
-Tiene cinco secciones:
-
----
-
-**Sección 1 — Brief de la semana**
-
-Una página de Notion con tres campos:
-- El objetivo principal de la semana (una línea)
-- La métrica que más importa mover esta semana (una sola)
-- El contexto relevante (campañas activas, experimentos en curso, cambios de producto)
-
-Eso es lo que alimenta a los cuatro agentes al inicio de cada semana.
-No cuatro briefs diferentes. Uno. Que cada agente interpreta desde su especialidad.
-
----
-
-**Sección 2 — Outputs por agente**
-
-Cuatro columnas — una por agente.
-Cada semana, cada agente produce un output principal: su diagnóstico de situación + su recomendación para la semana.
-No cinco páginas de análisis. Un output concreto: qué está viendo + qué recomiendo hacer.
-
-La regla: máximo 300 palabras por agente. Si no cabe en 300 palabras, el output no está lo suficientemente destilado.
-
----
-
-**Sección 3 — Decisiones de la semana**
-
-Aquí es donde el tablero se convierte en sala de guerra real.
-Con los cuatro outputs sobre la mesa, el Chief of Growth toma tres decisiones:
-1. La iniciativa de mayor impacto para ejecutar esta semana
-2. El experimento que se lanza
-3. La métrica que se monitorea diariamente
-
-No veinte pendientes. Tres decisiones. Eso es lo que produce tener cuatro especialistas bien alineados.
-
----
-
-**Sección 4 — Registro de experimentos**
-
-Una tabla Notion con cada experimento activo:
-Hipótesis / Agente que lo propuso / Fecha de inicio / Criterio de éxito / Estado / Resultado
-
-Cuando termina el experimento, el Agente de Análisis lo cierra con el resultado y la conclusión.
-Ese registro es la memoria colectiva de tu equipo de Growth.
-
----
-
-**Sección 5 — Reporte semanal**
-
-Al final de la semana, el Agente de Revenue (o de Análisis, según la semana) genera el reporte para stakeholders usando el Skill 05 de la clase anterior.
-Se pega en esta sección. Listo para enviar.
-
-*(Pantalla: slide con el tablero de Notion esquematizado — cinco secciones visibles)*
-
-Cinco secciones. Un tablero. La coordinación de cuatro agentes especializados sin una sola reunión de sincronización.
-
----
-
-### DEMO/CASO EN VIVO — Lanzamiento de una nueva feature: 4 agentes, 20 minutos [11:00–15:00]
-
-*(Pantalla: pantalla completa — tablero de Notion abierto + Claude Projects en otro tab)*
-
-*(Instructor comparte pantalla)*
-
-Voy a mostrarte un caso real: el equipo acaba de aprobar una nueva feature.
-Tenemos que: crear los copies de adquisición, diseñar el flujo de onboarding de la feature, reportar el impacto proyectado a stakeholders.
-
-Normalmente: dos días de trabajo distribuido. Con los 4 agentes: 20 minutos.
-
-*(Nota: la demo muestra el proceso, no los 20 minutos completos — se muestran 4 minutos representativos)*
-
----
-
-**Brief del caso [30 seg]**
-
-*(Instructor escribe en Notion — sección "Brief de la semana")*
+Pego el system prompt completo del Agente de Adquisición:
 
 ```
-Objetivo: lanzar la nueva feature de "reportes automáticos" a la base de usuarios activos
-Métrica clave: % de usuarios que activan la feature en los primeros 7 días post-lanzamiento
-Contexto: feature lista para deploy el jueves — necesitamos copies de anuncio,
-secuencia de onboarding de la feature y reporte de impacto proyectado para el board
+Eres el Agente de Adquisición de Acme (SaaS de gestión de proyectos para agencias).
+
+Tu único foco es traer más usuarios calificados al menor costo posible.
+No opinas sobre retención, onboarding, producto ni revenue de usuarios existentes.
+Si te preguntan sobre esas áreas, rediriges: "Eso es territorio del Agente de Retención / Agente de Revenue. Mi foco es adquisición."
+
+CONTEXTO DEL NEGOCIO:
+- Producto: herramienta de gestión de proyectos para agencias creativas de 10-50 personas
+- ICP: directores creativos y project managers que gestionan 5+ proyectos simultáneos
+- Ticket promedio: $149/mes
+- Canales de adquisición activos: Meta Ads (CAC actual $48), Google Ads (CAC actual $71), referidos orgánicos (CAC $12)
+- CAC objetivo: $40 promedio ponderado
+- Presupuesto mensual de paid: $8,500
+- Mercados: México, Colombia, Argentina, España
+
+LO QUE HACES:
+- Analizar el rendimiento de campañas pagas e identificar qué optimizar esta semana
+- Generar copies y ángulos para tests de adquisición en Meta y Google
+- Identificar canales de adquisición sin explotar para este ICP
+- Calcular CAC por canal y proponer ajustes de presupuesto con lógica clara
+- Crear briefs de creatividades para el equipo de diseño
+- Detectar señales de saturación de audiencia en canales activos
+
+CÓMO RESPONDER:
+- Sé específico. Si te doy métricas, úsalas. No des recomendaciones genéricas.
+- Cuando generes copies, dame siempre más de una variación con ángulos diferentes.
+- Prioriza lo que se puede ejecutar esta semana sobre lo que requiere planificación larga.
+- Formato: bullet points accionables, tablas cuando compares opciones.
+
+RESTRICCIONES:
+- No recomiendes cambios de producto.
+- No propongas estrategias de retención de usuarios existentes.
+- No generes reportes que incluyan métricas de retención o revenue.
 ```
+
+[ACCIÓN EN PANTALLA: pegar el texto en el campo de instrucciones, hacer scroll para mostrar que está completo, hacer clic en "Save" o "Confirm"]
+
+Guardo las instrucciones. El Agente de Adquisición existe ahora. Tiene su rol, su contexto de negocio específico y sus restricciones.
 
 ---
 
-**Agente de Adquisición — copies del anuncio [1 min]**
+## 2. Verifico que el agente piensa como especialista
 
-*(Instructor abre el Project del Agente de Adquisición)*
+Antes de usarlo para una tarea real, verifico que las instrucciones están funcionando.
 
-**Lo que escribe:**
+[ACCIÓN EN PANTALLA: hacer clic en "New Conversation" dentro del Project del Agente de Adquisición, mostrar el chat vacío]
+
+Escribo este prompt de verificación:
+
 ```
-Nueva feature: reportes automáticos — genera reportes de proyecto en 1 clic
-sin configuración manual.
+¿Qué entiendes sobre nuestra estrategia de adquisición actual y cuál crees que es el mayor cuello de botella basándote en el contexto que tienes?
+```
+
+[ACCIÓN EN PANTALLA: enviar el prompt, esperar el output]
+
+El agente menciona el CAC de Google ($71) como fuera del objetivo ($40), menciona los canales activos específicos, sugiere que los referidos orgánicos ($12 CAC) están subexplotados. No habla de onboarding ni de retención.
+
+Eso es exactamente lo que quiero. Un especialista que piensa en su área, con los datos específicos de este negocio.
+
+[ACCIÓN EN PANTALLA: hacer scroll por el output mostrando que el agente responde con los datos específicos del contexto cargado]
+
+---
+
+## 3. Configuro el Agente de Retención
+
+Abro una nueva pestaña del navegador. Voy a crear el segundo Project.
+
+[ACCIÓN EN PANTALLA: abrir nueva pestaña, ir a claude.ai, crear nuevo Project con el nombre "Acme — Agente Retención"]
+
+Entro en Project Instructions y pego el system prompt del Agente de Retención:
+
+```
+Eres el Agente de Retención de Acme (SaaS de gestión de proyectos para agencias).
+
+Tu único foco es que los usuarios que ya tenemos se queden más tiempo, activen las features del producto y reduzcan su probabilidad de churn.
+No trabajas en adquisición de nuevos usuarios ni en estrategias de revenue expansion activa.
+
+CONTEXTO DEL NEGOCIO:
+- Producto: herramienta de gestión de proyectos para agencias creativas de 10-50 personas
+- ICP: directores creativos y project managers
+- "Aha moment": cuando el usuario crea su primer proyecto con todo el equipo conectado y ve el estado en tiempo real (ocurre en los días 2-4 del onboarding)
+- Tasa de activación actual (primeros 7 días): 38%
+- Tasa de retención a 30 días: 71%
+- Tasa de retención a 90 días: 58%
+- Churn mensual actual: 4.2%
+- Principal razón de churn: "no lo usa suficiente el equipo" (62% de las respuestas a la encuesta de salida)
+- Herramientas de comunicación disponibles: Klaviyo (email), notificaciones in-app (Intercom), no hay SMS
+
+LO QUE HACES:
+- Diseñar y optimizar flujos de onboarding (emails, tooltips, mensajes in-app)
+- Identificar señales de alerta temprana de churn y proponer intervenciones
+- Crear secuencias de email de activación, reactivación y rescate
+- Proponer cambios de UX de bajo esfuerzo para mejorar la experiencia de activación
+- Diseñar programas de customer success escalables
+
+CÓMO RESPONDER:
+- Basa las recomendaciones en comportamiento de usuario, no en intenciones declaradas.
+- Cuando diseñes secuencias de email: asunto + preview + cuerpo + CTA + condición de envío.
+- Prioriza intervenciones de bajo esfuerzo y alto impacto.
+
+RESTRICCIONES:
+- No trabajes en estrategias de adquisición de usuarios nuevos.
+- No propongas cambios de pricing o upsell activo.
+- No recomiendes cambios de producto que requieran desarrollo significativo sin señalarlo.
+```
+
+[ACCIÓN EN PANTALLA: pegar el system prompt completo, guardarlo]
+
+Ahora tengo dos agentes activos en dos pestañas del navegador.
+
+---
+
+## 4. Configuro el Agente de Analytics
+
+[ACCIÓN EN PANTALLA: abrir tercera pestaña, crear nuevo Project "Acme — Agente Analytics"]
+
+Project Instructions — pego el system prompt:
+
+```
+Eres el Agente de Analytics de Acme (SaaS de gestión de proyectos para agencias).
+
+Tu único foco es interpretar datos y convertirlos en decisiones accionables.
+No generas copies, no diseñas campañas, no propones estrategias sin datos que las soporten.
+
+CONTEXTO DEL NEGOCIO:
+- Producto: SaaS de gestión de proyectos para agencias creativas
+- Modelo de negocio: SaaS con planes $49/mes (básico) y $149/mes (pro)
+- MRR actual: $184,000
+- Métricas que monitoreo semanalmente: MRR, CAC por canal, tasa de activación 7 días, retención 30/90 días, churn mensual, NPS
+- Herramientas de datos: Mixpanel (comportamiento), Stripe (revenue), Google Analytics (tráfico), hojas de cálculo para reporting
+- Benchmark de industria: churn SaaS B2B < 3% mensual, activación > 55%, retención 30 días > 75%
+
+LO QUE HACES:
+- Interpretar métricas y detectar anomalías vs. baseline histórico y benchmark de industria
+- Calcular el impacto en MRR de mejorar cada etapa del funnel (mostrar el cálculo)
+- Priorizar experimentos por relación impacto/esfuerzo con justificación cuantitativa
+- Generar el diagnóstico semanal del funnel
+- Diseñar el framework de medición de un experimento antes de lanzarlo
+
+CÓMO RESPONDER:
+- Usa números siempre. Una recomendación sin número no es una recomendación de análisis.
+- Cuando detectes una anomalía, da 3 hipótesis sobre por qué ocurrió.
+- Muestra el cálculo cuando calcules impacto, no solo el resultado.
+- Semáforo al final de cada diagnóstico: Verde / Amarillo / Rojo con justificación en 1 línea.
+
+RESTRICCIONES:
+- No hagas recomendaciones de canal o copy sin datos que las soporten.
+- No asumas datos que no tienes — pregunta antes de responder.
+- No generes copies o contenido de marketing.
+```
+
+[ACCIÓN EN PANTALLA: pegar el system prompt, guardarlo, mostrar la tercera pestaña con el agente configurado]
+
+Tres agentes activos. Tres pestañas. Cada uno con su rol, su contexto y sus restricciones.
+
+---
+
+## 5. Ejecuto los tres agentes en paralelo para el mismo brief
+
+Ahora el momento clave. Tengo un brief real: lanzamos la feature "reportes automáticos" el jueves. Necesito tres cosas: copies para anunciarla, flujo de onboarding para que los usuarios la activen, y proyección de impacto para el board.
+
+Voy al Agente de Adquisición primero.
+
+[ACCIÓN EN PANTALLA: cambiar a la pestaña del Agente de Adquisición, abrir nueva conversación, pegar el siguiente prompt]
+
+```
+Nueva feature que lanzamos el jueves: "reportes automáticos"
+— genera reportes de estado del proyecto en 1 clic, sin configuración manual
+— ahorra aproximadamente 45 minutos por semana a los project managers
 
 Necesito copies para anunciar la feature a:
 1. Usuarios activos en el producto (email + notificación in-app)
-2. Leads en nurturing que no convirtieron (email de reactivación)
+2. Leads en nurturing que no convirtieron en los últimos 60 días (email de reactivación — esta feature puede ser el motivo que les faltaba para convertir)
 
 Para cada formato:
-- Asunto / headline (máx 50 caracteres)
-- Copy principal (máx 150 palabras)
-- CTA específico
+- Asunto + preview (email) o headline (notificación in-app) — máx 55 caracteres
+- Copy principal — máx 100 palabras
+- CTA específico y medible
 
-Tono: enfocado en el tiempo que ahorra, no en la tecnología.
+Tono: orientado al tiempo que ahorra, no a la tecnología. Sin jerga de producto.
 ```
 
-*(Output aparece — instructor lee el headline y el CTA del email a usuarios activos)*
+[ACCIÓN EN PANTALLA: enviar el prompt, esperar el output, hacer scroll mostrando los copies diferenciados para usuarios activos y para leads en nurturing]
 
-**Narración:**
-> "Fíjate: el agente de adquisición se enfocó en el mensaje. No me dio recomendaciones de onboarding, no me habló de churn. Solo copies. Ese foco es el punto."
+El Agente de Adquisición generó copies separados para los dos segmentos. El email a usuarios activos usa el beneficio de tiempo. El email de reactivación usa la novedad como razón para volver. No me habló de onboarding ni de churn.
 
----
+[ACCIÓN EN PANTALLA: copiar el output, cambiarlo a un bloc de notas o Notion para guardarlo]
 
-**Agente de Retención — flujo de onboarding de la feature [1 min]**
+Ahora voy al Agente de Retención.
 
-*(Instructor abre el Project del Agente de Retención)*
+[ACCIÓN EN PANTALLA: cambiar a la pestaña del Agente de Retención, abrir nueva conversación, pegar el siguiente prompt]
 
-**Lo que escribe:**
 ```
 Lanzamos la feature "reportes automáticos" el jueves.
-Necesito el flujo de onboarding para que los usuarios la activen en los primeros 7 días.
+Necesito el flujo de onboarding para maximizar activación en los primeros 7 días.
 
 Diseña:
-1. El trigger de activación (qué evento dispara el onboarding)
-2. El tooltip o modal de primer contacto (copy + CTA)
-3. La secuencia de 3 emails si no activan en 48h (asunto + copy breve + CTA)
-4. El email de confirmación cuando activan la feature por primera vez
+1. El trigger de activación (qué comportamiento del usuario dispara el onboarding de esta feature)
+2. El mensaje de primer contacto in-app (tooltip o modal — copy + CTA)
+3. Secuencia de 3 emails para usuarios que no activan en 48h:
+   — Email 1: a las 48h de no activar
+   — Email 2: a los 5 días
+   — Email 3: a los 7 días (último intento)
+   Para cada email: asunto + preview + cuerpo máx 120 palabras + CTA
+4. Email de confirmación cuando activan la feature por primera vez
 
 Objetivo: 60% de usuarios activos activan la feature en 7 días.
-Restricción: no podemos hacer cambios de UI — solo emails y mensajes in-app existentes.
+Restricción: sin cambios de UI — solo emails y mensajes in-app con los templates existentes en Intercom y Klaviyo.
 ```
 
-*(Output aparece)*
+[ACCIÓN EN PANTALLA: enviar el prompt, esperar el output, hacer scroll mostrando el flujo completo — trigger, mensajes in-app y secuencia de 3 emails]
 
-**Narración:**
-> "El Agente de Retención me da el flujo completo. No me habló de campañas pagas, no me dijo que debería invertir más en adquisición. Pensó solo en activación de la feature. Eso es lo que quiero de un especialista."
+El Agente de Retención entregó el flujo completo. Trigger definido, mensaje de primer contacto, tres emails con timing y CTAs específicos, email de confirmación. No mencionó campañas pagas.
 
----
+Ahora el Agente de Analytics.
 
-**Agente de Revenue — impacto proyectado [1 min]**
+[ACCIÓN EN PANTALLA: cambiar a la pestaña del Agente de Analytics, abrir nueva conversación, pegar el siguiente prompt]
 
-*(Instructor abre el Project del Agente de Revenue)*
-
-**Lo que escribe:**
 ```
-Nueva feature: reportes automáticos.
-Contexto del negocio: 2,400 usuarios activos / ticket promedio $149/mes / churn mensual 4.2%
+Nueva feature lanzando el jueves: "reportes automáticos" — exclusiva del plan Pro ($149/mes).
+Los usuarios del plan básico ($49/mes) la ven pero necesitan upgrade para acceder.
 
-Proyecta el impacto de esta feature en:
-1. Reducción de churn (si la retención de usuarios que activan la feature es mayor)
-2. Oportunidad de upsell (si la feature es exclusiva de plan premium)
-3. Impacto en MRR a 90 días — escenario conservador y escenario optimista
+Contexto actual:
+- 2,400 usuarios activos totales
+- 65% en plan básico (1,560 usuarios)
+- 35% en plan pro (840 usuarios)
+- Churn mensual: 4.2%
+- MRR actual: $184,000
 
-Asunciones a usar si no tienes los datos: dímelas y las proveo.
+Proyecta:
+1. Cuántos usuarios del plan básico podrían hacer upgrade por esta feature (escenario conservador: 3% de básicos; escenario optimista: 8% de básicos)
+2. Impacto en MRR de esos upgrades — muestra el cálculo
+3. Impacto en churn del plan pro si los usuarios que activan features premium retienen mejor (hipótesis: churn pro baja de 4.2% a 3.1%)
+4. MRR projection a 90 días — ambos escenarios con las asunciones explícitas
+
+Muestra todos los cálculos. No des solo el número final.
 ```
 
-*(Output aparece)*
+[ACCIÓN EN PANTALLA: enviar el prompt, esperar el output, hacer scroll mostrando los cálculos y la proyección con dos escenarios]
 
-**Narración:**
-> "El Agente de Revenue me da el modelo financiero. Tres minutos. Sin que yo haga un solo cálculo.
-> Ese es el reporte que le presento al board esta semana."
+La proyección de MRR. Dos escenarios. Los cálculos visibles. Eso es el slide del CEO.
 
 ---
 
-**Coordinación en Notion [30 seg]**
+## 6. Coordino los outputs en el tablero
 
-*(Instructor vuelve a Notion — pega los tres outputs en las columnas correspondientes)*
+Ahora abro Notion y pego los tres outputs en el tablero de coordinación.
 
-**Narración:**
-> "Cuatro agentes — tres de ellos activos en este caso. Los outputs en el tablero.
-> Ahora tengo: copies listos para subir, flujo de onboarding diseñado, modelo financiero para el board.
-> En 20 minutos. Sin reuniones. Sin briefs internos. Sin emails de coordinación.
-> Eso es un equipo de Growth con agentes especializados."
+[ACCIÓN EN PANTALLA: abrir Notion, ir a la página "Acme — Sala de Guerra Growth", mostrar la tabla con columnas por agente]
 
----
+En la columna del Agente de Adquisición pego los copies. En la columna del Agente de Retención pego el flujo de onboarding. En la columna del Agente de Analytics pego la proyección.
 
-### CIERRE — [15:00–16:00]
+[ACCIÓN EN PANTALLA: pegar cada output en la columna correspondiente de la tabla de Notion]
 
-*(Instructor en cámara. Slide con entregable visible.)*
-
-Tu entregable de esta clase son los system prompts de los 4 agentes y la plantilla del tablero de coordinación en Notion.
-
-Configura los 4 Claude Projects esta semana.
-No esperes tener el contexto perfecto para empezar. Empieza con lo que tienes y afina las instrucciones en el uso.
-
-El sistema mejora cuando lo usas, no cuando lo piensas.
-
-La próxima clase es la última del curso: los tres instructores mostramos en vivo cómo nuestros sistemas de Growth con Claude operan en nuestros negocios reales.
-Y te damos el plan de 7 días para que tu sistema esté completamente operativo esta semana.
-
-Nos vemos ahí.
+Ahora el tablero muestra en un vistazo todo lo que necesito para el lanzamiento del jueves: qué decirle a los usuarios, cómo activar la feature, y cuánto impacto en MRR puede generar. Tres agentes. Veinte minutos. Sin reuniones de coordinación.
 
 ---
 
-## NOTAS DE PRODUCCIÓN
+## 7. Lo que acabas de ver
 
-| Elemento | Detalle |
-|---|---|
-| Duración objetivo | 16 minutos exactos |
-| Slides necesarios | 4: título, arquitectura de 4 agentes (cuadrícula), tablero Notion (esquema), slide de cierre |
-| Demo | Pantalla completa — Notion + 3 Claude Projects abiertos en tabs. Ver demo.md |
-| Ritmo | Desarrollo 1: ritmo moderado — dar tiempo para que cada agente quede claro. Demo: ritmo rápido, mostrar la velocidad del sistema |
-| Tono | Operacional. No teórico. Cada agente se explica con lo que hace y lo que NO hace |
-| Énfasis | Las restricciones de cada agente son tan importantes como sus capacidades |
-| Preparación previa | 4 Claude Projects configurados con los system prompts del entregable, tablero de Notion clonado y abierto |
+[ACCIÓN EN PANTALLA: mostrar las tres pestañas del navegador con los agentes y la pestaña de Notion, todo visible]
+
+Tres agentes especializados configurados con el contexto real de un negocio. Cada uno con su rol, sus restricciones y su forma de responder. Ejecutados en paralelo para el mismo brief. Outputs coordinados en Notion.
+
+Tu tarea de esta clase es configurar los tres agentes en tres Projects separados. Los system prompts están en el entregable — listos para pegar y personalizar con tu contexto real.
+
+No esperes tener el contexto perfecto para empezar. Las instrucciones mejoran con el uso. Empieza con lo que tienes hoy.
+
+La próxima clase es la última del curso: los tres instructores muestran sus sistemas operando en vivo con datos reales de esta semana.
+
+[ACCIÓN EN PANTALLA: mostrar la tabla de Notion con los tres outputs guardados como imagen de cierre]

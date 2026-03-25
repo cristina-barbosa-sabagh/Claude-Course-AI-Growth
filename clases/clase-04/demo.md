@@ -1,29 +1,18 @@
-# Demo en Vivo — Campaña real a 5 variaciones de copy en menos de 10 minutos
-**Clase 04 · Instructor B · Segmento: 11:00–15:00 del guión**
+# DEMO PASO A PASO — Copies de Meta, Google y email en minutos
 
 ---
 
-## Objetivo del demo
+**Paso 1 — Abre tu Project de Growth en Claude.ai**
 
-Mostrar el flujo completo de análisis + generación en tiempo real: desde pegar datos de una campaña activa hasta tener 5 variaciones de copy por canal listas para subir — usando el Project de Growth ya configurado.
-
-Tiempo de ejecución en pantalla: **< 8 minutos**.
-
----
-
-## Setup antes de grabar
-
-- [ ] Abrir el Project de Growth en Claude.ai (debe tener instrucciones de sistema cargadas — ICP, tono, producto)
-- [ ] Tener los datos de campaña anonimizados listos en un archivo de texto separado (preparar antes de grabar — ver datos de ejemplo abajo)
-- [ ] Tener el entregable de la clase (entregable.md) abierto en otra pestaña para mostrar la plantilla
-- [ ] Pantalla compartida activa, resolución legible
-- [ ] Ninguna otra pestaña visible que no sea Claude y los datos de ejemplo
+- Ve a claude.ai → haz clic en el Project de Growth
+- Abre una nueva conversación ("New Chat")
+- Deberías ver esto en pantalla: el campo de texto vacío, y en la barra lateral el nombre del Project con instrucciones de sistema ya cargadas (ICP, tono de marca, descripción del producto)
 
 ---
 
-## Datos de campaña de ejemplo para el demo
+**Paso 2 — Prepara los datos de campaña en un archivo de texto separado**
 
-*(Usar estos datos anonimizados durante la grabación. Son lo suficientemente reales para que el output de Claude sea bueno.)*
+- Abre un archivo .txt o Notas con este bloque exacto (reemplaza los valores con los tuyos reales):
 
 ```
 DATOS DE CAMPAÑAS ACTIVAS — PERÍODO: últimos 14 días
@@ -43,59 +32,27 @@ Campaña 1 — "Prueba gratuita — audiencia fría"
   CTA: "Empieza gratis"
 
 - Copy del anuncio con peor performance:
-  Headline: "Reportes de ventas en minutos con [Producto]"
-  Texto: "[Producto] conecta con Salesforce para automatizar tus reportes semanales.
-  Más tiempo. Menos errores. Equipos más eficientes.
-  Prueba 14 días gratis."
+  Headline: "Reportes de ventas en minutos con SalesFlow"
+  Texto: "SalesFlow conecta con Salesforce para automatizar tus reportes semanales.
+  Más tiempo. Menos errores. Equipos más eficientes."
   CTA: "Probar ahora"
   CTR: 0.6%
 
-Campaña 2 — "Retargeting — visitaron pricing"
-- Objetivo: conversiones
-- Presupuesto diario: $40
-- CTR: 3.2%
-- CPC: $0.85
-- Costo por registro: $9
-- Copy del anuncio ganador:
-  Headline: "Todavía estás pensándolo. Te entiendo."
-  Texto: "La mayoría de Sales Managers que prueban [Producto] deciden en el primer reporte.
-  14 días. Sin compromiso. Y si no ves el resultado, cancelas en 30 segundos."
-  CTA: "Empieza los 14 días"
-
-ICP: Sales Managers en empresas B2B de 50–200 empleados. Usan Salesforce. Equipo de 5–15 reps.
+ICP: Sales Managers en empresas B2B de 50–200 empleados. Usan Salesforce.
 Oferta activa: prueba gratuita de 14 días, sin tarjeta de crédito.
 Restricciones: no mencionar precio en el copy.
 ```
 
----
-
-## El demo: paso a paso exacto
+- Deberías ver esto en pantalla: el bloque de texto completo listo para copiar
 
 ---
 
-### PASO 1 — Mostrar el Project con contexto cargado [45 seg]
+**Paso 3 — Pega los datos en Claude y pide el análisis previo**
 
-*(Instructor muestra el Project de Growth abierto — instrucciones de sistema visibles)*
+- Selecciona todo el bloque de datos (Cmd+A en el archivo)
+- Cópialo y pégalo en el chat de Claude
+- Inmediatamente debajo de los datos, escribe este prompt exacto:
 
-**Narración:**
-> "Arranco desde el Project. Ya tiene cargado el ICP, el producto y el tono.
-> No voy a explicarle a Claude quién soy — ya lo sabe.
-> Lo que sí voy a hacer es darle los datos de campaña de esta semana."
-
----
-
-### PASO 2 — Pegar los datos y lanzar el análisis [1 min 30 seg]
-
-*(Instructor abre nueva conversación dentro del Project. Pega los datos de campaña del archivo de texto.)*
-
-**Narración mientras pega:**
-> "Este bloque son los datos de la última quincena. Meta Ads. Dos campañas.
-> Fíjate que incluyo el copy de los anuncios que están corriendo — el que gana y el que pierde.
-> Esa diferencia es lo más valioso que le puedo dar a Claude para que analice qué está pasando."
-
-*(Después de pegar los datos, el instructor escribe el Prompt A del entregable)*
-
-**Lo que escribe el instructor:**
 ```
 Antes de generar copy nuevo, analiza los datos que te compartí y dime:
 
@@ -107,34 +64,30 @@ Antes de generar copy nuevo, analiza los datos que te compartí y dime:
 Sé específico. Usa los datos que te di. No me des respuestas genéricas.
 ```
 
-*(Presiona Enter. Espera en silencio mientras Claude genera.)*
-
-**Narración mientras aparece el output:**
-> "Mira lo que está identificando. El patrón del anuncio ganador es una pregunta que nombra el dolor exacto del ICP — '¿Tu equipo pierde 3 horas por semana?'. El que no funciona empieza con el nombre del producto. Eso es lo que Claude detecta.
-> ¿Es obvio en retrospectiva? Sí. Pero nadie en tu equipo va a decirte esto en 40 segundos analizando 14 días de datos."
+- Presiona Enter
+- Deberías ver esto en pantalla: un análisis de 4 puntos donde Claude identifica que el anuncio ganador empieza con una pregunta que nombra el dolor del ICP, mientras el perdedor empieza con el nombre del producto
 
 ---
 
-### PASO 3 — Generar las 5 variaciones para Meta [2 min]
+**Paso 4 — Pide las 5 variaciones para Meta Ads**
 
-*(Sin salir del chat, el instructor escribe el Prompt B del entregable — adaptado al ejemplo)*
+- En el mismo chat (sin abrir una conversación nueva), pega este prompt:
 
-**Lo que escribe el instructor:**
 ```
 Con base en tu análisis, genera 5 variaciones de anuncio para Meta Ads.
 
 Objetivo de campaña: conversiones (registro a prueba gratuita)
-Audiencia: fría — Sales Managers que no conocen el producto
+Audiencia: fría — Sales Managers en empresas B2B de 50 a 200 empleados que no conocen el producto
 
 Formato exacto para cada variación:
 ---
 VARIACIÓN [número]
-Ángulo: [describe en 1 línea]
+Ángulo: [describe el ángulo en 1 línea — para que yo sepa qué estoy testeando]
 Headline (máx. 40 caracteres): [texto]
 Texto principal (máx. 3 líneas):
-[línea 1 — hook]
-[línea 2 — desarrollo]
-[línea 3 — cierre o prueba social]
+[línea 1 — el hook]
+[línea 2 — el desarrollo]
+[línea 3 — el cierre o prueba social]
 CTA (máx. 20 caracteres): [texto]
 ---
 
@@ -145,67 +98,134 @@ Reglas:
 - El copy debe leerse como algo que un humano escribiría
 ```
 
-*(Espera el output. Lee en voz alta las 5 variaciones mientras aparecen, señalando en pantalla.)*
-
-**Narración mientras lee el output:**
-> "Fíjate en los ángulos. Variación 1: entra con un dato de la industria. Variación 2: empieza con la objeción — 'Ya probamos automatización y no funcionó'. Variación 3: historia de un solo rep del equipo. Variación 4: pregunta sobre el lunes de reportes. Variación 5: afirmación sobre los competidores.
-> Cinco ángulos distintos. Ninguno es una variación cosmética del otro. Eso es lo que necesito para aprender rápido qué resuena."
+- Deberías ver esto en pantalla: 5 bloques claramente separados con el formato solicitado, cada uno con un ángulo distinto nombrado en la primera línea (dato de industria, objeción directa, historia de un rep, pregunta de lunes, afirmación sobre competidores)
 
 ---
 
-### PASO 4 — Refinar en tiempo real [1 min]
+**Paso 5 — Refina el headline de la variación que más te convence**
 
-*(Instructor elige una variación — la 2, por ejemplo — y ejecuta el refinamiento)*
+- Elige la variación más interesante (por ejemplo la variación 2)
+- Pega este prompt adaptando el número:
 
-**Lo que escribe:**
 ```
 La variación 2 me interesa pero el headline es demasiado largo.
 Dame 3 versiones del headline en máximo 35 caracteres, manteniendo el ángulo de la objeción.
 Explica en 1 línea por qué cada versión podría funcionar.
 ```
 
-*(Espera el output. Lee las 3 opciones.)*
-
-**Narración:**
-> "30 segundos. Tres opciones. Cada una con una lógica distinta.
-> Ahora puedo tomar una decisión — no tengo que pensar en cómo redactarlo.
-> Solo tengo que elegir."
+- Deberías ver esto en pantalla: 3 opciones de headline numeradas, cada una seguida de una línea de explicación de la lógica
 
 ---
 
-### PASO 5 — El cierre del demo: mostrar el entregable [30 seg]
+**Paso 6 — Abre nueva conversación para Google Search Ads**
 
-*(Instructor cambia a la pestaña del entregable.md)*
+- Haz clic en "New Chat" dentro del mismo Project (el contexto de negocio sigue cargado)
+- Pega este prompt directamente sin necesidad de pegar datos nuevos:
 
-**Narración:**
-> "Todo lo que hicimos en este demo está sistematizado en el entregable.
-> Bloque 1: tu contexto de negocio — lo rellenas una vez.
-> Bloque 2: los datos de campaña — los actualizas cada semana.
-> Bloque 3: los prompts listos para cada canal.
-> Llevas este archivo a tu operación y el ciclo de análisis + generación tarda 10 minutos.
-> No una hora. No una reunión. Diez minutos."
+```
+Con base en el contexto de mi negocio que ya conoces, genera 5 variaciones de anuncio para Google Search.
+
+Contexto de intención de búsqueda:
+- Palabras clave principales: "software reportes ventas", "automatizar reportes Salesforce", "reportes equipo ventas"
+- Etapa del funnel: intención de compra alta — el usuario está buscando una solución activamente
+- Competidores directos en esa búsqueda: Clari, Gong, Tableau
+
+Formato exacto para cada variación:
+---
+VARIACIÓN [número]
+Ángulo: [describe en 1 línea]
+Título 1 (máx. 30 caracteres): [texto]
+Título 2 (máx. 30 caracteres): [texto]
+Título 3 (máx. 30 caracteres): [texto]
+Descripción 1 (máx. 90 caracteres): [texto]
+Descripción 2 (máx. 90 caracteres): [texto]
+---
+
+Reglas:
+- Al menos un título por variación debe incluir una de las palabras clave principales
+- Las descripciones deben terminar con una acción implícita o explícita
+- No repitas el mismo beneficio en Título 1 y Descripción 1
+- Cada variación debe tener estructura diferente en los titulares
+```
+
+- Deberías ver esto en pantalla: 5 variaciones con todos los campos dentro de los límites de caracteres de Google Ads (30 chars por título, 90 por descripción)
 
 ---
 
-## Qué NO hacer en el demo
+**Paso 7 — Verifica los límites de caracteres de Google manualmente**
 
-| No hacer | Por qué |
-|---|---|
-| Pegar datos sin el copy de los anuncios actuales | El análisis de Claude pierde la mitad de su valor — necesita ver qué está corriendo para identificar patrones |
-| Generar variaciones sin hacer el análisis previo (Prompt A) | El output será bueno pero desconectado de la evidencia real — se pierde el diferencial del flujo |
-| Mostrar 5 variaciones sin leer los ángulos en voz alta | El estudiante no entiende que son variaciones conceptualmente distintas, no solo variaciones de palabras |
-| Saltarse el paso de refinamiento | El refinamiento demuestra que Claude no es un generador de una sola vuelta — la iteración rápida es central al flujo |
-| Usar más de 8 minutos | La promesa de la clase es velocidad. Si el demo tarda más, la promesa se rompe en vivo. |
-| Mostrar un output perfecto sin señalar lo que editarías | Crea expectativas irreales. Siempre señala 1 cosa que cambiarías — eso refuerza que Claude es co-piloto, no auto-pilot. |
+- Para cada variación, cuenta los caracteres de los títulos (deben ser máximo 30)
+- Si algún título supera el límite, pide:
+
+```
+El Título 2 de la variación 3 tiene [N] caracteres — supera el límite de 30.
+Dame 2 alternativas de ese título en máximo 28 caracteres manteniendo el mismo ángulo.
+```
+
+- Deberías ver esto en pantalla: 2 opciones alternativas de título dentro del límite
 
 ---
 
-## Métricas de éxito del demo
+**Paso 8 — Abre nueva conversación para email frío**
 
-El demo funcionó si al final el estudiante piensa:
+- Haz clic en "New Chat" dentro del mismo Project
+- Pega este prompt:
 
-- "Puedo hacer esto ahora mismo con mi campaña actual"
-- "Entiendo por qué el análisis previo cambia la calidad del output"
-- "El ciclo de una semana es realista — no tengo excusa para no implementarlo"
+```
+Con base en el contexto de mi negocio, genera 3 variaciones de email frío para outbound.
 
-Si hay esas tres reacciones, el demo cumplió su objetivo.
+ICP objetivo: Sales Managers en empresas B2B de 50 a 200 empleados. Usan Salesforce. Equipo de 5 a 15 reps. Odian hacer reportes manuales los lunes.
+Objetivo del email: conseguir una respuesta o un clic — no vender en el primer contacto.
+Longitud: corto, máximo 120 palabras por email.
+
+Formato exacto para cada variación:
+---
+VARIACIÓN [número]
+Ángulo: [describe en 1 línea]
+Asunto (máx. 50 caracteres): [texto]
+Preheader (máx. 90 caracteres): [texto]
+Cuerpo:
+[Párrafo 1 — hook: conecta con el dolor o contexto del lector]
+[Párrafo 2 — puente: cómo resuelves ese dolor en términos concretos]
+[Párrafo 3 — CTA: una sola acción, no dos]
+---
+
+Reglas:
+- El cuerpo no puede empezar con el nombre de la empresa ni con "Hola [nombre]"
+- Sin frases de relleno: "espero que estés bien", "me permito contactarte"
+- El tono debe sonar como un mensaje de un colega, no de un vendedor
+- El CTA debe ser una sola pregunta o una sola acción — no ambas
+```
+
+- Deberías ver esto en pantalla: 3 emails completos con asunto + preheader + cuerpo de 3 párrafos cortos, ninguno comenzando con el nombre de la empresa
+
+---
+
+**Paso 9 — Elige un email y pide 5 variaciones de asunto para A/B test**
+
+- Elige el email que más te convence (por ejemplo variación 1)
+- Pega:
+
+```
+Del email de la variación 1, quiero testear el asunto en A/B.
+Dame 5 versiones del asunto con ángulos diferentes:
+- 1 con pregunta directa
+- 1 con dato numérico
+- 1 con nombre de empresa del destinatario (usa [empresa] como placeholder)
+- 1 con urgencia real (solo si la hay — si no, no la inventes)
+- 1 muy corto (máximo 25 caracteres)
+
+Cada asunto en máximo 50 caracteres.
+```
+
+- Deberías ver esto en pantalla: 5 asuntos numerados con el ángulo identificado junto a cada uno
+
+---
+
+**Paso 10 — Guarda los outputs**
+
+- Para cada canal (Meta, Google, Email): copia el output de Claude y pégalo en un documento separado
+- Nombra cada documento: "Variaciones Meta — [fecha]", "Variaciones Google — [fecha]", "Emails fríos — [fecha]"
+- Marca con destacado la variación que subirás primero y la hipótesis de por qué va a funcionar
+
+- Deberías ver esto en pantalla: tres documentos guardados con los outputs listos para subir a las plataformas

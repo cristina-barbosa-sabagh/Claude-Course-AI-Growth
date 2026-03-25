@@ -1,248 +1,160 @@
-# Clase 06 — War Room de Growth: un dashboard en vivo donde Claude es tu estratega
+# War Room de Growth: un dashboard en vivo donde Claude es tu estratega — GUIÓN EN PANTALLA
 **Instructor A · 16 minutos · Módulo 02**
 
 ---
 
-## GUIÓN COMPLETO
+## 1. ABRO EL WAR ROOM EN GOOGLE SHEETS
+
+Abro directamente Google Sheets. El War Room ya está configurado con los datos de los últimos 3 días.
+
+[ACCIÓN EN PANTALLA: abrir Google Sheets con el archivo "War Room de Growth — [Empresa]" ya abierto, mostrar la hoja "War Room" con las dos zonas visibles — Zona 1 en azul claro, Zona 2 en verde claro]
+
+Este es el War Room. No lo estoy construyendo ahora en vivo — ya está configurado. Lo que voy a hacer es lo que hago cada mañana: leer los datos, copiarlos y pegarlos en Claude.
+
+Antes de hacerlo, te muestro el patrón que hay en estos números.
 
 ---
 
-### INTRO — [0:00–1:00]
+## 2. SEÑALO EL PATRÓN ANTES DEL ANÁLISIS
 
-*(Pantalla: slide con título de la clase. Instructor en cámara.)*
+[ACCIÓN EN PANTALLA: hacer zoom en la Zona 1 — columna CPC, señalar con el cursor los valores de los 3 días: $0.37, $0.40, $0.44]
 
-Pregunta directa: ¿cuántas veces por semana revisas tus métricas de Meta, Google y email en tres pestañas distintas, calculas a mano dónde está cayendo el funnel y terminas tomando la misma decisión de siempre porque no tienes tiempo para analizar todo a la vez?
+Mira la Zona 1. Meta Ads: el CPC subió de $0.37 a $0.44 en tres días. Las conversiones cayeron de 38 a 22. El instinto natural de cualquier equipo es: problema de Meta, hay que ajustar pujas o cambiar creativos.
 
-La respuesta honesta para la mayoría de equipos es: todos los días.
+[ACCIÓN EN PANTALLA: hacer scroll hasta la Zona 2, señalar la columna "% ACT DÍA 1": 33.9%, 25.5%, 19.5%]
 
-Hoy eso se termina.
+Ahora mira la Zona 2. Activación día 1: de 33.9% a 19.5% en el mismo período. Y el 23 de marzo entró un nuevo diseño de landing — está en la columna de notas.
 
-En los próximos 16 minutos construyes tu War Room de Growth: una sola pantalla en Google Sheets donde pegas tus métricas cada mañana, Claude las lee, detecta dónde se está rompiendo el funnel y te da **una** recomendación clara de dónde mover presupuesto o esfuerzo ese día.
+[ACCIÓN EN PANTALLA: señalar la celda de nota del 23/03 que dice "Nuevo diseño landing activo"]
 
-Una. No cinco. Una.
-
-Porque el problema no es que falten datos. Es que sobran y nadie decide.
-
-Vamos.
+¿El problema es Meta o es el landing? Ahí está la pregunta. Vamos a ver qué dice Claude.
 
 ---
 
-### DESARROLLO 1 — La estructura del War Room: qué va dónde y por qué [1:00–6:00]
+## 3. COPIO LOS DATOS Y LOS PEGO EN CLAUDE
 
-*(Pantalla: slide con la estructura visual del War Room en Google Sheets — tres secciones coloreadas)*
+[ACCIÓN EN PANTALLA: seleccionar todo el rango — desde el encabezado de Zona 1 hasta la última fila de Zona 2 incluyendo notas, presionar Cmd+C / Ctrl+C]
 
-El War Room tiene una lógica muy específica. No es un reporte. No es un dashboard de vanity metrics. Es una pantalla de decisión. Y tiene exactamente tres zonas.
+Selecciono todo. Zona 1, encabezados, Zona 2, notas. Copio.
 
----
+[ACCIÓN EN PANTALLA: abrir claude.ai en una nueva pestaña del navegador, entrar al Project de Growth, hacer clic en "New Chat"]
 
-**Zona 1 — Métricas de entrada (el tráfico que pagas)**
+Abro Claude. Mi Project de Growth. Nueva conversación — el prompt de sistema ya está cargado en el Project, no tengo que escribir nada más que los datos.
 
-Aquí pegas cada mañana los números de ayer. Meta Ads, Google Ads y email. Nada más.
+[ACCIÓN EN PANTALLA: hacer clic en el campo de texto de Claude, presionar Cmd+V / Ctrl+V — los datos aparecen en el campo como texto tabulado]
 
-Columnas: fecha, canal, impresiones, clics, CTR, CPM, CPC, conversiones, costo por conversión.
+Pego.
 
-No necesitas exportar. No necesitas una integración. Abres la plataforma, copias la tabla de ayer, pegas en el Sheet. Dos minutos.
+[ACCIÓN EN PANTALLA: presionar Enter — pausa en silencio de 3 a 5 segundos mientras Claude procesa]
 
-*(Pausa.)*
-
-¿Por qué solo ayer? Porque la decisión que tomas hoy es sobre lo que pasó ayer. El análisis semanal lo haces el viernes. El War Room es para decisiones de hoy.
+Envío. Y esperamos.
 
 ---
 
-**Zona 2 — Métricas de activación y retención (lo que pasa después del clic)**
+## 4. LEO EL OUTPUT DE CLAUDE EN VOZ ALTA
 
-Esta es la zona que la mayoría ignora y donde vive el verdadero problema.
+[ACCIÓN EN PANTALLA: cuando el output empieza a aparecer, hacer scroll lentamente mientras se lee cada sección en voz alta, señalando con el cursor]
 
-Columnas: registros completados, usuarios que llegaron al primer valor, porcentaje de activación, usuarios activos de los últimos 7 días, churn de la semana.
+Mira el diagnóstico:
 
-Fuente: tu CRM, Mixpanel, Amplitude, o incluso una hoja manual si estás en etapa temprana. No importa de dónde venga — lo que importa es que esté en el mismo Sheet que las métricas de adquisición.
+"DIAGNÓSTICO: Caída sostenida en activación día 1 de 33.9% a 19.5% en 72 horas — el tráfico de Meta entra pero casi la mitad no completa el primer valor. El costo por conversión sube como consecuencia, no como causa."
 
-*(Pausa.)*
+[ACCIÓN EN PANTALLA: subrayar con el cursor la frase "como consecuencia, no como causa"]
 
-¿Por qué en el mismo Sheet? Porque el problema rara vez es donde parece estar.
+Fíjate en esa frase: "como consecuencia, no como causa". Eso es lo que cambia todo. Si hubiéramos ajustado pujas en Meta sin revisar activación, habríamos resuelto el síntoma y dejado el problema intacto.
 
-Si tu CAC subió esta semana, el reflejo es ajustar las pujas en Meta. Pero si tu activación cayó al mismo tiempo, el problema es que estás trayendo a las personas equivocadas — y subir o bajar pujas no lo resuelve.
+[ACCIÓN EN PANTALLA: hacer scroll hasta la sección CAUSA PROBABLE]
 
-Claude necesita ver los dos bloques juntos para hacer ese diagnóstico. Tú solo, mirando pestañas separadas, raramente lo notas a tiempo.
+"CAUSA PROBABLE: El nuevo diseño de landing activado el 23/03 está generando desconexión entre la promesa del anuncio y la experiencia de llegada."
 
----
+Usó la nota de la columna H. Eso estaba en los datos que pegué. Claude lo incorporó al diagnóstico.
 
-**Zona 3 — La celda de comando: donde Claude entra al War Room**
+[ACCIÓN EN PANTALLA: hacer scroll hasta la sección RECOMENDACIÓN]
 
-Esta es la parte que hace que todo funcione.
+"RECOMENDACIÓN: Revertir temporalmente al diseño anterior de landing y medir activación día 1 mañana — si sube a más del 28%, el nuevo diseño es el problema. No ajustar pujas ni creativos de Meta hasta confirmar."
 
-Debajo de las dos zonas de métricas, hay una celda que dice: "ANÁLISIS DE HOY — PEGAR AQUÍ".
+Una acción. Con qué métrica medir el resultado. Y qué no tocar. Sin ambigüedad.
 
-Lo que haces: seleccionas todo el rango de métricas de las dos zonas, lo copias, abres Claude con tu prompt de sistema ya cargado, pegas los datos y envías.
+[ACCIÓN EN PANTALLA: hacer scroll hasta la sección EXPERIMENTO OPCIONAL]
 
-Treinta segundos. No es una integración. No es una API. Es copy-paste.
+"EXPERIMENTO OPCIONAL: Crear un test A/B del landing nuevo vs. anterior con tráfico dividido 50/50 esta semana para confirmar la hipótesis antes de descartarlo definitivamente."
 
-*(Pantalla: zoom en la celda de comando del War Room de ejemplo)*
-
-El prompt de sistema de Claude ya sabe que eres Chief of Growth, ya conoce tu etapa, ya sabe qué métricas priorizar y ya sabe que quieres una sola recomendación accionable — no un ensayo.
-
-Cuando pegas los datos, Claude lee el funnel completo y detecta la ruptura más crítica del día.
+Para quien quiere ir más lejos. No es obligatorio para la decisión de hoy.
 
 ---
 
-*(Pantalla: slide con el flujo completo: Sheet → copy → Claude → recomendación)*
+## 5. MUESTRO EL TIEMPO TOTAL
 
-Así se ve el flujo completo.
+[ACCIÓN EN PANTALLA: volver al Google Sheet y al Claude abiertos en pestañas del navegador, alternar entre las dos pestañas]
 
-Abres el Sheet. Pegas las métricas de ayer. Copias todo. Abres Claude. Pegas. Recibes una recomendación. La ejecutas o la delegas.
+Eso tomó menos de 2 minutos desde que abrí el Sheet. La decisión está clara: revertir el landing, medir mañana, no tocar Meta hasta tener el dato.
 
-Tiempo total: menos de diez minutos. Todos los días.
+Sin el War Room, la conversación de equipo hubiera sido "Meta está mal, subamos el presupuesto" o "cambiemos los creativos". Con dos días de trabajo en la dirección equivocada.
 
----
-
-### DESARROLLO 2 — El prompt de sistema: cómo configurar a Claude como tu estratega de Growth [6:00–11:00]
-
-*(Pantalla: slide con el prompt de sistema completo visible — texto en caja oscura)*
-
-El prompt de sistema es lo que convierte a Claude de chatbot genérico a estratega de tu War Room. Voy a darte el prompt exacto que usarás. Está en el entregable de esta clase. Y te voy a explicar cada bloque.
+El valor no son los datos — esos ya los tenías. El valor es ver la Zona 1 y la Zona 2 juntas, en el mismo lugar, y pasárselas a Claude con el contexto correcto.
 
 ---
 
-**Bloque 1 — El rol**
+## 6. MUESTRO EL PROMPT DE SISTEMA DEL PROJECT
+
+[ACCIÓN EN PANTALLA: ir al Project de Claude, hacer clic en "Project Instructions" (esquina superior derecha o ícono de configuración según la interfaz)]
+
+Te muestro qué hay cargado en el Project para que Claude pueda hacer ese diagnóstico.
+
+[ACCIÓN EN PANTALLA: mostrar el contenido del prompt de sistema — desplazarse lentamente por él para que sea legible en pantalla]
+
+Cuatro bloques. El rol — "estratega de Growth, produce exactamente UNA recomendación accionable para hoy". El contexto del negocio — producto, etapa, métrica norte. Las instrucciones de análisis — leer Zona 1 y Zona 2 juntas, identificar la ruptura del funnel. Y las restricciones — "no hagas recomendaciones sin datos que las soporten".
+
+[ACCIÓN EN PANTALLA: señalar con el cursor el campo "Métrica norte" en el prompt de sistema]
+
+El campo más importante es este: "métrica norte". Si tu métrica norte es activación día 1, Claude va a priorizar las señales de activación aunque el CPM esté subiendo. Si es CAC, prioriza eficiencia de adquisición. Defínela antes de cargar el prompt.
+
+---
+
+## 7. MUESTRO EL PROMPT DE DIAGNÓSTICO DE LA SEMANA
+
+En el mismo Project, abro otra conversación para el análisis semanal del viernes. Pego este prompt:
 
 ```
-Eres el estratega de Growth de [nombre de empresa].
-Tu rol en esta conversación es analizar las métricas diarias del War Room
-y producir exactamente una recomendación accionable para hoy.
+Aquí están los datos del War Room de esta semana completa (lunes a viernes):
+
+[datos de Zona 1 y Zona 2 de los 5 días]
+
+Analiza la semana completa y dime:
+
+1. ¿Cuál fue el punto de mayor ruptura del funnel esta semana y qué lo causó?
+2. ¿Qué experimento de los que corrimos funcionó (o al menos mostró señal positiva)?
+3. ¿Qué NO debemos repetir la próxima semana y por qué?
+4. ¿Cuáles son los 3 experimentos que recomiendas priorizar la próxima semana?
+
+Para cada experimento recomendado, usa este formato:
+---
+EXPERIMENTO [número]
+Hipótesis: [qué esperas que pase]
+Canal: [dónde se ejecuta]
+Métrica de éxito: [qué número tiene que moverse para que sea un éxito]
+Tiempo estimado para tener resultado: [días]
+---
 ```
 
-Esto no es decorativo. Claude necesita saber que su output tiene un formato específico: **una** recomendación, no un análisis completo. Sin esto, Claude te da cinco párrafos cuando necesitas una decisión.
+[ACCIÓN EN PANTALLA: mostrar el prompt pegado en el chat sin enviarlo — hacer zoom para que el formato sea legible]
+
+Este prompt lo ejecutas el viernes. Te da el cierre de semana y el plan de la siguiente. Con los datos de la hoja "Histórico" del Sheet que fuiste llenando de lunes a jueves.
 
 ---
 
-**Bloque 2 — El contexto de negocio**
+## 8. RESUMEN Y LLAMADA A LA ACCIÓN
 
-```
-Contexto del negocio:
-- Producto: [descripción en 1 línea]
-- Etapa: [early stage / growth stage / scale]
-- Canales activos: Meta Ads, Google Ads, email
-- Métrica norte: [CAC / activación al día 1 / LTV / churn]
-- Presupuesto semanal de adquisición: [monto aproximado]
-```
+[ACCIÓN EN PANTALLA: mostrar las dos pestañas abiertas — Google Sheets y Claude — en una vista del navegador]
 
-Este bloque es el que hace que las recomendaciones sean relevantes. Sin él, Claude puede recomendarte mover presupuesto hacia un canal que ni siquiera usas.
+Dos herramientas. Un flujo. Menos de 10 minutos por mañana.
 
-*(Pausa.)*
+El War Room no reemplaza tu juicio. Asegura que tu juicio tenga todos los datos del funnel — adquisición y activación juntos — antes de decidir.
 
-Nota el campo "métrica norte". Este es el campo más importante. Si tu métrica norte es activación al día 1, Claude va a priorizar las señales de activación sobre las de adquisición aunque el CPM esté subiendo. Si tu métrica norte es CAC, va a priorizar la eficiencia de adquisición aunque la activación esté bien.
+Tu entregable tiene la plantilla de Google Sheets lista para duplicar y el prompt de sistema completo para cargar en tu Project. Tiempo de configuración: 20 minutos. A partir de mañana, los primeros 10 minutos de tu día tienen un output claro.
 
-Define tu métrica norte antes de cargar el prompt. Si no la tienes clara, escríbela en el chat de Claude antes de empezar — te ayuda a definirla en dos minutos.
+Empiézalo esta tarde.
 
 ---
 
-**Bloque 3 — Las instrucciones de análisis**
-
-```
-Cuando recibas las métricas del War Room:
-1. Identifica el punto de mayor ruptura en el funnel (de tráfico a conversión a activación)
-2. Determina si el problema es de adquisición, de mensaje o de producto
-3. Produce UNA recomendación concreta para hoy: qué mover, cuánto y en qué dirección
-4. Si necesitas un dato que no está en las métricas para hacer el diagnóstico, pídelo
-
-Formato de output:
-- DIAGNÓSTICO: [1-2 líneas: dónde y qué está cayendo]
-- CAUSA PROBABLE: [1 línea: por qué está cayendo]
-- RECOMENDACIÓN: [1 línea de acción concreta con canal, ajuste y magnitud]
-- EXPERIMENTO OPCIONAL: [1 línea: qué testear esta semana si quieres ir más lejos]
-```
-
-*(Instructor señala el formato en pantalla)*
-
-Fíjate en la estructura. Cuatro campos. Todos de una o dos líneas. El objetivo no es que Claude te impresione con su análisis — es que en 30 segundos puedas decidir y ejecutar.
-
----
-
-**Bloque 4 — Las restricciones**
-
-```
-Restricciones:
-- No hagas recomendaciones sin datos que las soporten
-- Si no puedes hacer un diagnóstico con los datos disponibles, di qué dato específico necesitas
-- No repitas la misma recomendación dos días seguidos a menos que los datos lo justifiquen
-- El output siempre en español
-```
-
-La restricción más importante es la segunda: Claude no alucina cuando le das un marco de salida claro. Si falta un dato, te pregunta. Eso es mejor que una recomendación basada en suposiciones.
-
----
-
-*(Pantalla: slide — "Este prompt no es una guía. Es el sistema operativo de tu morning review.")*
-
-Este prompt, cargado en tu Project de Claude, convierte los primeros diez minutos de tu día en la decisión más importante de la jornada.
-
-No porque Claude sea perfecto. Sino porque tú vas a tener que leer las métricas, pegarlas y leer la recomendación — y ese proceso de cinco minutos te obliga a pensar en el funnel completo antes de que la operación del día te consuma.
-
-El War Room no es solo un dashboard. Es un ritual de decisión.
-
----
-
-### DEMO EN VIVO — War Room en acción: métricas reales, diagnóstico real [11:00–15:00]
-
-*(Pantalla: pantalla completa — Google Sheets con War Room abierto y datos cargados)*
-
-*(Instructor ejecuta el demo — ver archivo demo.md para los pasos exactos)*
-
-*(Mientras navega en vivo)*
-
-Lo que ven es el War Room con métricas de una campaña real — los números están ligeramente modificados pero el patrón es el mismo que encontré la semana pasada en una revisión real.
-
-Observen lo que Claude detecta: el CTR de Meta está bien — 2.1%, dentro de rango.
-El CPC subió 18% respecto al lunes. Eso normalmente dispara el reflejo de ajustar pujas.
-
-Pero miren la Zona 2: la activación cayó de 34% a 19% en tres días.
-
-Eso no es un problema de Meta. Es un problema de lo que pasa después del clic.
-
-Vean lo que dice Claude.
-
-*(Instructor muestra el output de Claude en pantalla)*
-
-"DIAGNÓSTICO: Caída en activación del día 1 de 34% a 19% en 72 horas — el tráfico entra pero no completa el primer valor.
-
-CAUSA PROBABLE: Desconexión entre el mensaje del anuncio y el onboarding — el usuario llega con una expectativa que el producto no cumple inmediatamente.
-
-RECOMENDACIÓN: Pausar el Ad Set 3 (mayor volumen, menor activación) y mover ese presupuesto al Ad Set 1 que muestra la activación más alta (31%). Mañana revisar si la activación sube.
-
-EXPERIMENTO OPCIONAL: Crear una versión del onboarding que entregue el primer valor en menos de 2 minutos — testear contra el flujo actual la próxima semana."
-
-*(Pausa. Instructor mira a cámara.)*
-
-Eso tomó cuarenta segundos. Y la recomendación está lista para ejecutar o para mandar al equipo.
-
-No porque Claude sea adivino. Sino porque el formato del War Room le dio los dos bloques juntos — adquisición y activación — y el prompt de sistema le dijo exactamente qué buscar y cómo responder.
-
----
-
-### CIERRE — [15:00–16:00]
-
-*(Instructor en cámara. Slide con entregable visible.)*
-
-Tu entregable de esta clase tiene dos cosas: la plantilla del War Room lista para duplicar en Google Sheets y el prompt de sistema completo para cargar en tu Project de Claude.
-
-Tiempo para configurarlo: veinte minutos.
-
-A partir de mañana, los primeros diez minutos de tu día tienen un output claro: una decisión, soportada por datos, lista para ejecutar.
-
-El War Room no va a reemplazar tu juicio. Va a asegurarse de que tu juicio tenga todos los datos del funnel antes de decidir.
-
-Clase 7: Claude Code. Construimos tu primera herramienta de Growth sin escribir una línea de código.
-
----
-
-## NOTAS DE PRODUCCIÓN
-
-| Elemento | Detalle |
-|---|---|
-| Duración objetivo | 16 minutos exactos |
-| Slides necesarios | 5: título, estructura del War Room (3 zonas), flujo completo, prompt de sistema, entregable |
-| Demo | Pantalla completa Google Sheets + Claude — ver demo.md |
-| Ritmo | Denso en Desarrollo 1. El Desarrollo 2 puede ir ligeramente más lento — hay texto en pantalla que el estudiante quiere leer. |
-| Tono | Estratégico, práctico. El instructor habla como alguien que usa esto todos los días, no como alguien que está vendiendo una idea. |
-| Énfasis | Remarcar con pausa: "una recomendación, no cinco" y "el problema rara vez está donde parece" |
-| Advertencia técnica | No intentar conectar Google Sheets con Claude via API — el flujo es copy-paste. Si alguien pregunta en vivo, la respuesta es: el copy-paste funciona hoy. La integración técnica viene después. |
+*Duración estimada del guión: 14–16 minutos de grabación en pantalla*

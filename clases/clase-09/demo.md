@@ -1,244 +1,190 @@
-# Demo en Vivo — Tracker de Experimentos de Growth: de prompt a Google Sheet en tiempo real
-**Clase 09 · Instructor B · Segmento: 11:00–15:00 del guión**
+# DEMO PASO A PASO — Reporte semanal automático, alertas y tracker en Google Sheets
 
 ---
 
-## Objetivo del demo
+**Paso 1.** Abre claude.ai en el navegador y haz clic en "New conversation". Abre también una segunda pestaña con sheets.new para crear un Google Sheet en blanco.
 
-Mostrar que Claude Code puede generar un Google Apps Script funcional que crea un tracker de experimentos completo — con estructura, formatos, colores condicionales y fórmulas — instalable en un Google Sheet real en menos de 3 minutos. El estudiante ve que no hay código que entender y no hay configuración técnica. Solo copiar, pegar y ejecutar.
-
-Tiempo de ejecución en pantalla: **< 4 minutos**.
+- Deberías ver esto en pantalla: dos pestañas abiertas — Claude en una, Google Sheets en blanco en la otra.
 
 ---
 
-## Setup antes de grabar
+**Paso 2.** En el Google Sheet en blanco, crea la estructura de datos. En la hoja por defecto (renómbrala "Métricas"), agrega estos encabezados en la fila 1 y estos datos de ejemplo en las filas 2 y 3:
 
-- [ ] Claude Code abierto en terminal — sesión limpia
-- [ ] Google Sheets abierto en una pestaña del navegador — cuenta de Google activa
-- [ ] Un Google Sheet en blanco ya creado (no hace falta nombrarlo — lo hace el script)
-- [ ] El prompt del tracker ya preparado en un archivo de texto separado para copiar rápido
-- [ ] Apps Script abierto en una segunda pestaña (Extensiones → Apps Script) — para ahorrar tiempo de navegación durante el demo
-- [ ] Carpeta de backup con el script ya generado (`/demo-backup/tracker_script.gs`) — por si Claude Code tarda más de lo esperado
-- [ ] Resolución de pantalla legible — terminal con fuente ≥ 14pt
+Fila 1 (encabezados): `Semana | Canal | Inversión | Conversiones | CAC | Activación_% | Conversión_Trial_Pago_%`
 
----
+Fila 2: `2024-01-15 | Meta Ads | 4500 | 38 | 118.4 | 47 | 12`
+Fila 3: `2024-01-15 | Google Ads | 3200 | 29 | 110.3 | 47 | 12`
+Fila 4: `2024-01-15 | Email | 800 | 22 | 36.4 | 47 | 12`
+Fila 5: `2024-01-08 | Meta Ads | 4200 | 40 | 105 | 44 | 11`
+Fila 6: `2024-01-08 | Google Ads | 3000 | 28 | 107.1 | 44 | 11`
+Fila 7: `2024-01-08 | Email | 750 | 23 | 32.6 | 44 | 11`
 
-## El demo: paso a paso exacto
+Crea una segunda hoja llamada "Experimentos" con encabezados: `ID | Nombre | Canal | Métrica_Primaria | Baseline | Resultado_Actual | Impacto_Estimado_%`
 
----
-
-### PASO 1 — Mostrar Claude Code en terminal [20 seg]
-
-*(Instructor muestra la terminal con Claude Code activo — prompt limpio)*
-
-**Narración:**
-> "Claude Code. Terminal. Le voy a describir exactamente qué necesito que construya
-> y en menos de 3 minutos voy a tener un script que instalo en Google Sheets.
-> Voy a usar el prompt del entregable — el mismo que ustedes van a pegar hoy."
+- Deberías ver esto en pantalla: Google Sheet con dos pestañas (Métricas y Experimentos), datos visibles en la hoja Métricas.
 
 ---
 
-### PASO 2 — Pegar el prompt del tracker [30 seg]
-
-*(Instructor copia el prompt desde el archivo de texto y lo pega en Claude Code — sin escribir en vivo)*
-
-**El prompt exacto del demo (versión abreviada para el demo en pantalla — más legible):**
+**Paso 3.** En Claude, pega este prompt completo y presiona Enter:
 
 ```
-Eres un desarrollador de Google Apps Script especializado en herramientas de Growth.
+Crea un Google Apps Script que tome datos de esta hoja de cálculo y genere automáticamente un resumen semanal con: CAC por canal, conversión por etapa del funnel, y top 3 experimentos por impacto estimado.
 
-Tu tarea: construir un tracker de experimentos de Growth en Google Sheets.
+La hoja de cálculo tiene esta estructura:
+- Hoja "Métricas": columnas Semana | Canal | Inversión | Conversiones | CAC | Activación_% | Conversión_Trial_Pago_%
+- Hoja "Experimentos": columnas ID | Nombre | Canal | Métrica_Primaria | Baseline | Resultado_Actual | Impacto_Estimado_%
 
-INSTRUCCIONES TÉCNICAS:
-- Google Apps Script que se instala en un Sheet vacío
-- Al ejecutarse, crea la hoja con encabezados, formatos, validaciones y fórmulas
-- Sin dependencias externas
-- Incluye instrucciones de instalación comentadas al final
+El script debe:
+1. Leer la última semana de datos de la hoja "Métricas"
+2. Calcular el CAC por canal (inversión / conversiones)
+3. Calcular el promedio de activación y conversión de trial a pago de esa semana
+4. Leer la hoja "Experimentos" y ordenar por Impacto_Estimado_% de mayor a menor
+5. Generar un resumen de texto con este formato exacto:
 
-COLUMNAS (en orden):
-A: ID — número secuencial
-B: Fecha de inicio (DD/MM/YYYY)
-C: Fecha de fin estimada (DD/MM/YYYY)
-D: Área — dropdown: Adquisición, Activación, Retención, Revenue, Referral
-E: Nombre del experimento (máx 60 chars)
-F: Hipótesis — formato: "Creemos que [cambio] para [segmento] resultará en [resultado] porque [razón]"
-G: Canal — dropdown: Meta Ads, Google Ads, Email, Onboarding, Pricing page, Otro
-H: Métrica primaria (texto libre)
-I: Baseline (número)
-J: Target (número)
-K: Resultado actual (número)
-L: % mejora vs baseline — fórmula: =(K-I)/I*100
-M: Estado — dropdown: En diseño, Activo, En análisis, Concluido, Archivado
-N: Resultado final — dropdown: Ganó, Perdió, Inconcluso, En curso
-O: Aprendizaje clave (máx 140 chars)
-P: Próximo experimento sugerido
+--- REPORTE DE GROWTH — Semana del [fecha] ---
 
-FORMATOS:
-- Fila 1: negrita, fondo #1a1a2e, texto blanco
-- Colores condicionales en columna M:
-  "En diseño" → #E3F2FD | "Activo" → #FFF9C4 | "Concluido" → #E8F5E9 | "Archivado" → #EEEEEE
-- Colores condicionales en columna N:
-  "Ganó" → fondo #4CAF50 texto blanco | "Perdió" → fondo #F44336 texto blanco
+CAC POR CANAL:
+• Meta Ads: $[valor] ([delta]% vs semana anterior)
+• Google Ads: $[valor] ([delta]% vs semana anterior)
+• Email: $[valor] ([delta]% vs semana anterior)
 
-INCLUIR:
-- 3 filas de ejemplo con fondo #F5F5F5 (datos ficticios de SaaS B2B)
-- Segunda hoja "Resumen" con: total de experimentos por área, tasa de éxito global, experimentos activos
+CONVERSIÓN DEL FUNNEL:
+• Activación: [valor]% ([delta] pp vs semana anterior)
+• Trial a pago: [valor]% ([delta] pp vs semana anterior)
+
+TOP 3 EXPERIMENTOS (por impacto estimado):
+1. [nombre] — Canal: [canal] — Impacto estimado: [%]
+2. [nombre] — Canal: [canal] — Impacto estimado: [%]
+3. [nombre] — Canal: [canal] — Impacto estimado: [%]
+
+6. Guardar el resumen generado en una nueva hoja llamada "Reportes" — una fila por semana
+7. Incluir al final del script las instrucciones de instalación y cómo programarlo para que corra automáticamente cada lunes a las 8am usando triggers de Apps Script
 
 Genera el Google Apps Script completo listo para instalar.
 ```
 
-**Narración mientras pega:**
-> "Pego el prompt. Estos son exactamente los campos del tracker que vimos en la clase.
-> Le estoy describiendo estructura, formatos, colores y qué quiero en la hoja de resumen.
-> Claude Code hace el resto. Send."
+- Deberías ver esto en pantalla: un bloque de código JavaScript largo con funciones de Google Apps Script, botón "Copy code" visible en la esquina superior derecha.
 
 ---
 
-### PASO 3 — Esperar y comentar mientras Claude Code genera [1:30 min]
+**Paso 4.** Haz clic en "Copy code". Vuelve al Google Sheet. Ve a Extensiones → Apps Script.
 
-*(Instructor presiona Enter. Claude Code empieza a generar el Apps Script. Instructor comenta lo que aparece en pantalla.)*
-
-**Narración mientras Claude Code trabaja:**
-> "Está generando el script. Primero define la función principal — `crearTracker()`."
-
-*(30 segundos después)*
-
-> "Ahora está creando las columnas. Fíjate que para cada columna define el ancho,
-> el nombre del encabezado y si tiene validación de datos con dropdown.
-> No estoy eligiendo eso yo — Claude Code lo está interpretando del brief."
-
-*(60 segundos después)*
-
-> "Ahora los colores condicionales. Son reglas de formato — el mismo concepto
-> que usarías en Sheets manualmente, pero automatizadas en código.
-> Nunca más vas a tener que configurar esto a mano."
-
-*(Cuando termina)*
-
-> "Y terminó. Tenemos el script. Ahora vamos a Google Sheets a instalarlo."
+- Deberías ver esto en pantalla: editor de Apps Script con el código por defecto `function myFunction() {}`.
 
 ---
 
-### PASO 4 — Instalar el script en Google Sheets [1 min]
+**Paso 5.** Selecciona todo el código por defecto (Cmd+A o Ctrl+A), bórralo. Pega el script copiado de Claude. Guarda con Cmd+S o Ctrl+S.
 
-*(Instructor cambia de pantalla al Google Sheet en blanco. Ya tiene Apps Script abierto en otra pestaña.)*
-
-**Narración:**
-> "Google Sheets. Tengo un Sheet en blanco.
-> Voy a Extensiones → Apps Script."
-
-*(Instructor cambia a la pestaña de Apps Script)*
-
-> "Borro el código que aparece por defecto — esto que dice 'function myFunction'."
-
-*(Instructor selecciona todo el código por defecto y lo borra)*
-
-> "Pego el script que generó Claude Code."
-
-*(Instructor pega el script)*
-
-> "Guardo. Y ejecuto — este botón de play."
-
-*(Instructor hace clic en Run/Ejecutar)*
-
-> "Google va a pedir autorización la primera vez. Eso es normal — está pidiendo permiso
-> para modificar el Sheet. Hago clic en 'Revisar permisos', elijo mi cuenta,
-> y le doy permiso."
-
-*(Instructor completa el flujo de autorización de Google — 20–30 segundos)*
-
-> "Y ahora volvemos al Sheet."
-
-*(Instructor cambia de vuelta al Google Sheet)*
-
-> "Ahí está."
+- Deberías ver esto en pantalla: el editor de Apps Script con el código nuevo pegado, nombre del proyecto en la barra superior cambiado a "Sin título" o el que tenía antes.
 
 ---
 
-### PASO 5 — Mostrar el tracker generado [30 seg]
+**Paso 6.** Haz clic en el botón de play (triángulo) para ejecutar el script. Cuando Google pida autorización, haz clic en "Revisar permisos" → elige tu cuenta → "Avanzado" → "Ir al script (no seguro)" → "Permitir".
 
-*(La pantalla muestra el Google Sheet con el tracker completo — encabezados formateados, dropdowns activos, colores, filas de ejemplo)*
-
-**Narración:**
-> "El tracker completo. Encabezados formateados. Las columnas con el ancho correcto.
-> Voy a hacer clic en la columna de Estado para que vean el dropdown."
-
-*(Instructor hace clic en la columna M — aparece el dropdown con las opciones)*
-
-> "En diseño, Activo, En análisis, Concluido, Archivado.
-> Cambia el color automáticamente cuando seleccionas."
-
-*(Instructor selecciona 'Activo' — la celda cambia al amarillo claro)*
-
-> "Y la hoja de Resumen — aquí."
-
-*(Instructor cambia a la hoja 'Resumen')*
-
-> "Muestra el total de experimentos por área, la tasa de éxito y los activos ahora mismo.
-> Todo con fórmulas que se actualizan solas cuando agregas datos en la hoja principal."
+- Deberías ver esto en pantalla: ventana de autorización de Google, botones "Avanzado" y "Ir al script", finalmente "Permitir". Luego, el editor de Apps Script muestra "Running..." brevemente.
 
 ---
 
-### PASO 6 — El remate [20 seg]
+**Paso 7.** Vuelve al Google Sheet. Verifica que aparece una nueva hoja llamada "Reportes".
 
-*(Instructor mira a cámara)*
-
-**Narración:**
-> "Del prompt al tracker funcional: menos de 4 minutos.
-> El primer experimento lo registran ustedes — ese sí requiere que lo pienses tú.
-> Todo lo demás lo hizo Claude Code.
-> El prompt está en el entregable. Cópialo y ejecútalo hoy."
+- Deberías ver esto en pantalla: nueva pestaña "Reportes" en la parte inferior del Sheet, con al menos una fila con el resumen del reporte generado automáticamente, incluyendo el texto formateado con los datos de CAC y conversión.
 
 ---
 
-## Variantes del demo (si el instructor quiere personalizar)
+**Paso 8.** Configura el trigger automático. En el editor de Apps Script, haz clic en el ícono de reloj (Triggers) en la barra lateral izquierda. Haz clic en "Add Trigger" en la esquina inferior derecha.
 
-Ajusta estos elementos del prompt según el producto o industria de referencia del curso:
-- **Áreas del dropdown:** si la audiencia es más de ecommerce, agrega "Conversión" y "Carrito abandonado"
-- **Canales del dropdown:** ajusta a los canales más relevantes para la audiencia (TikTok, WhatsApp Business, LinkedIn)
-- **Datos de ejemplo:** elige experimentos ficticios que resuenen con la audiencia del curso
+Configura: función → `generarReporteSemanal` (o el nombre que usó Claude), tipo de evento → Time-driven, tipo de tiempo → Week timer, día → lunes, hora → 8am-9am. Haz clic en "Save".
 
-**Regla:** los datos de ejemplo en el tracker deben ser lo suficientemente específicos para que el estudiante entienda exactamente cómo llenar cada campo — no datos abstractos.
+- Deberías ver esto en pantalla: el trigger aparece listado en la pantalla de Triggers con el ícono de reloj y la descripción "Every week, on Monday, 8 AM to 9 AM".
 
 ---
 
-## Qué NO hacer en el demo
+**Paso 9.** Vuelve a Claude. Nueva conversación. Pega este prompt para el sistema de alertas:
 
-| No hacer | Por qué |
-|---|---|
-| Explicar el código de Apps Script línea por línea | El punto es que no necesitas entenderlo |
-| Mostrar la hoja de resumen antes de mostrar el tracker principal | Pierde el efecto visual — el tracker principal es la revelación |
-| Saltarse el paso de autorización de Google | Es el momento donde más estudiantes tienen dudas — mostrarlo en cámara lo normaliza |
-| Usar un prompt vago en el demo | El output va a ser genérico y el tracker va a quedar incompleto |
-| Editar el script manualmente si algo falla | Pide a Claude Code que lo corrija — eso también es parte del flujo |
-| Mostrar solo el script sin instalarlo en Sheets | La instalación es la mitad del demo — sin ella, el estudiante no ve el resultado |
+```
+Crea un Google Apps Script que funcione como sistema de alertas de Growth.
+
+El script lee el mismo Google Sheet del reporte semanal (hoja "Métricas") y compara la última semana con la anterior.
+
+Alertas que debe detectar y notificar:
+1. CAC de cualquier canal sube más de 20% semana a semana → ALERTA ALTA
+2. Tasa de activación cae por debajo de 35% → ALERTA ALTA
+3. Conversión de trial a pago cae más de 3 puntos porcentuales → ALERTA MEDIA
+4. CAC blended (promedio de todos los canales) supera $120 → ALERTA ALTA
+
+Para cada alerta, el script debe enviar un mensaje a Slack usando un Incoming Webhook.
+
+Formato del mensaje de Slack:
+🚨 ALERTA DE GROWTH — [Nombre de la métrica]
+Valor actual: [valor]
+Valor semana anterior: [valor]
+Variación: [delta en % o pp]
+Acción sugerida: [una línea con la primera acción a tomar]
+
+Si no hay alertas activas, el script no envía nada (sin ruido).
+
+La URL del webhook de Slack va en una constante al inicio del script llamada SLACK_WEBHOOK_URL — con un comentario que explique cómo obtenerla en 2 minutos desde la configuración de Slack.
+
+Incluye al final las instrucciones para programar este script con un trigger diario a las 9am.
+
+Genera el Google Apps Script completo.
+```
+
+- Deberías ver esto en pantalla: un nuevo bloque de código con el script de alertas, con la constante `SLACK_WEBHOOK_URL` visible al inicio del código.
 
 ---
 
-## Métricas de éxito del demo
+**Paso 10.** Obtén la URL del webhook de Slack. Abre Slack en el navegador. Ve a tu workspace → icono de "Add apps" o busca "Incoming WebHooks" en el directorio de apps → "Add to Slack" → elige el canal donde quieres recibir alertas (por ejemplo, `#alertas-growth`) → copia la URL del webhook que aparece.
 
-El demo funcionó si al final el estudiante piensa:
-
-- "Puedo instalar esto en mi Google Sheets ahora mismo"
-- "Entiendo qué tipo de experimentos registrar desde hoy"
-- "El reporte y las alertas que están en el entregable siguen exactamente el mismo proceso"
-
-Si hay esas tres reacciones, el demo cumplió su objetivo.
+- Deberías ver esto en pantalla: una URL que empieza con `https://hooks.slack.com/services/...` en la pantalla de configuración de Incoming WebHooks.
 
 ---
 
-## Plan de contingencia
+**Paso 11.** Copia el script de alertas de Claude. En el editor de Apps Script del Google Sheet, crea un nuevo archivo de script con el botón "+" → "Script". Pega el código. Reemplaza el valor placeholder de `SLACK_WEBHOOK_URL` con la URL real de Slack. Guarda. Ejecuta para probar.
 
-**Si Claude Code tarda más de 2 minutos en generar el script:**
-> "Claude Code está siendo minucioso — cuando el brief es detallado, el output también lo es. Mientras termina, les anticipo que la hoja de Resumen que va a generar tiene [descripción de las métricas del resumen]."
-> *(Si llega a 3 minutos, cambia al backup sin disculpas y continúa.)*
+- Deberías ver esto en pantalla: si alguna métrica de los datos de ejemplo cruza el umbral, un mensaje llega al canal de Slack configurado con el formato de alerta definido. Si no hay alertas, la ejecución termina sin enviar nada.
 
-**Si la autorización de Google Apps Script da pasos adicionales:**
-> "Dependiendo del workspace de Google que tengan — corporativo o personal — este proceso puede tener un paso adicional. Si aparece una pantalla que dice 'Esta aplicación no está verificada', hagan clic en 'Avanzado' y luego en 'Ir a [nombre del script]'. Es normal para scripts que ustedes mismos crean."
+---
 
-**Si el script genera un error al ejecutarse:**
-> "Apps Script nos está diciendo que hay un error. Copio el mensaje de error, vuelvo a Claude Code y le pido que lo corrija."
-> *(Copia el error, vuelve a Claude Code, escribe: "El script da este error al ejecutarse: [pega el error]. Corrígelo." — esto también es un momento de enseñanza valioso sobre cómo iterar con Claude Code.)*
+**Paso 12.** Vuelve a Claude. Nueva conversación. Pega este prompt para el tracker de experimentos:
 
-**Si Google Sheets muestra el tracker sin los colores condicionales:**
-> "Los colores pueden tardar unos segundos en aplicarse si el Sheet es nuevo. Si no aparecen, pídele a Claude Code que revise la sección de formato condicional del script — es probable que la sintaxis de la versión de Apps Script que estás usando necesite un ajuste menor."
+```
+Crea un Google Apps Script que construya un tracker de experimentos de Growth en Google Sheets.
+
+Al ejecutarse, el script debe crear una hoja llamada "Tracker Experimentos" con estas columnas:
+
+A: ID (número secuencial, ancho 50px)
+B: Fecha inicio (formato DD/MM/YYYY)
+C: Fecha fin estimada (formato DD/MM/YYYY)
+D: Área — dropdown: Adquisición, Activación, Retención, Revenue, Referral
+E: Hipótesis (texto libre, ancho 280px, wrap)
+F: Canal — dropdown: Meta Ads, Google Ads, Email, Onboarding, Pricing page, Otro
+G: Métrica primaria (texto libre)
+H: Baseline (número)
+I: Target (número)
+J: Resultado actual (número)
+K: % mejora — fórmula: =(J-H)/H*100
+L: Estado — dropdown: En diseño, Activo, En análisis, Concluido, Archivado
+M: Resultado final — dropdown: Ganó, Perdió, Inconcluso, En curso
+N: Aprendizaje clave (texto libre, ancho 230px, wrap)
+O: Próximo experimento (texto libre)
+
+Encabezado fila 1: negrita, fondo #1a1a2e, texto blanco.
+
+Colores condicionales columna L: "En diseño" → #E3F2FD | "Activo" → #FFF9C4 | "Concluido" → #E8F5E9
+Colores condicionales columna M: "Ganó" → fondo #4CAF50 texto blanco | "Perdió" → fondo #F44336 texto blanco
+
+Incluye 3 filas de ejemplo ficticias pero realistas de experimentos de Growth SaaS B2B. Fondo #F5F5F5 en esas filas.
+
+Crea también una hoja "Resumen" con: total experimentos por área (COUNTIF), tasa de éxito global, experimentos activos.
+
+Script completo con instrucciones de instalación comentadas al final.
+```
+
+- Deberías ver esto en pantalla: un bloque de código extenso con el script del tracker, incluyendo las definiciones de columnas, los formatos y las reglas de color condicional.
+
+---
+
+**Paso 13.** Instala el script del tracker igual que los anteriores: copia, pega en un nuevo archivo de script en Apps Script, guarda, ejecuta, autoriza.
+
+- Deberías ver esto en pantalla: nueva pestaña "Tracker Experimentos" en el Google Sheet con todos los encabezados formateados en azul oscuro, dropdowns activos en las columnas correspondientes, tres filas de ejemplo con fondo gris claro, y una pestaña "Resumen" adicional con las métricas agregadas.

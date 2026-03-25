@@ -1,248 +1,200 @@
-# Clase 08 — Landing page de experimento en vivo: de idea a URL en 20 minutos
+# Landing page de experimento en vivo: de idea a URL en 20 minutos — GUIÓN EN PANTALLA
 **Instructor C · 16 minutos · Módulo 03**
 
 ---
 
-## GUIÓN COMPLETO
+## 1. ABRO CLAUDE Y EMPIEZO CON EL BRIEF
+
+Abro claude.ai. Conversación nueva. Tengo aquí un documento con el brief del experimento que escribí esta mañana. Lo voy a convertir en una landing page completa en los próximos minutos.
+
+[ACCIÓN EN PANTALLA: abrir chrome, ir a claude.ai, clic en "New conversation", mostrar también un documento de texto abierto al lado con notas del brief]
+
+El producto de ejemplo que voy a usar: una herramienta SaaS que genera reportes de ventas automáticos para Sales Managers. La hipótesis del experimento: si mostramos el tiempo ahorrado en números concretos, la tasa de reserva de demo sube.
 
 ---
 
-### INTRO — [0:00–1:00]
+## 2. EL PROMPT DE GENERACIÓN DE LANDING — LO PEGO COMPLETO
 
-*(Pantalla: slide con título de la clase. Instructor en cámara.)*
+No escribo nada manual. Copio el prompt que ya tenía preparado y lo pego directamente.
 
-Voy a empezar con una pregunta directa:
+[ACCIÓN EN PANTALLA: mostrar el archivo de texto con el prompt, seleccionarlo todo con Cmd+A, copiarlo con Cmd+C, pegarlo en Claude con Cmd+V, mostrar el prompt completo antes de enviarlo para que el estudiante pueda leerlo]
 
-¿Cuántas ideas de experimento tienes ahora mismo que no han llegado a producción porque necesitabas a un desarrollador para hacer la landing?
+Este es el prompt exacto:
 
-La mayoría de Chiefs of Growth tienen entre tres y cinco de esas ideas esperando.
-Hoy las desbloqueamos todas.
+```
+Eres un desarrollador frontend especializado en landing pages de conversión para SaaS B2B.
 
-Dieciséis minutos. Al final tienes una URL funcionando con tu página de experimento publicada.
-No una maqueta. No un boceto. Una URL real.
+Tu tarea: construir una landing page completa lista para publicar. Genera un solo archivo HTML con CSS interno.
 
-Vamos.
+INSTRUCCIONES TÉCNICAS:
+- Un solo archivo index.html — sin archivos CSS o JS separados
+- Diseño limpio, mobile-first, sin librerías externas
+- Fuente: Inter desde Google Fonts
+- Colores: fondo blanco (#ffffff), texto principal (#1a1a1a), acento azul (#2563EB)
+- Formulario con campos: nombre + email, con validación básica en JavaScript
+- La página debe cargar en menos de 2 segundos
 
----
+ESTRUCTURA DE LA PÁGINA (en este orden):
+1. Hero section: H1 con la propuesta de valor + subtítulo + formulario CTA
+2. Beneficios: 4 puntos con iconos SVG simples inline
+3. Prueba social: número de clientes + 1 testimonio con nombre y cargo
+4. FAQ: 3 preguntas con respuestas directas (máximo 3 líneas cada una)
+5. CTA final: repetir el formulario con copy diferente al hero
+6. Footer mínimo: nombre del producto + año
 
-### DESARROLLO 1 — Cómo describir una landing page en español para que Claude Code la construya [1:00–6:00]
+CONTENIDO DEL PRODUCTO:
 
-*(Pantalla: slide "El brief perfecto para Claude Code")*
+Propuesta de valor:
+Reduce el tiempo de reporte semanal de ventas de 3 horas a 20 minutos, sin cambiar tu CRM.
 
-Lo primero que tienes que entender es que Claude Code no lee mentes.
-Pero sí lee briefs bien escritos.
+ICP (para ajustar el copy):
+Sales Managers en empresas SaaS B2B de 50 a 200 empleados, con equipos de 5 a 15 representantes, que usan HubSpot o Salesforce y arman el reporte de pipeline manualmente cada lunes por la mañana.
 
-Y un brief de landing page tiene exactamente siete campos.
-No más. No menos.
+CTA principal:
+Reservar demo de 20 minutos
 
----
+Beneficios clave:
+1. Reportes de pipeline listos en 20 minutos, no 3 horas — todos los lunes
+2. Datos de HubSpot, Salesforce y Excel unificados en un solo lugar automáticamente
+3. Sin código, sin IT — configuración completa en menos de un día
+4. Alertas automáticas cuando un deal cae por debajo del umbral de cierre
 
-**Campo 1 — Propuesta de valor**
+Objeciones:
+1. ¿Funciona con mi CRM actual o tengo que migrar los datos?
+2. ¿Cuánto tiempo toma la implementación y quién lo configura?
+3. ¿El precio escala cuando crece mi equipo de ventas?
 
-Una sola línea. El beneficio principal que el visitante obtiene al convertir.
-No el feature. El beneficio.
+Prueba social:
+Más de 200 equipos de ventas en Latam lo usan actualmente.
+Testimonio: "Pasé de armar el reporte a mano cada lunes a recibirlo listo el domingo a las 11pm. Mi equipo pensó que había contratado a alguien nuevo." — Carlos M., Sales Manager, Fintech México.
 
-Mal: "Plataforma de analytics con IA integrada."
-Bien: "Reduce tu tiempo de reporte semanal de 3 horas a 20 minutos, sin cambiar tu stack."
+INSTRUCCIONES DE COPY:
+- El H1 debe ser la propuesta de valor, directo, sin adjetivos vacíos
+- El subtítulo debe nombrar el ICP y el problema específico
+- Los beneficios van con números concretos en negrita
+- Las respuestas del FAQ: directas, sin rodeos
+- Tono: orientado a resultados, conversacional pero profesional
 
-Claude Code va a usar esta línea como el H1 de tu landing.
-Si es vaga, el H1 va a ser vago. Si es específica, el H1 va a ser específico.
+Genera el archivo index.html completo. No me expliques el código — solo devuelve el HTML.
+```
 
----
-
-**Campo 2 — ICP (Ideal Customer Profile)**
-
-A quién le estás hablando. Rol, empresa, problema concreto.
-Cuanto más específico, mejor va a ser el copy.
-
-Ejemplo: "Sales Managers en SaaS B2B, equipos de 10–50 personas, que usan HubSpot y pierden horas cada lunes armando el reporte de pipeline."
-
-Claude Code va a usar esto para ajustar el tono, el vocabulario y los ejemplos de la página.
-
----
-
-**Campo 3 — CTA principal**
-
-Una sola acción. ¿Qué quieres que haga el visitante?
-Opciones comunes: registrarse para demo, empezar prueba gratuita, dejar email, reservar llamada.
-
-Sé específico: "Reservar demo de 20 minutos" es mejor que "Contáctanos".
-
----
-
-**Campo 4 — Beneficios clave**
-
-Tres a cinco puntos concretos. Cada uno con un número si es posible.
-No listas de features — listas de resultados.
-
-Ejemplo:
-- Reportes listos en 20 minutos, no 3 horas
-- Datos de HubSpot, Salesforce y Excel en un solo lugar
-- Sin código, sin IT, listo en un día
+[ACCIÓN EN PANTALLA: presionar Enter, mostrar cómo Claude empieza a generar el HTML en tiempo real, hacer scroll mientras el código aparece para que se vea la magnitud del output]
 
 ---
 
-**Campo 5 — Objeciones principales**
+## 3. ESPERO SIN TOCAR NADA — Y COMENTO LO QUE VEO
 
-¿Qué le impide a tu ICP convertir ahora mismo?
-Nómbralas. Claude Code va a construir una sección de la landing que las desmonta.
+Mientras Claude genera, leo en voz alta lo que va apareciendo.
 
-Ejemplo: "¿Funciona con mi CRM actual?", "¿Cuánto tiempo toma implementarlo?", "¿Tengo que migrar datos?"
+[ACCIÓN EN PANTALLA: cursor quieto, el código HTML aparece línea por línea, instructor hace scroll lento para seguir el output]
 
----
+Está generando el head primero — los estilos, la fuente Inter de Google, los colores que le pedí. Ahora el hero section con el H1. Fíjate: usó exactamente la propuesta de valor como H1, no la cambió. Ahora los beneficios con iconos SVG en línea, sin imágenes externas. Ahora el FAQ con las tres objeciones que le di. Ahora el CTA final.
 
-**Campo 6 — Prueba social**
-
-Qué tienes disponible: número de clientes, testimonios, logos de empresas que lo usan, resultados medibles.
-Si no tienes nada todavía, dilo — Claude Code va a proponer placeholders realistas.
-
-Ejemplo: "Usado por 200+ equipos de ventas. Testimonio: 'Bajamos el tiempo de reporte un 80% en la primera semana.' — Directora Comercial, Fintech B2B."
+Terminó.
 
 ---
 
-**Campo 7 — URL del experimento**
+## 4. COPIO EL CÓDIGO Y LO ABRO EN EL NAVEGADOR
 
-El slug que quieres usar. Algo limpio y rastreable.
-Ejemplo: `/demo-reportes`, `/prueba-gratis`, `/equipos-ventas`
+[ACCIÓN EN PANTALLA: hacer clic en el botón "Copy code" del bloque de HTML en Claude, abrir TextEdit o VS Code, pegar el código, guardar como index.html en una carpeta nueva llamada "landing-demo-reportes" en el Escritorio]
 
-Esto le dice a Claude Code cómo nombrar los archivos y te ayuda a rastrear el tráfico en Google Analytics.
+Guardo el archivo. Ahora lo arrastro al navegador.
 
----
+[ACCIÓN EN PANTALLA: arrastrar el archivo index.html desde el Finder directamente a una pestaña de Chrome, mostrar la landing cargando]
 
-*(Pantalla: slide con los 7 campos en lista)*
-
-Siete campos. Con eso, Claude Code construye una landing de conversión completa:
-H1, subtítulo, sección de beneficios, sección de objeciones, prueba social, formulario y CTA.
-
-No tienes que saber HTML. No tienes que saber CSS. No tienes que saber nada de código.
-Solo tienes que saber tu negocio. Y eso ya lo sabes.
+La landing carga. Hero con el H1, formulario, sección de beneficios, FAQ, CTA al final. Todo en un solo archivo HTML. Sin servidor.
 
 ---
 
-### DESARROLLO 2 — Publicar en Vercel: arrastras una carpeta y haces clic [6:00–11:00]
+## 5. PROMPT DE REFINAMIENTO: MEJORAR EL HEADLINE Y EL HERO
 
-*(Pantalla: slide "De archivos a URL en 3 pasos")*
+El H1 es bueno pero quiero probar una versión más agresiva. Le pido variantes.
 
-Una vez que Claude Code genera tu landing, tienes una carpeta con archivos.
-Probablemente un `index.html`, un `styles.css` y quizás un `script.js`.
+[ACCIÓN EN PANTALLA: volver a la conversación de Claude, escribir el siguiente prompt]
 
-Publicarla en internet tarda literalmente dos minutos.
+```
+Dame 5 variantes del H1 y subtítulo del hero section.
 
----
+Contexto: el visitante es un Sales Manager que lleva años armando el reporte de pipeline a mano. Llega a esta página porque vio un anuncio que decía "¿Todavía armas el reporte de ventas a mano?".
 
-**Paso 1 — Vercel.com**
+Para cada variante dame:
+- H1 (máximo 10 palabras, orientado al resultado)
+- Subtítulo (máximo 20 palabras, que nombre el problema específico y a quién resuelve)
 
-Entra a vercel.com. Crea una cuenta gratis con tu email de trabajo.
-No necesitas tarjeta de crédito para el plan Hobby — que es suficiente para experimentos de Growth.
+Quiero que las 5 variantes tengan ángulos distintos:
+1. Ángulo tiempo (cuánto se ahorra)
+2. Ángulo frustración (el dolor que elimina)
+3. Ángulo resultado (qué logra el equipo)
+4. Ángulo competencia (qué tienen otros que tú aún no)
+5. Ángulo social proof (lo que hacen los mejores equipos)
+```
 
----
+[ACCIÓN EN PANTALLA: enviar el prompt, mostrar las 5 variantes que devuelve Claude en una lista numerada]
 
-**Paso 2 — Drag and drop**
-
-En el dashboard de Vercel, hay un botón que dice "Add New" y luego "Project".
-Selecciona "Deploy from file" o arrastra directamente la carpeta que te generó Claude Code.
-
-Vercel detecta automáticamente qué tipo de proyecto es.
-Para una landing estática, no hay ninguna configuración adicional.
-
----
-
-**Paso 3 — Tu URL**
-
-Vercel te da una URL automática: `[nombre-del-proyecto].vercel.app`
-Puedes usarla directamente o conectar tu dominio propio — pero para un experimento, la URL de Vercel funciona perfectamente.
-
-En menos de 60 segundos desde que subes la carpeta, la página está viva.
+Me quedo con la variante 2 — ángulo frustración. Voy a pedirle que actualice la landing con ese nuevo hero.
 
 ---
 
-*(Pantalla: slide con diagrama del flujo: Brief → Claude Code → Carpeta → Vercel → URL)*
+## 6. PROMPT DE OPTIMIZACIÓN DEL CTA
 
-El flujo completo es:
-- Llenas el brief en 5 minutos
-- Claude Code genera la landing en 3 minutos
-- Subes a Vercel en 2 minutos
+[ACCIÓN EN PANTALLA: en la misma conversación, escribir el siguiente prompt]
 
-Total: 10 minutos de la idea a la URL.
+```
+Ahora optimiza el CTA de la landing. Actualmente dice "Reservar demo de 20 minutos".
 
-Los otros 10 minutos de la clase son para hacerlo en vivo juntos.
+Dame 4 alternativas de CTA con su copy de botón y el texto de apoyo debajo del botón (la frase pequeña que reduce la fricción).
 
----
+Quiero que explores:
+1. CTA con urgencia implícita
+2. CTA con reducción de riesgo ("sin tarjeta", "sin compromiso")
+3. CTA con resultado inmediato ("Ve cómo funciona en 3 minutos")
+4. CTA orientado al equipo, no al individuo
 
-*(Pantalla: slide "Por qué Vercel y no [otra opción]")*
+Para cada uno dame: texto del botón + frase de apoyo (máximo 8 palabras)
+```
 
-Vercel es la opción porque:
-- Es gratis para experimentos
-- El deploy es instantáneo — sin servidores, sin configuración
-- Las páginas cargan rápido — y la velocidad de carga afecta la tasa de conversión
-- Puedes tener múltiples experimentos en URLs separadas sin costo adicional
+[ACCIÓN EN PANTALLA: mostrar las 4 variantes de CTA que genera Claude, con el texto del botón y la frase de apoyo]
 
-Netlify también funciona con exactamente el mismo proceso.
-Elige uno y quédate con él. No importa cuál — importa que lo uses.
+Me quedo con la opción 3. Ahora le pido que actualice el HTML con el nuevo H1 y el nuevo CTA.
 
 ---
 
-### DEMO / EJERCICIO EN VIVO — Brief de landing, Claude Code la construye, la publicamos [11:00–15:00]
+## 7. ACTUALIZO EL HTML Y SUBO A NETLIFY
 
-*(Pantalla: Claude Code abierto — terminal en pantalla completa)*
+[ACCIÓN EN PANTALLA: escribir en Claude]
 
-Ahora hacemos esto en vivo. Voy a usar un producto de ejemplo y vamos a construir la landing juntos.
+```
+Actualiza el archivo index.html con estos cambios:
 
-*(Instructor comparte pantalla — ver demo.md para los pasos exactos)*
+H1 nuevo: [pega aquí la variante de H1 que elegiste en el paso anterior]
+Subtítulo nuevo: [pega el subtítulo correspondiente]
+CTA nuevo: botón que dice "Ve cómo funciona en 3 minutos" + frase de apoyo "Sin demo comercial. Sin tarjeta de crédito."
 
-*(Mientras Claude Code genera la landing, instructor comenta)*
+Devuelve solo el HTML completo actualizado.
+```
 
-Fíjate en lo que está pasando:
-Claude Code está escribiendo el HTML estructura por estructura.
-Primero el head con los estilos.
-Luego el hero con el H1 y el subtítulo.
-Luego la sección de beneficios con iconos.
-Luego las objeciones en formato de preguntas frecuentes.
-Luego el CTA final.
+[ACCIÓN EN PANTALLA: copiar el HTML nuevo, reemplazar el archivo index.html con el contenido actualizado, arrastrarlo al navegador para verificar que los cambios se ven bien]
 
-No estoy tocando nada. Solo leo el output mientras aparece.
+La landing está lista. Ahora la subo a Netlify.
 
-*(Cuando Claude Code termina)*
+[ACCIÓN EN PANTALLA: abrir una nueva pestaña del navegador, ir a netlify.com, mostrar el dashboard con el área de "drag and drop", arrastrar la carpeta "landing-demo-reportes" completa al área indicada en Netlify]
 
-Tenemos una carpeta. Vamos a Vercel.
+Arrastro la carpeta. Netlify detecta el archivo HTML. No hay ninguna configuración adicional.
 
-*(Instructor cambia de pantalla a Vercel.com)*
+[ACCIÓN EN PANTALLA: mostrar la barra de progreso de Netlify, esperar a que aparezca la URL pública — algo como "https://cheerful-cupcake-abc123.netlify.app"]
 
-Arrastro la carpeta aquí. Espero 30 segundos.
-Y tenemos la URL.
+Tenemos la URL. La abro.
 
-Eso es todo.
+[ACCIÓN EN PANTALLA: hacer clic en la URL de Netlify, mostrar la landing cargando desde internet, hacer scroll para mostrar todas las secciones]
 
----
-
-### CIERRE — [15:00–16:00]
-
-*(Instructor en cámara. Slide con el entregable visible)*
-
-Lo que acabas de ver no es un truco de demo.
-Es exactamente cómo publicas tus experimentos de Growth de ahora en adelante.
-
-Sin esperar a que el desarrollador tenga tiempo.
-Sin tickets en Jira.
-Sin reuniones de estimación.
-
-Tu tarea: completa el brief de landing que te dejamos como entregable.
-Siete campos. Quince minutos.
-Al final tienes los inputs para que Claude Code construya tu primera landing de experimento.
-
-La clase 9 construimos el resto de tu stack de Growth: tracker, reportes y alertas.
-Nos vemos ahí.
+Eso es todo. Una URL pública. Funciona en cualquier dispositivo. Listo para enviar tráfico.
 
 ---
 
-## NOTAS DE PRODUCCIÓN
+## 8. LO QUE TIENES AL FINAL DE ESTA CLASE
 
-| Elemento | Detalle |
-|---|---|
-| Duración objetivo | 16 minutos exactos |
-| Slides necesarios | 5: título, los 7 campos del brief, flujo de Vercel, diagrama completo del proceso, entregable |
-| Demo | Claude Code en terminal + Vercel en navegador — ver demo.md |
-| Ritmo | Denso en Desarrollo 1 (cada campo necesita 45 seg). Fluido en Desarrollo 2. En vivo en el ejercicio. |
-| Tono | Directo. El énfasis está en "esto lo puedes hacer tú solo en 20 minutos". |
-| Énfasis | Marcar con pausa cada campo del brief. Dejar silencio cuando Claude Code genera la landing — que el output hable. |
-| Riesgo técnico | Tener la carpeta de backup lista por si Claude Code tarda más de lo esperado. Vercel siempre funciona. |
+Tienes una URL publicada con tu landing de experimento. No una maqueta. Una URL real, accesible desde cualquier dispositivo, lista para recibir tráfico.
+
+Del brief al HTML: un prompt. Del HTML a la URL: arrastrar una carpeta.
+
+Tu tarea está en el entregable. Hazla con tu producto real.

@@ -1,150 +1,175 @@
-# Demo en Vivo — De cero a primer output útil en menos de 5 minutos
-**Clase 01 · Instructor A · Segmento: 8:30–11:30 del guión**
+# DEMO PASO A PASO — Claude para Growth: adquisición, retención y upsell en tiempo real
 
 ---
 
-## Objetivo del demo
+**Paso 1 — Abre claude.ai con una conversación nueva**
 
-Mostrar que un Chief of Growth puede obtener un output accionable de Claude **sin ninguna configuración previa** — sin Project, sin instrucciones de sistema, sin contexto cargado. Solo un prompt bien construido.
-
-Tiempo de ejecución en pantalla: **< 5 minutos**.
-
----
-
-## Setup antes de grabar
-
-- [ ] Abrir navegador limpio (sin extensiones visibles, historial borrado)
-- [ ] Ir a [claude.ai](https://claude.ai) con cuenta Pro activa
-- [ ] Usar una conversación nueva — NO el Project del curso
-- [ ] Tener el prompt del Paso 3 ya redactado en un archivo de texto aparte (para copiar rápido)
-- [ ] Pantalla compartida activa, resolución legible
+- Ve a claude.ai en tu navegador
+- Haz clic en "New chat" (parte superior izquierda)
+- No uses ningún Project todavía — conversación libre
+- Deberías ver esto en pantalla: campo de texto vacío, sin historial, sin instrucciones cargadas
 
 ---
 
-## El demo: paso a paso exacto
+**Paso 2 — Pega el prompt de adquisición (copy para Meta)**
 
----
-
-### PASO 1 — Mostrar la pantalla de inicio de Claude [30 seg]
-
-*(Instructor muestra claude.ai sin ningún chat activo)*
-
-**Narración:**
-> "Esto es Claude sin nada. Sin configuración, sin contexto, sin instrucciones.
-> Exactamente como lo ves tú cuando abres una cuenta nueva.
-> Desde aquí, en menos de 5 minutos, voy a tener un output que puedo usar esta semana."
-
----
-
-### PASO 2 — Construir el prompt en vivo [1 min]
-
-*(Instructor empieza a escribir el prompt directamente en el chat — NO copia y pega todavía)*
-
-**Lo que escribe el instructor (adaptar al producto del ejemplo):**
+- Copia este prompt completo y pégalo en el chat:
 
 ```
-Actúa como un experto en Growth Marketing B2B SaaS.
+Actúa como un Growth Marketer especializado en adquisición B2B SaaS con experiencia en Meta Ads y ciclos de venta cortos.
 
-Mi producto: [nombre ficticio], una herramienta de analytics para equipos de ventas
-que reduce el tiempo de reporte semanal de 3 horas a 20 minutos.
+Producto: Dataflow, una herramienta que ayuda a Sales Managers a eliminar el reporte semanal manual. Se conecta a Salesforce y genera el reporte del equipo en 20 minutos. Sin IT, sin código.
 
-Mi ICP: Sales Managers en empresas de 50–200 empleados,
-que usan Salesforce y tienen un equipo de 5–15 reps.
+ICP: Sales Managers en empresas de 50–200 empleados, equipo de 5–15 reps, que usan Salesforce y pasan entre 3 y 4 horas cada viernes consolidando datos en hojas de cálculo.
 
-Tarea: genera 3 variaciones de copy para un anuncio de Meta Ads.
-Objetivo: clicks a landing page de prueba gratuita.
+Genera 5 variaciones de copy para anuncio de Meta Ads.
+Objetivo: clicks a página de prueba gratuita de 14 días.
 
-Formato para cada variación:
-- Headline (máximo 7 palabras)
+Formato por variación:
+- Headline (máximo 6 palabras)
 - Texto principal (máximo 3 líneas)
 - CTA (máximo 4 palabras)
 
-Tono: directo, orientado a resultados, sin jerga técnica.
+Restricciones: sin jerga técnica, sin la palabra "automatización", sin exclamaciones.
 ```
 
-**Narración mientras escribe:**
-> "Fíjate en lo que estoy haciendo: le estoy dando un rol, contexto del producto, ICP específico, tarea clara, formato exacto y tono.
-> No es un prompt largo. Son 6 elementos. Y todos importan.
-> En la Clase 2 te explico cada uno en detalle."
+- Presiona Enter y espera el output completo
+
+Deberías ver esto en pantalla: 5 bloques numerados, cada uno con headline, texto y CTA. Diferentes ángulos: tiempo perdido, datos inconsistentes, identidad del manager moderno.
 
 ---
 
-### PASO 3 — Enviar y mostrar el output [1 min]
+**Paso 3 — Itera sobre una variación sin salir del chat**
 
-*(Instructor presiona Enter. Espera el output sin hablar — que el silencio muestre que Claude es rápido)*
+- En la misma conversación, pega este segundo prompt:
 
-*(Cuando el output aparece, instructor lee las 3 variaciones en voz alta, señalando en pantalla)*
-
-**Narración:**
-> "Observa: tres variaciones. Ángulos diferentes.
-> Una apela al tiempo perdido. Otra al dolor del reporte manual. Otra al beneficio del equipo.
-> ¿Puedo subir alguna de estas hoy? Sí.
-> ¿Necesito editarla? Probablemente el headline de la segunda.
-> Pero el trabajo duro ya está hecho."
-
----
-
-### PASO 4 — Iterar en 30 segundos [1 min]
-
-*(Sin salir del chat, instructor envía un segundo prompt)*
-
-**Lo que escribe:**
 ```
-La variación 2 está bien pero el headline es muy largo.
-Reescríbelo en máximo 5 palabras manteniendo el mismo ángulo.
-Dame 3 opciones.
+El headline de la variación 3 es demasiado largo. Reescríbelo en máximo 4 palabras manteniendo el mismo ángulo. Dame 3 opciones.
 ```
 
-*(Espera el output)*
+- Presiona Enter
 
-**Narración:**
-> "Eso es iteración en tiempo real. Sin brief nuevo. Sin reunión.
-> En 30 segundos ajusté el elemento que no me gustaba.
-> Así trabaja un equipo de Growth con Claude bien usado."
+Deberías ver esto en pantalla: 3 opciones de headline, todas en 4 palabras o menos, todas con el mismo ángulo que el original.
 
 ---
 
-### PASO 5 — El remate: mostrar lo que falta [30 seg]
+**Paso 4 — Abre una conversación nueva para el caso de retención**
 
-*(Instructor cierra el chat y mira a cámara)*
+- Haz clic en "New chat"
+- Copia y pega este prompt:
 
-**Narración:**
-> "Eso que acaban de ver tomó menos de 4 minutos.
-> Y lo hice sin ninguna configuración. Sin que Claude supiera nada de mi empresa.
-> ¿Qué pasa cuando le cargo todo mi contexto — ICP detallado, métricas, tono de marca, historial de campañas?
-> El output pasa de 'usable' a 'listo para producción'.
-> Eso es lo que construyes en las próximas dos clases."
+```
+Actúa como un especialista en lifecycle marketing para SaaS B2B.
+
+Contexto:
+- Producto: Dataflow (herramienta de reporting automatizado para equipos de ventas)
+- ICP: Sales Managers que se registraron a la prueba gratuita de 14 días
+- Problema: el 39% de los usuarios que se registran no completa la conexión a Salesforce en las primeras 48 horas. Esos usuarios casi nunca convierten a pago.
+- El evento de activación que predice conversión: generar el primer reporte automático dentro de las 72h de signup.
+
+Tarea: escribe una secuencia de 3 emails para usuarios que se registraron pero NO conectaron Salesforce en las primeras 24 horas.
+
+Formato por email:
+- Subject line
+- Preview text (máximo 90 caracteres)
+- Cuerpo del email (máximo 120 palabras)
+- CTA principal
+
+Restricciones:
+- Tono directo, sin condescendencia
+- Sin exclamaciones
+- El email 1 va a las 24h, el 2 a las 48h, el 3 al día 5
+- No mencionar a competidores
+- Sin la frase "espero que esto te ayude" ni variantes
+```
+
+- Presiona Enter
+
+Deberías ver esto en pantalla: 3 emails completos con subject, preview text, cuerpo y CTA. El email del día 5 debería mencionar el viernes o el momento de reporte — señal de que Claude entendió el dolor del ICP.
 
 ---
 
-## Variantes del demo (si el producto del instructor es diferente)
+**Paso 5 — Evalúa si los emails están listos para producción**
 
-Usa exactamente la misma estructura del Paso 2 pero adapta:
-- **Producto:** cualquier SaaS o herramienta digital
-- **ICP:** el segmento más específico y reconocible para la audiencia
-- **Canal:** puede ser Google Ads, email o LinkedIn en vez de Meta
+- Lee el subject del email 1: ¿evita las palabras genéricas tipo "Recordatorio" o "Hola"?
+- Lee el cuerpo del email 2: ¿habla del problema específico (conexión a Salesforce, 48 horas) o es genérico?
+- Si algo no encaja, escribe en el mismo chat:
 
-**Regla:** el producto del demo debe ser lo suficientemente genérico para que cualquier Chief of Growth en la audiencia pueda visualizarse en esa situación — pero lo suficientemente específico para que el output de Claude sea realmente bueno.
+```
+El email 2 suena demasiado genérico. Reescribe el cuerpo mencionando específicamente el viernes y el reporte manual. Máximo 100 palabras.
+```
 
----
-
-## Qué NO hacer en el demo
-
-| No hacer | Por qué |
-|---|---|
-| Usar un prompt vago ("ayúdame a escribir un anuncio") | El output será malo y refuerza el hábito incorrecto |
-| Copiar y pegar sin explicar cada elemento | El estudiante no aprende qué hace que el prompt funcione |
-| Editar el output en el demo sin comentarlo | Perdida la oportunidad de mostrar iteración en tiempo real |
-| Mostrar un output perfecto sin iterar | Crea expectativas irreales — la iteración es parte del flujo |
-| Usar más de 5 minutos | Pierde el efecto del "menos de 5 minutos" prometido en el título |
+Deberías ver esto en pantalla: cuerpo del email 2 reescrito con referencia explícita al dolor del ICP.
 
 ---
 
-## Métricas de éxito del demo
+**Paso 6 — Abre una tercera conversación para el análisis de upsell**
 
-El demo funcionó si al final el estudiante piensa:
-- "Puedo hacer esto ahora mismo"
-- "Entiendo qué hace que el prompt sea bueno"
-- "Quiero ver qué pasa cuando cargue mi contexto real"
+- Haz clic en "New chat"
+- Pega este prompt:
 
-Si hay esas tres reacciones, el demo cumplió su objetivo.
+```
+Actúa como un Growth Analyst especializado en revenue expansion para SaaS B2B.
+
+Contexto:
+- Producto: Dataflow (reporting automatizado para equipos de ventas)
+- Plan actual de los usuarios: Starter (1 usuario, 1 Salesforce connection, máximo 10 reps)
+- Plan de expansión: Pro (5 usuarios, 3 connections, reps ilimitados, $149/mes vs $49/mes actual)
+- Señales de comportamiento que ya tenemos: login diario, generación de más de 3 reportes por semana, invitación a un segundo usuario aunque el plan no lo permite formalmente
+
+Tarea: define los 3 criterios de comportamiento que deben cumplirse simultáneamente para activar el trigger de upsell, y para cada criterio explica por qué predice intención de expansión.
+
+Luego: propón el mensaje exacto del in-app notification que se envía cuando se cumplen los 3 criterios.
+
+Formato:
+- Criterios: tabla con columna "Criterio", "Señal técnica medible", "Por qué predice upsell"
+- Mensaje: Subject + Cuerpo (máximo 2 líneas) + CTA
+
+Restricciones: sin recomendaciones de A/B testing genérico, sin frases de catálogo como "desbloquea tu potencial"
+```
+
+- Presiona Enter
+
+Deberías ver esto en pantalla: tabla con 3 criterios definidos con señales técnicas medibles, seguida del mensaje de in-app notification listo para copiar.
+
+---
+
+**Paso 7 — Verifica el tiempo total**
+
+- Mira el reloj: los pasos 2 al 6 deben haberte tomado menos de 15 minutos en total
+- Tienes en pantalla: 5 copies de Meta, 3 emails de onboarding y un sistema de trigger de upsell
+- Todo esto sin ninguna configuración previa en Claude
+
+Deberías ver esto en pantalla: 3 conversaciones en el sidebar de claude.ai, cada una con su output completo.
+
+---
+
+**Paso 8 — Adapta el prompt de adquisición a tu producto real**
+
+- Abre una conversación nueva
+- Toma el prompt del Paso 2 y reemplaza:
+  - "Dataflow" por el nombre de tu producto
+  - La descripción del producto por la tuya en 2 líneas
+  - El ICP por el tuyo (cargo, tamaño de empresa, dolor específico)
+- Mantén todo lo demás igual (formato, restricciones)
+- Pega el prompt adaptado y presiona Enter
+
+Deberías ver esto en pantalla: 5 variaciones de copy para tu producto real, con los mismos 3 ángulos diferenciados.
+
+---
+
+**Paso 9 — Guarda los outputs que usarías esta semana**
+
+- De los copies de Meta: señala cuál usarías en una campaña real esta semana
+- De los emails: ¿cuánto tiempo te hubiera tomado escribir esto desde cero?
+- De la tabla de upsell: ¿tienes ya esas señales de comportamiento en tu stack?
+
+Esas tres preguntas son el diagnóstico de cuánto tiempo te devuelve Claude en tu operación actual.
+
+---
+
+**Paso 10 — Cierra las 3 conversaciones y ve al entregable**
+
+- En el sidebar de Claude, verás las 3 conversaciones de esta demo
+- Haz clic en el entregable de la Clase 01 y completa los pasos
+- Antes de la Clase 02: ten identificado tu caso de uso de mayor impacto inmediato

@@ -1,216 +1,264 @@
-# Demo en Vivo — Lanzamiento de feature con 4 agentes en paralelo
-**Clase 11 · Instructor B · Segmento: 11:00–15:00 del guión**
+# DEMO PASO A PASO — Configurar 3 agentes especializados y ejecutarlos en paralelo
 
 ---
 
-## Objetivo del demo
+## Paso 1 — Crea el Project del Agente de Adquisición en Claude
 
-Mostrar el flujo completo de coordinación de los 4 agentes ante un caso real: el lanzamiento de una nueva feature. El estudiante debe ver con claridad que los agentes producen outputs especializados y no solapados, y que el tablero de Notion funciona como punto de convergencia — no como repositorio de información.
+- Abre claude.ai
+- Haz clic en "New Project"
+- Escribe el nombre: `[Tu empresa] — Agente Adquisición`
+- Confirma la creación del Project
 
-Tiempo de ejecución en pantalla: **< 4 minutos** (versión condensada del flujo real de 20 minutos).
-
----
-
-## Setup antes de grabar
-
-- [ ] 4 Claude Projects ya configurados con los system prompts del entregable (con el contexto real del instructor)
-- [ ] Tablero de Notion abierto con las 5 secciones ya creadas (pero vacías para el demo)
-- [ ] Brief del caso ya redactado en un archivo de texto aparte — para copiar rápido al Notion
-- [ ] Prompts de cada agente preparados en un archivo de texto — para no escribirlos desde cero en pantalla
-- [ ] Pantalla compartida activa — layout: Notion en el lado izquierdo, Claude en el derecho (split screen)
-- [ ] Tabs de los 4 Projects ya abiertos en el navegador para cambiar rápido
-
-**Caso del demo:**
-Feature nueva: "reportes automáticos" — genera reportes de proyecto en 1 clic.
-Deploy previsto: jueves de esta semana.
-Necesidades: copies de anuncio a usuarios activos + flujo de onboarding de la feature + impacto proyectado para el board.
+**Deberías ver esto en pantalla:** página del nuevo Project con el nombre que pusiste, el campo "Project Instructions" visible y vacío, y el botón para iniciar una nueva conversación.
 
 ---
 
-## El demo: paso a paso exacto
+## Paso 2 — Carga las instrucciones del Agente de Adquisición
 
----
-
-### PASO 1 — Contextualizar el caso en vivo [30 seg]
-
-*(Instructor en cámara antes de compartir pantalla)*
-
-**Narración:**
-> "Escenario real. Es martes. El equipo de producto acaba de aprobar una nueva feature para este jueves.
-> Necesito tres cosas antes de que salga: los copies para anunciarla a los usuarios activos, el flujo de onboarding para que la activen, y un modelo de impacto para presentarle al CEO.
-> Normalmente esto toma dos días de trabajo distribuido en el equipo.
-> Voy a hacer las tres con mis agentes. En el tiempo que dure este demo."
-
-*(Comparte pantalla — split: Notion + Claude)*
-
----
-
-### PASO 2 — Brief en Notion [30 seg]
-
-*(Instructor escribe en Notion — Sección 1: Brief de la Semana)*
-
-**Lo que escribe:**
+Haz clic en "Project Instructions" y pega este system prompt completo (reemplaza los corchetes con tu contexto real):
 
 ```
-Objetivo: lanzar la feature "reportes automáticos" el jueves con máxima activación en los primeros 7 días
-Métrica clave: % de usuarios activos que activan la feature en 7 días — objetivo: 60%
-Contexto: feature lista para deploy / necesitamos copies de anuncio, flujo de onboarding y modelo de impacto para el board
-Lo que NO se toca: no hay capacidad de desarrollo adicional esta semana — solo copy, email y configuración de flows existentes
+Eres el Agente de Adquisición de [NOMBRE DE TU EMPRESA].
+
+Tu único foco es traer más usuarios calificados al menor costo posible.
+No opinas sobre retención, onboarding, producto ni revenue de usuarios existentes.
+Si te preguntan sobre esas áreas, rediriges: "Eso es territorio del Agente de Retención / Agente de Revenue. Mi foco es adquisición."
+
+CONTEXTO DEL NEGOCIO:
+- Producto: [qué hace, para quién, en 2 líneas]
+- ICP: [rol, tipo de empresa, tamaño, dolor principal]
+- Ticket promedio: [monto]
+- Canales de adquisición activos: [lista los canales con CAC actual de cada uno si lo tienes — ej: Meta Ads CAC $48, Google Ads CAC $71, referidos orgánicos CAC $12]
+- CAC objetivo: [monto]
+- Presupuesto mensual de paid: [monto]
+- Mercados: [países o idiomas donde operas]
+
+LO QUE HACES:
+- Analizar el rendimiento de campañas pagas e identificar qué optimizar esta semana
+- Generar copies y ángulos para tests de adquisición en Meta, Google, LinkedIn
+- Identificar canales de adquisición sin explotar para este ICP
+- Calcular CAC por canal y proponer ajustes de presupuesto con lógica clara
+- Crear briefs de creatividades para el equipo de diseño
+
+CÓMO RESPONDER:
+- Sé específico. Si te doy métricas, úsalas. No des recomendaciones genéricas.
+- Cuando generes copies, dame siempre más de una variación con ángulos diferentes.
+- Prioriza lo que se puede ejecutar esta semana.
+- Formato: bullet points accionables, tablas cuando compares opciones.
+
+RESTRICCIONES:
+- No recomiendes cambios de producto.
+- No propongas estrategias de retención de usuarios existentes.
+- No generes reportes que incluyan métricas de retención o revenue.
 ```
 
-**Narración:**
-> "Ese es el brief. Cuatro líneas. Los cuatro agentes trabajan desde el mismo punto de partida."
+Guarda las instrucciones.
+
+**Deberías ver esto en pantalla:** el campo de Project Instructions tiene el texto completo del system prompt guardado. El Project muestra el nombre del agente en la barra lateral.
 
 ---
 
-### PASO 3 — Agente de Adquisición: copies del anuncio [1 min]
+## Paso 3 — Verifica que el Agente de Adquisición piensa como especialista
 
-*(Instructor abre el Project del Agente de Adquisición)*
+Abre una nueva conversación dentro del Project. Envía este prompt:
 
-**Lo que escribe:**
+```
+¿Qué entiendes sobre nuestra estrategia de adquisición actual y cuál crees que es el mayor cuello de botella basándote en el contexto que tienes?
+```
+
+**Deberías ver esto en pantalla:** el agente responde mencionando tus canales específicos con los datos de CAC que cargaste, identifica el canal con mayor CAC como el cuello de botella principal, y no hace ninguna mención a retención ni onboarding. Si menciona retención, las instrucciones necesitan reforzar las restricciones.
+
+---
+
+## Paso 4 — Crea el Project del Agente de Retención
+
+- Abre una nueva pestaña del navegador
+- Ve a claude.ai, crea un nuevo Project
+- Nombre: `[Tu empresa] — Agente Retención`
+- En Project Instructions, pega este system prompt:
+
+```
+Eres el Agente de Retención de [NOMBRE DE TU EMPRESA].
+
+Tu único foco es que los usuarios que ya tenemos se queden más tiempo, activen las features del producto y reduzcan su probabilidad de churn.
+No trabajas en adquisición de nuevos usuarios ni en estrategias de revenue expansion activa.
+
+CONTEXTO DEL NEGOCIO:
+- Producto: [qué hace, para quién]
+- ICP: [perfil del usuario ideal]
+- "Aha moment": [cuándo el usuario siente por primera vez que el producto vale — sé específico: ej: "cuando completa su primer proyecto con todo el equipo conectado y ve el estado en tiempo real, días 2-4"]
+- Tasa de activación actual (primeros 7 días): [%]
+- Tasa de retención a 30 días: [%]
+- Tasa de retención a 90 días: [%]
+- Churn mensual actual: [%]
+- Principal razón de churn (si tienes datos): [ej: "no lo usa suficiente el equipo — 62% de encuestas de salida"]
+- Herramientas de comunicación disponibles: [ej: Klaviyo, Intercom, notificaciones in-app]
+- Segmentos de usuarios: [ej: plan básico $49 / plan pro $149]
+
+LO QUE HACES:
+- Diseñar y optimizar flujos de onboarding (emails, tooltips, mensajes in-app)
+- Identificar señales de alerta temprana de churn y proponer intervenciones concretas
+- Crear secuencias de email de activación, reactivación y rescate
+- Proponer cambios de UX de bajo esfuerzo para mejorar la activación
+- Diseñar programas de customer success escalables
+
+CÓMO RESPONDER:
+- Basa las recomendaciones en comportamiento de usuario, no en intenciones declaradas.
+- Cuando diseñes secuencias de email: asunto + preview + cuerpo + CTA + condición de envío.
+- Prioriza intervenciones de bajo esfuerzo y alto impacto.
+
+RESTRICCIONES:
+- No trabajes en estrategias de adquisición de nuevos usuarios.
+- No propongas cambios de pricing o upsell activo.
+- No recomiendes cambios de producto que requieran desarrollo significativo sin señalarlo claramente.
+```
+
+**Deberías ver esto en pantalla:** segunda pestaña del navegador con el Project del Agente de Retención configurado. Tienes dos pestañas abiertas — una por agente.
+
+---
+
+## Paso 5 — Crea el Project del Agente de Analytics
+
+- Abre una tercera pestaña
+- Crea un nuevo Project: `[Tu empresa] — Agente Analytics`
+- En Project Instructions, pega:
+
+```
+Eres el Agente de Analytics de [NOMBRE DE TU EMPRESA].
+
+Tu único foco es interpretar datos y convertirlos en decisiones accionables.
+No generas copies, no diseñas campañas, no propones estrategias sin datos que las soporten.
+Si te piden hacer algo sin datos suficientes, los solicitas antes de responder.
+
+CONTEXTO DEL NEGOCIO:
+- Producto: [descripción]
+- Modelo de negocio: [SaaS / eCommerce / marketplace / otro] con ticket promedio [monto]
+- MRR actual: [cifra]
+- Métricas que monitoreo semanalmente: [lista tus KPIs — ej: MRR, CAC por canal, tasa de activación 7 días, retención 30/90 días, churn mensual, NPS]
+- Herramientas de datos disponibles: [ej: Mixpanel, Stripe, Google Analytics, hojas de cálculo]
+- Benchmark de industria que uso como referencia: [ej: churn SaaS B2B < 3% mensual, activación > 55%, retención 30 días > 75%]
+
+LO QUE HACES:
+- Interpretar métricas y detectar anomalías vs. baseline histórico y benchmark de industria
+- Calcular el impacto en MRR de mejorar cada etapa del funnel (mostrar el cálculo, no solo el resultado)
+- Priorizar experimentos por relación impacto/esfuerzo con justificación cuantitativa
+- Generar el diagnóstico semanal del funnel
+- Diseñar el framework de medición de un experimento antes de lanzarlo
+
+CÓMO RESPONDER:
+- Usa números siempre. Una recomendación sin número no es una recomendación de análisis.
+- Cuando detectes una anomalía, da 3 hipótesis sobre por qué ocurrió, no una conclusión definitiva.
+- Muestra el cálculo cuando calcules impacto.
+- Semáforo al final de cada diagnóstico: Verde / Amarillo / Rojo con justificación en 1 línea.
+
+RESTRICCIONES:
+- No hagas recomendaciones de canal o copy sin datos que las soporten.
+- No asumas datos que no tienes — pregunta primero.
+- No generes copies o contenido de marketing.
+```
+
+**Deberías ver esto en pantalla:** tres pestañas abiertas — Agente Adquisición, Agente Retención, Agente Analytics. Los tres con instrucciones guardadas.
+
+---
+
+## Paso 6 — Ejecuta los tres agentes con el mismo brief de lanzamiento
+
+Tienes un brief: lanzas una nueva feature el jueves. Necesitas copies, flujo de onboarding y proyección de impacto.
+
+**En la pestaña del Agente de Adquisición**, abre nueva conversación y envía:
 
 ```
 Nueva feature que lanzamos el jueves: "reportes automáticos"
 — genera reportes de estado del proyecto en 1 clic, sin configuración manual
-— ahorra ~45 minutos por semana a los project managers
+— ahorra aproximadamente 45 minutos por semana a los project managers
 
 Necesito copies para anunciar la feature a:
-1. Usuarios activos (email + notificación in-app)
-2. Leads en nurturing que no convirtieron (email de reactivación — esta feature puede ser el motivo de conversión)
+1. Usuarios activos en el producto (email + notificación in-app)
+2. Leads en nurturing que no convirtieron en los últimos 60 días (email de reactivación)
 
 Para cada formato:
-- Asunto + preview (email) o headline (in-app) — máx 50 caracteres
+- Asunto + preview (email) o headline (notificación in-app) — máx 55 caracteres
 - Copy principal — máx 100 palabras
 - CTA específico
-Tono: orientado al tiempo que ahorra, no a la tecnología. Sin jerga de producto.
+
+Tono: orientado al tiempo que ahorra, no a la tecnología.
 ```
 
-*(Output aparece — instructor espera en silencio hasta que termine)*
-
-**Narración mientras señala el output:**
-> "Fíjate: copies diferenciados para los dos segmentos. El email a usuarios activos usa el beneficio de tiempo. El email de reactivación usa la novedad como razón para volver.
-> ¿Pude haber pedido esto a un agente genérico? Sí. ¿Con este nivel de coherencia con el contexto de adquisición que ya tiene cargado? No.
-> Ahí está el valor de la especialización."
-
-*(Instructor copia el output y lo pega en Notion — Sección 2, columna Agente de Adquisición)*
+**Deberías ver esto en pantalla:** el agente genera copies diferenciados para los dos segmentos. Los emails a usuarios activos y a leads son visiblemente distintos en ángulo y tono. No hay mención a retención ni onboarding.
 
 ---
 
-### PASO 4 — Agente de Retención: flujo de onboarding [1 min]
+## Paso 7 — Ejecuta el Agente de Retención con el mismo brief
 
-*(Instructor cambia al Project del Agente de Retención)*
-
-**Lo que escribe:**
+**En la pestaña del Agente de Retención**, abre nueva conversación y envía:
 
 ```
 Lanzamos la feature "reportes automáticos" el jueves.
 Necesito el flujo de onboarding para maximizar activación en los primeros 7 días.
 
 Diseña:
-1. El trigger de activación (qué comportamiento dispara el onboarding de esta feature)
+1. El trigger de activación (qué comportamiento del usuario dispara el onboarding de esta feature)
 2. El mensaje de primer contacto in-app (tooltip o modal — copy + CTA)
 3. Secuencia de 3 emails para usuarios que no activan en 48h:
-   — Email 1: a las 48h de no activar
-   — Email 2: a los 5 días
-   — Email 3: a los 7 días (último intento)
-   Para cada email: asunto + preview + cuerpo (máx 120 palabras) + CTA
-4. Email de confirmación cuando activan por primera vez
+   — Email 1 a las 48h / Email 2 a los 5 días / Email 3 a los 7 días
+   Para cada email: asunto + preview + cuerpo máx 120 palabras + CTA
+4. Email de confirmación cuando activan la feature por primera vez
 
 Objetivo: 60% de usuarios activos activan la feature en 7 días.
 Restricción: sin cambios de UI — solo emails y mensajes in-app con los templates existentes.
 ```
 
-*(Output aparece)*
-
-**Narración:**
-> "El Agente de Retención me da el flujo completo. Trigger, mensaje de primer contacto, secuencia de 3 emails con timing específico, email de confirmación.
-> No me habló de campañas. No me recomendó invertir más en paid. Pensó en activación. Solo en activación.
-> Ese foco es lo que hace que el output sea usable directamente."
-
-*(Copia output a Notion — columna Agente de Retención)*
+**Deberías ver esto en pantalla:** el agente entrega un flujo estructurado — trigger definido, mensaje in-app con copy específico, tres emails con timing y contenido diferenciado, email de confirmación. No menciona campañas pagas ni nuevos usuarios.
 
 ---
 
-### PASO 5 — Agente de Revenue: impacto proyectado [45 seg]
+## Paso 8 — Ejecuta el Agente de Analytics con el mismo brief
 
-*(Instructor cambia al Project del Agente de Revenue)*
-
-**Lo que escribe:**
+**En la pestaña del Agente de Analytics**, abre nueva conversación y envía:
 
 ```
-Nueva feature: "reportes automáticos" — lanza jueves.
-Contexto del negocio:
-- 2,400 usuarios activos
-- Distribución: 65% plan básico $49/mes, 35% plan pro $149/mes
+Nueva feature lanzando el jueves: "reportes automáticos" — exclusiva del plan Pro.
+Los usuarios del plan básico la ven pero necesitan upgrade para acceder.
+
+Contexto actual:
+- 2,400 usuarios activos totales
+- 65% en plan básico ($49/mes) = 1,560 usuarios
+- 35% en plan pro ($149/mes) = 840 usuarios
 - Churn mensual: 4.2%
 - MRR actual: $184,000
 
-La feature "reportes automáticos" es exclusiva del plan Pro.
-Los usuarios del plan básico la ven pero necesitan hacer upgrade para acceder.
-
 Proyecta:
-1. Conversión esperada de básico a pro por esta feature (escenario conservador y optimista)
-2. Impacto en MRR de los upgrades en 90 días
-3. Impacto en churn del plan pro (hipótesis: los usuarios que activan features premium retienen mejor)
-4. ¿Cuándo es el mejor momento para presentar el upgrade a un usuario del plan básico que intenta usar la feature?
+1. Impacto en MRR si el 3% de usuarios básicos hacen upgrade (escenario conservador) vs. 8% (escenario optimista)
+2. Impacto en churn del plan pro si los usuarios que activan features premium retienen mejor — hipótesis: churn pro baja de 4.2% a 3.1%
+3. MRR projection a 90 días — ambos escenarios
+4. ¿En qué día post-lanzamiento tiene más sentido medir si el experimento está funcionando?
 
-Muestra las asunciones que usas.
+Muestra todos los cálculos. No des solo el número final.
 ```
 
-*(Output aparece)*
-
-**Narración:**
-> "Proyección de MRR. Dos escenarios. Con las asunciones explícitas.
-> Ese es el slide que le presento al CEO esta tarde.
-> No una hoja de cálculo que tardé dos horas en construir. Una proyección con lógica clara que puedo defender.
-> Y tardé 45 segundos en pedirla."
-
-*(Copia output a Notion — columna Agente de Revenue)*
+**Deberías ver esto en pantalla:** el agente muestra los cálculos línea por línea — número de upgrades × diferencia de precio × meses. La proyección a 90 días tiene dos columnas con los escenarios. Las asunciones están listadas explícitamente.
 
 ---
 
-### PASO 6 — El tablero como sala de guerra [30 seg]
+## Paso 9 — Coordina los outputs en Notion
 
-*(Instructor muestra el tablero de Notion con los 3 outputs ya pegados)*
+- Abre Notion, ve a tu página de "Sala de Guerra Growth"
+- Pega el output del Agente de Adquisición en la columna correspondiente
+- Pega el output del Agente de Retención en su columna
+- Pega el output del Agente de Analytics en su columna
 
-**Narración:**
-> "Miren el tablero ahora. Brief arriba. Tres outputs de agentes especializados en las columnas.
-> Tengo copies listos para subir, flujo de onboarding para ejecutar, modelo de impacto para el board.
-> Solo falta tomar tres decisiones: qué variación de copy subo primero, en qué orden ejecuto el onboarding, y qué número pongo en el slide del CEO.
-> Eso lo hago yo. El resto lo hicieron los agentes.
-> Esa es la división de trabajo correcta entre el Chief of Growth y su equipo de agentes."
+**Deberías ver esto en pantalla:** tabla de Notion con tres columnas rellenas. En un vistazo tienes copies, flujo de onboarding y proyección financiera para el lanzamiento del jueves.
 
 ---
 
-## Variantes del demo
+## Paso 10 — Toma las tres decisiones de la semana
 
-Si el producto del instructor no tiene features en lanzamiento, usar uno de estos escenarios alternativos:
+Con los tres outputs visibles en Notion, completa la sección "Decisiones de la Semana":
 
-| Escenario alternativo | Agentes que trabajan | Output esperado |
-|---|---|---|
-| Caída inesperada del CAC en 25% | Adquisición + Análisis | Diagnóstico de causa + acciones para capitalizar |
-| Churn sube 2 puntos en el último mes | Retención + Análisis | Intervenciones inmediatas + investigación de causa raíz |
-| Preparación del reporte de fin de quarter | Análisis + Revenue | Diagnóstico de funnel + proyección de MRR próximo quarter |
+- ¿Qué variación de copy subes primero al Ads Manager?
+- ¿En qué orden implementas los emails de onboarding (email 1 primero, luego 2 y 3 en los días siguientes)?
+- ¿Qué número del escenario conservador o del optimista usas en el slide del CEO?
 
----
+**Deberías ver esto en pantalla:** sección de Decisiones de la Semana en Notion con tres bullets completados. El tablero muestra brief + outputs de los 3 agentes + decisiones tomadas.
 
-## Qué NO hacer en el demo
-
-| No hacer | Por qué |
-|---|---|
-| Mostrar los 4 agentes trabajando en el mismo tiempo real | Confunde. Muestra uno a uno, en orden lógico |
-| Leer el output completo de cada agente en voz alta | Pierde el ritmo — destacar solo los 2-3 puntos clave de cada output |
-| Saltarse la parte de pegar en Notion | Ese paso es lo que convierte 3 conversaciones sueltas en un sistema coordinado |
-| Usar Projects sin context cargado | Si los Projects están vacíos, los outputs son genéricos — el demo pierde su argumento central |
-| Mostrar más de 3 agentes en 4 minutos | Mejor 3 agentes bien ejecutados que 4 a medias |
-
----
-
-## Métricas de éxito del demo
-
-El demo funcionó si al terminar el estudiante piensa:
-- "Vi con claridad por qué los agentes especializados producen mejor que uno genérico"
-- "Entiendo cómo el tablero de Notion convierte outputs en decisiones"
-- "Puedo configurar esto en mi negocio con el entregable de la clase"
-
-Las tres respuestas son sí: el demo cumplió.
+**Sabrás que lo hiciste bien cuando:** los outputs de los tres agentes son visiblemente diferentes entre sí — cada uno habla de su área sin solaparse con los demás, y las decisiones que tomas se basan en los outputs, no en tu intuición sola.

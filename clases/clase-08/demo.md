@@ -1,244 +1,169 @@
-# Demo en Vivo — Landing page de experimento: de brief a URL en tiempo real
-**Clase 08 · Instructor C · Segmento: 11:00–15:00 del guión**
+# DEMO PASO A PASO — Landing page de experimento: de brief a URL publicada
 
 ---
 
-## Objetivo del demo
+**Paso 1.** Abre claude.ai en el navegador. Haz clic en "New conversation".
 
-Mostrar el flujo completo en pantalla: brief completado → Claude Code genera la landing → Vercel publica la URL. El estudiante ve que no hay pasos ocultos, no hay código que entender, no hay configuración técnica. Lo que ve en pantalla es exactamente lo que puede replicar en los próximos 20 minutos.
-
-Tiempo de ejecución en pantalla: **< 4 minutos**.
+- Deberías ver esto en pantalla: área de chat vacía, campo de texto en la parte inferior, barra lateral izquierda con el historial.
 
 ---
 
-## Setup antes de grabar
-
-- [ ] Claude Code abierto en terminal — sesión limpia, sin historial previo visible
-- [ ] Vercel.com abierto en una pestaña separada del navegador — cuenta Hobby activa y lista
-- [ ] El brief de demo ya completado (ver Paso 2 abajo) — en un archivo de texto aparte para copiar rápido
-- [ ] Carpeta de backup ya generada (`/demo-backup/index.html`) — por si Claude Code tarda más de 3 minutos durante la grabación
-- [ ] Una segunda pestaña del navegador para previsualizar el `index.html` generado antes de publicar
-- [ ] Resolución de pantalla legible — terminal con fuente ≥ 14pt, fondo oscuro para contraste
-
----
-
-## El demo: paso a paso exacto
-
----
-
-### PASO 1 — Mostrar Claude Code en terminal [20 seg]
-
-*(Instructor muestra la terminal con Claude Code activo — prompt limpio, sin nada escrito todavía)*
-
-**Narración:**
-> "Esto es Claude Code. Una terminal. No un formulario, no una app con botones.
-> Le voy a hablar en español, le voy a describir la landing que necesito,
-> y él va a escribir el código por mí.
-> El producto que voy a usar es ficticio pero el brief es real — el mismo que usarías tú."
-
----
-
-### PASO 2 — Pegar el brief completo [30 seg]
-
-*(Instructor copia el brief desde el archivo de texto y lo pega en Claude Code — que el estudiante vea que es copy-paste, no escritura manual)*
-
-**El brief exacto del demo:**
+**Paso 2.** Copia y pega este prompt completo en Claude. Presiona Enter.
 
 ```
-Eres un desarrollador frontend especializado en landing pages de conversión.
+Eres un desarrollador frontend especializado en landing pages de conversión para SaaS B2B.
 
-Tu tarea: construir una landing page completa lista para publicar en Vercel.
+Tu tarea: construir una landing page completa lista para publicar. Genera un solo archivo HTML con CSS interno.
 
 INSTRUCCIONES TÉCNICAS:
-- Genera un solo archivo HTML con CSS interno
-- Diseño limpio, profesional, mobile-first
-- Fuente: Inter (Google Fonts)
-- Paleta: fondo blanco, texto #1a1a1a, acento #2563EB (azul)
-- Formulario con campos nombre + email, validación básica en JavaScript
-- Sin dependencias externas
-- Archivo: index.html
+- Un solo archivo index.html — sin archivos CSS o JS separados
+- Diseño limpio, mobile-first, sin librerías externas
+- Fuente: Inter desde Google Fonts
+- Colores: fondo blanco (#ffffff), texto principal (#1a1a1a), acento azul (#2563EB)
+- Formulario con campos: nombre + email, con validación básica en JavaScript
+- La página debe cargar en menos de 2 segundos
 
-ESTRUCTURA:
-1. Hero: H1 + subtítulo + formulario CTA
-2. Beneficios: 4 puntos con iconos SVG simples
-3. Prueba social: número de clientes + 1 testimonio
-4. FAQ: 3 objeciones con respuestas directas
-5. CTA final: repetición del formulario
-6. Footer mínimo
+ESTRUCTURA DE LA PÁGINA (en este orden):
+1. Hero section: H1 con la propuesta de valor + subtítulo + formulario CTA
+2. Beneficios: 4 puntos con iconos SVG simples inline
+3. Prueba social: número de clientes + 1 testimonio con nombre y cargo
+4. FAQ: 3 preguntas con respuestas directas (máximo 3 líneas cada una)
+5. CTA final: repetir el formulario con copy diferente al hero
+6. Footer mínimo: nombre del producto + año
 
-CONTEXTO DEL PRODUCTO:
+CONTENIDO DEL PRODUCTO:
 
 Propuesta de valor:
 Reduce el tiempo de reporte semanal de ventas de 3 horas a 20 minutos, sin cambiar tu CRM.
 
-ICP:
-Sales Managers en empresas SaaS B2B de 50–200 empleados, equipos de 5–15 reps, que usan HubSpot o Salesforce y arman reportes de pipeline manualmente cada lunes.
+ICP (para ajustar el copy):
+Sales Managers en empresas SaaS B2B de 50 a 200 empleados, con equipos de 5 a 15 representantes, que usan HubSpot o Salesforce y arman el reporte de pipeline manualmente cada lunes por la mañana.
 
 CTA principal:
 Reservar demo de 20 minutos
 
 Beneficios clave:
-1. Reportes de pipeline listos en 20 minutos, no 3 horas
-2. Datos de HubSpot, Salesforce y Excel unificados automáticamente
-3. Sin código, sin IT — configuración en menos de un día
-4. Alertas automáticas cuando un deal está en riesgo
+1. Reportes de pipeline listos en 20 minutos, no 3 horas — todos los lunes
+2. Datos de HubSpot, Salesforce y Excel unificados en un solo lugar automáticamente
+3. Sin código, sin IT — configuración completa en menos de un día
+4. Alertas automáticas cuando un deal cae por debajo del umbral de cierre
 
-Objeciones principales:
-1. ¿Funciona con mi CRM actual o tengo que migrar datos?
-2. ¿Cuánto tiempo toma implementarlo y quién lo configura?
-3. ¿El precio escala cuando crece mi equipo?
+Objeciones:
+1. ¿Funciona con mi CRM actual o tengo que migrar los datos?
+2. ¿Cuánto tiempo toma la implementación y quién lo configura?
+3. ¿El precio escala cuando crece mi equipo de ventas?
 
 Prueba social:
-Usado por 200+ equipos de ventas en Latam.
+Más de 200 equipos de ventas en Latam lo usan actualmente.
 Testimonio: "Pasé de armar el reporte a mano cada lunes a recibirlo listo el domingo a las 11pm. Mi equipo pensó que había contratado a alguien nuevo." — Carlos M., Sales Manager, Fintech México.
 
-URL del experimento:
-/demo-reportes
-
 INSTRUCCIONES DE COPY:
-- H1: la propuesta de valor, directo
-- Subtítulo: nombra el ICP y el problema
-- Beneficios con números concretos
-- FAQ: respuestas de máximo 3 líneas, directas
-- Tono: orientado a resultados, sin adjetivos vacíos
+- El H1 debe ser la propuesta de valor, directo, sin adjetivos vacíos
+- El subtítulo debe nombrar el ICP y el problema específico
+- Los beneficios van con números concretos en negrita
+- Las respuestas del FAQ: directas, sin rodeos
+- Tono: orientado a resultados, conversacional pero profesional
 
-Genera el archivo index.html completo.
+Genera el archivo index.html completo. No me expliques el código — solo devuelve el HTML.
 ```
 
-**Narración mientras pega:**
-> "Estoy pegando el brief completo. Los 7 campos que llenamos en el entregable.
-> Esto es exactamente el texto del template — lo único que cambié fue el producto.
-> Send."
+- Deberías ver esto en pantalla: Claude genera un bloque de código HTML largo, empieza con `<!DOCTYPE html>` y termina con `</html>`. El bloque tiene un botón "Copy code" en la esquina superior derecha.
 
 ---
 
-### PASO 3 — Esperar y comentar mientras Claude Code genera [1:30 min]
+**Paso 3.** Haz clic en "Copy code". Abre un editor de texto (TextEdit en Mac en modo texto sin formato, Bloc de notas en Windows, o VS Code). Pega el código. Guarda el archivo como `index.html` dentro de una carpeta nueva llamada `landing-reportes` en el Escritorio.
 
-*(Instructor presiona Enter. Claude Code empieza a generar el HTML. Instructor comenta en voz alta lo que va apareciendo — no hay silencio incómodo)*
-
-**Narración mientras Claude Code trabaja:**
-> "Está escribiendo el head primero — los estilos, la fuente de Google, los colores que pedí."
-
-*(30 segundos después)*
-
-> "Ahora el hero section. Fíjate en el H1 — está usando exactamente la propuesta de valor que le dí.
-> No la parafraseó. No la 'mejoró'. La usó como se la pedí."
-
-*(60 segundos después)*
-
-> "Sección de beneficios. Los cuatro puntos, con iconos SVG que él mismo generó en código.
-> Eso antes requería un diseñador."
-
-*(Cuando termina)*
-
-> "Y terminó. Tenemos el index.html completo. Vamos a previsualizarlo antes de subir."
+- Deberías ver esto en pantalla: carpeta `landing-reportes` visible en el Escritorio, archivo `index.html` dentro de ella.
 
 ---
 
-### PASO 4 — Previsualizar en el navegador [30 seg]
+**Paso 4.** Arrastra el archivo `index.html` desde el Finder o Explorador directamente a una pestaña abierta de Chrome o Safari.
 
-*(Instructor abre el archivo index.html generado directamente en el navegador — arrastra el archivo a una pestaña del Chrome)*
-
-**Narración:**
-> "Arrastro el archivo al navegador.
-> Sin servidor, sin configuración — el navegador lo lee directamente."
-
-*(La landing aparece en el navegador)*
-
-> "Ahí está. Hero con el H1, formulario, beneficios, FAQ, CTA al final.
-> Mobile-first — si quiero ver cómo se ve en móvil, abro el inspector y cambio la vista.
-> Pero no necesito hacerlo ahora. Vamos a Vercel."
+- Deberías ver esto en pantalla: la landing page cargada en el navegador con: H1 visible en grande, formulario con campos nombre y email, sección de beneficios con iconos, sección de testimonio, FAQ con tres preguntas, CTA al final de la página.
 
 ---
 
-### PASO 5 — Publicar en Vercel [1 min]
+**Paso 5.** Haz scroll por la página y verifica que todas las secciones se ven correctas. Prueba ingresar un email inválido en el formulario.
 
-*(Instructor cambia de pantalla a Vercel.com — ya tiene el dashboard abierto)*
-
-**Narración:**
-> "Vercel. Dashboard. Add New → Project."
-
-*(Instructor arrastra la carpeta con el index.html al área de Vercel)*
-
-> "Arrastro la carpeta. Vercel detecta que es un sitio estático.
-> No hay ninguna configuración adicional que hacer."
-
-*(Instructor hace clic en Deploy)*
-
-> "Deploy. Y esperamos."
-
-*(30 segundos de deploy — instructor no habla, deja que el progreso de Vercel hable)*
-
-*(La URL aparece)*
-
-> "Tenemos la URL. Hago clic."
-
-*(Instructor abre la URL en el navegador — la landing carga en menos de 2 segundos)*
-
-> "Eso es todo. Una URL pública. Funciona en cualquier dispositivo.
-> Puedo mandarle esta URL a alguien ahora mismo y convierte.
-> Del brief a la URL: menos de 4 minutos."
+- Deberías ver esto en pantalla: el formulario muestra un mensaje de error de validación cuando el email no tiene el formato correcto.
 
 ---
 
-### PASO 6 — El remate [20 seg]
+**Paso 6.** Vuelve a Claude. En la misma conversación, pega este prompt:
 
-*(Instructor mira a cámara)*
+```
+Dame 5 variantes del H1 y subtítulo del hero section.
 
-**Narración:**
-> "¿Qué experimento tienes tú esperando porque no tenías quién hiciera la landing?
-> Ahora lo tienes.
-> El brief está en el entregable. Rellénalo y haz este mismo proceso hoy."
+Contexto: el visitante es un Sales Manager que lleva años armando el reporte de pipeline a mano. Llega a esta página porque vio un anuncio que decía "¿Todavía armas el reporte de ventas a mano?".
 
----
+Para cada variante dame:
+- H1 (máximo 10 palabras, orientado al resultado)
+- Subtítulo (máximo 20 palabras, que nombre el problema específico y a quién resuelve)
 
-## Variantes del demo (si el producto del instructor es diferente)
+Quiero que las 5 variantes tengan ángulos distintos:
+1. Ángulo tiempo (cuánto se ahorra)
+2. Ángulo frustración (el dolor que elimina)
+3. Ángulo resultado (qué logra el equipo)
+4. Ángulo competencia (qué tienen otros que tú aún no)
+5. Ángulo social proof (lo que hacen los mejores equipos)
+```
 
-Usa exactamente la misma estructura del Paso 2 pero adapta:
-- **Propuesta de valor:** cualquier beneficio medible y concreto de tu producto
-- **ICP:** el segmento más específico de tu audiencia — con rol, empresa y problema
-- **CTA:** la acción de conversión más relevante para la etapa del funnel que estás testeando
-
-**Regla:** el producto del demo debe ser lo suficientemente reconocible para la audiencia (SaaS B2B funciona para la mayoría de Chiefs of Growth). Si el instructor tiene un producto más nicho, úsalo directamente — es más auténtico y el output de Claude Code va a ser más específico.
-
----
-
-## Qué NO hacer en el demo
-
-| No hacer | Por qué |
-|---|---|
-| Escribir el brief en vivo desde cero | Consume tiempo, genera ansiedad y distrae del punto principal |
-| Explicar el código que genera Claude Code | No importa — el mensaje es que no necesitas entenderlo |
-| Editar el HTML manualmente durante el demo | Rompe la narrativa de "sin tocar código" |
-| Usar un brief vago ("hazme una landing bonita") | El output va a ser genérico y el demo pierde fuerza |
-| Mostrar errores de Claude Code sin resolverlos en tiempo real | Si Claude Code pide aclaraciones, respóndelas en cámara — es un momento de enseñanza, no de edición |
-| Hacer el deploy sin previsualizar | El estudiante necesita ver que hay un paso de verificación antes de publicar |
-| Exceder los 4 minutos de demo en vivo | La promesa es "de brief a URL en menos de 4 minutos" — cumplirla en pantalla es la demostración más poderosa |
+- Deberías ver esto en pantalla: 5 bloques numerados, cada uno con un H1 y un subtítulo distintos. Los H1 tienen estilos claramente diferentes entre sí.
 
 ---
 
-## Métricas de éxito del demo
+**Paso 7.** Elige la variante que más te convence. En la misma conversación, pega este prompt:
 
-El demo funcionó si al final el estudiante piensa:
+```
+Dame 4 alternativas de CTA con su copy de botón y el texto de apoyo debajo del botón (la frase pequeña que reduce la fricción).
 
-- "Puedo hacer esto hoy mismo con mi producto"
-- "El brief es lo único que necesito preparar — lo demás lo hace Claude Code"
-- "Publicar en Vercel es literalmente arrastrar una carpeta"
+Quiero que explores:
+1. CTA con urgencia implícita
+2. CTA con reducción de riesgo ("sin tarjeta", "sin compromiso")
+3. CTA con resultado inmediato ("Ve cómo funciona en 3 minutos")
+4. CTA orientado al equipo, no al individuo
 
-Si hay esas tres reacciones, el demo cumplió su objetivo.
+Para cada uno dame: texto del botón + frase de apoyo (máximo 8 palabras)
+```
+
+- Deberías ver esto en pantalla: 4 opciones de CTA con el texto del botón en negrita y la frase de apoyo en texto normal debajo.
 
 ---
 
-## Plan de contingencia
+**Paso 8.** Con el H1 y CTA elegidos, pide la actualización del HTML:
 
-**Si Claude Code tarda más de 3 minutos:**
-> "Claude Code está tomando un momento extra — mientras termina, les cuento que el archivo de backup que ya tengo generado mide exactamente [X] líneas de HTML. Esto es normal cuando el brief es denso — está siendo más cuidadoso con el output."
-> *(Si llega a 4 minutos, cambia al archivo de backup sin disculpas y continúa.)*
+```
+Actualiza el archivo index.html con estos cambios:
 
-**Si Vercel da error de deploy:**
-> "Vercel a veces tiene un paso de verificación adicional en la primera cuenta nueva. Voy a mostrarles el archivo previsualizdo en el navegador, que es idéntico a lo que vería publicado — y en el entregable tienen los pasos de Vercel paso a paso."
-> *(Continúa con la previsualización local — el punto queda demostrado.)*
+H1 nuevo: [pega aquí el H1 que elegiste]
+Subtítulo nuevo: [pega el subtítulo correspondiente]
+CTA nuevo: botón que dice "[pega el texto de botón elegido]" + frase de apoyo "[pega la frase de apoyo]"
 
-**Si Claude Code genera HTML con errores de sintaxis:**
-> "Claude Code aquí cometió un error pequeño de sintaxis — esto pasa cuando el brief es muy largo y complejo. Voy a pedirle que lo corrija."
-> *(Escribe en Claude Code: "El HTML tiene un error en la línea [X] — corrígelo." — esto también es un momento de enseñanza valioso.)*
+Devuelve solo el HTML completo actualizado.
+```
+
+- Deberías ver esto en pantalla: un nuevo bloque de código HTML completo con los cambios aplicados.
+
+---
+
+**Paso 9.** Copia el nuevo HTML. Reemplaza el contenido del archivo `index.html` con el nuevo código. Arrastra el archivo al navegador de nuevo para verificar los cambios.
+
+- Deberías ver esto en pantalla: la landing con el nuevo H1, subtítulo y texto del botón CTA actualizados. El resto de la página igual que antes.
+
+---
+
+**Paso 10.** Abre una nueva pestaña del navegador y ve a netlify.com. Crea una cuenta gratuita (plan Starter — no requiere tarjeta de crédito).
+
+- Deberías ver esto en pantalla: dashboard de Netlify con un área grande que dice "Import from Git" y debajo una zona de drag & drop con el texto "Or deploy manually".
+
+---
+
+**Paso 11.** Arrastra la carpeta `landing-reportes` completa (no solo el archivo index.html, sino la carpeta) al área de drag & drop de Netlify.
+
+- Deberías ver esto en pantalla: barra de progreso de upload, después pantalla de confirmación con el texto "Your site is live" y una URL del tipo `https://[nombre-aleatorio].netlify.app`.
+
+---
+
+**Paso 12.** Haz clic en la URL generada por Netlify.
+
+- Deberías ver esto en pantalla: tu landing page cargando desde internet, con la URL de Netlify en la barra de direcciones del navegador. La página se ve idéntica a la previsualización local. Puedes copiar esa URL y compartirla con cualquier persona.

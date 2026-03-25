@@ -1,219 +1,152 @@
-# Clase 07 — Claude Code sin miedo: tu primer output en 10 minutos
+# Claude Code sin miedo: tu primer output en 10 minutos — GUIÓN EN PANTALLA
 **Instructor C · 14 minutos · Módulo 03**
 
 ---
 
-## GUIÓN COMPLETO
+## 1. ABRO CLAUDE Y ARRANCO SIN INTRODUCCIÓN
+
+Abro Claude en claude.ai y voy directamente a una conversación nueva.
+
+[ACCIÓN EN PANTALLA: abrir chrome, escribir claude.ai, hacer clic en "New conversation", mostrar el cursor parpadeando en el campo de texto]
+
+Tengo aquí mi CSV de campañas. Columnas: fecha, canal, inversión, conversiones. Lo descargué de mi dashboard de marketing hace cinco minutos. Necesito saber el CAC por canal. No quiero hacer esto en Excel. Se lo pido a Claude ahora mismo.
+
+[ACCIÓN EN PANTALLA: abrir el archivo CSV en el Finder para que se vea el contenido — filas reales con datos de Meta, Google, Email]
 
 ---
 
-### INTRO — [0:00–1:00]
+## 2. PRIMER PROMPT: ANALIZAR EL CSV Y CALCULAR CAC POR CANAL
 
-*(Pantalla: slide con título de la clase. Instructor en cámara.)*
+Pego este prompt exacto en Claude:
 
-Hasta ahora, si querías una calculadora de CAC/LTV personalizada para tu negocio, tenías dos opciones: pedírsela a un desarrollador y esperar dos semanas, o conformarte con una hoja de cálculo que no hace lo que necesitas.
-
-Claude Code es la tercera opción.
-
-No es programar. No necesitas saber qué es Python ni qué es JavaScript. Es describir lo que quieres en español — o en inglés, da igual — y Claude construye la herramienta.
-
-En los próximos 14 minutos instalas Claude Code, haces tu primera petición y tienes una calculadora de CAC/LTV funcional que puedes compartir con tu equipo hoy.
-
-Sin terminal. Sin GitHub. Sin "espera, déjame revisar con el dev".
-
-Vamos.
-
----
-
-### DESARROLLO 1 — Qué es Claude Code y por qué existe para ti [1:00–5:00]
-
-*(Pantalla: slide — "Claude Code: lo que cambia para Growth")*
-
-Antes de instalar nada, necesito que entiendas qué es Claude Code porque la mayoría de la gente lo confunde con dos cosas que no es.
-
----
-
-**Lo que NO es Claude Code**
-
-No es un editor de código donde tienes que escribir funciones y variables.
-No es para desarrolladores que quieren que Claude les ayude a codificar más rápido.
-No es una herramienta técnica que requiere configuración previa o conocimiento de programación.
-
----
-
-**Lo que SÍ es Claude Code para un Chief of Growth**
-
-Claude Code es una interfaz donde describes lo que quieres construir en lenguaje natural y Claude escribe el código, lo ejecuta y te entrega el resultado.
-
-Tú describes. Claude construye. Tú usas.
-
-*(Pantalla: ejemplo visual — texto a la izquierda "Quiero una calculadora que tome mi CAC y mi LTV y me diga cuántos meses para recuperar la inversión" → flecha → resultado a la derecha: interfaz funcional)*
-
----
-
-**Por qué esto cambia Growth específicamente**
-
-Piensa en cuántas herramientas necesitas que no existen en el mercado exactamente como las necesitas.
-
-Una calculadora de payback period con tus supuestos específicos.
-Un tracker de cohortes con las columnas que tú defines.
-Un generador de copies que siga tu brief exacto en formato de tabla.
-Un calculador de mix de canales que use tus CPAs reales.
-
-Estas herramientas no existen como producto porque son demasiado específicas para cada negocio. Pero son exactamente las que más necesitas en el día a día de Growth.
-
-Antes: encargárselas a un dev y esperar. O no tenerlas.
-Ahora: describírselas a Claude Code y tenerlas en 10 minutos.
-
-*(Pausa.)*
-
-Hay una sola condición: tienes que saber describir lo que quieres con suficiente detalle. No en código — en negocio. Qué inputs tiene la herramienta, qué calcula, cómo quieres ver el resultado.
-
-Esa es la habilidad que entrenas hoy.
-
----
-
-**El loop de trabajo con Claude Code**
-
-Funciona en tres pasos que se repiten:
-
-1. **Describes** lo que quieres — en español, con contexto de negocio
-2. **Claude construye** — escribe el código y lo ejecuta
-3. **Revisas el resultado** — si algo no está bien, lo describes y Claude lo corrige
-
-No hay paso cuatro donde tienes que entender el código. Si el resultado es lo que pediste, lo usas. Si no lo es, lo describes mejor.
-
-*(Pantalla: loop visual con los tres pasos)*
-
-Este loop tarda entre 5 y 15 minutos para la mayoría de herramientas de Growth simples.
-Para herramientas más complejas, puede tardar 30 minutos — pero son herramientas que antes tomaban días.
-
----
-
-### DESARROLLO 2 — Cómo instalar Claude Code: 5 pasos, menos de 5 minutos [5:00–9:00]
-
-*(Pantalla: slide con los 5 pasos de instalación — uno a la vez mientras el instructor habla)*
-
-Claude Code se instala desde la terminal de tu computadora. Sé que dije "sin terminal" — me refería a que no necesitas saber usarla. Hay exactamente dos comandos que vas a escribir. Solo dos. Y te los doy copiados.
-
-*(Pantalla: slide con los dos comandos listos para copiar)*
-
----
-
-**Paso 1 — Instalar Node.js**
-
-Node.js es el motor que corre Claude Code. Si ya lo tienes instalado, sáltate este paso.
-
-Para verificar si lo tienes: abre la Terminal (Mac: busca "Terminal" en Spotlight, Windows: busca "cmd") y escribe:
+[ACCIÓN EN PANTALLA: copiar el texto del bloque de abajo y pegarlo en Claude, mostrar cómo se ve el prompt completo antes de enviar]
 
 ```
-node --version
+Tengo un CSV con datos de campañas de marketing con estas columnas: fecha, canal, inversión, conversiones.
+
+Te voy a pegar los datos aquí abajo. Necesito que:
+
+1. Calcules el CAC (Costo de Adquisición de Cliente) por canal — fórmula: inversión total del canal / conversiones totales del canal
+2. Me digas qué canal tiene el CAC más bajo (el más eficiente)
+3. Me muestres un resumen en tabla con: Canal | Inversión Total | Conversiones Totales | CAC
+
+Aquí están los datos:
+fecha,canal,inversión,conversiones
+2024-01-01,Meta Ads,4500,38
+2024-01-01,Google Ads,3200,29
+2024-01-01,Email,800,22
+2024-01-08,Meta Ads,4800,41
+2024-01-08,Google Ads,3100,27
+2024-01-08,Email,750,24
+2024-01-15,Meta Ads,5200,43
+2024-01-15,Google Ads,2900,26
+2024-01-15,Email,820,23
 ```
 
-Si ves un número como `v20.x.x`, ya lo tienes. Sigue al Paso 2.
-Si ves un error, ve a [nodejs.org](https://nodejs.org), descarga el instalador LTS y sigue los pasos. Tarda 2 minutos.
+[ACCIÓN EN PANTALLA: presionar Enter, mostrar cómo Claude empieza a responder en tiempo real, dejar que el output se genere completamente sin interrumpir]
+
+Claude devuelve la tabla en segundos. Fíjate: Email tiene el CAC más bajo. No lo sabía antes de hacer esto. Esta es la respuesta que me llevaría 20 minutos armar en Excel.
 
 ---
 
-**Paso 2 — Instalar Claude Code**
+## 3. PROMPT DE SEGUIMIENTO: GENERAR EL SCRIPT DE PYTHON
 
-En la misma Terminal, escribe exactamente esto:
+Ahora le pido el script. Quiero poder ejecutar este cálculo cada semana cuando baje el CSV nuevo, sin tener que pedírselo a Claude cada vez.
+
+[ACCIÓN EN PANTALLA: escribir el siguiente mensaje en la misma conversación, justo debajo de la respuesta anterior]
+
+Pego este prompt:
 
 ```
-npm install -g @anthropic-ai/claude-code
+Perfecto. Ahora crea un script en Python que haga este mismo cálculo de forma automática.
+
+El script debe:
+1. Leer un archivo CSV llamado "campañas.csv" desde la misma carpeta donde está el script
+2. Verificar que el CSV tiene las columnas: fecha, canal, inversión, conversiones (si falta alguna, que muestre un error claro)
+3. Calcular el CAC por canal
+4. Mostrar la tabla de resultados en la terminal con formato limpio
+5. Guardar los resultados en un archivo "reporte_cac.csv" en la misma carpeta
+
+El script debe funcionar con Python 3 sin instalar librerías adicionales — solo usar pandas si está disponible, o csv y collections si no.
+
+Al final del script, agrega comentarios que expliquen cómo ejecutarlo desde la terminal.
 ```
 
-Presiona Enter. Espera 30 segundos. Cuando veas que vuelve el cursor, está instalado.
+[ACCIÓN EN PANTALLA: enviar el prompt, mostrar el bloque de código que devuelve Claude, hacer scroll para ver el código completo]
+
+Claude devuelve el script completo. Con comentarios. Con manejo de errores. Con instrucciones de uso al final.
 
 ---
 
-**Paso 3 — Autenticarte con tu cuenta de Anthropic**
+## 4. COPIO EL CÓDIGO Y LO EJECUTO
 
-Escribe:
+[ACCIÓN EN PANTALLA: hacer clic en el botón "Copy code" que aparece en el bloque de código de Claude, abrir un editor de texto simple como TextEdit en Mac o Bloc de Notas en Windows, pegar el código, guardar el archivo como "cac_calculator.py" en el Escritorio]
+
+Guardo el archivo. Abro la Terminal. Navego al Escritorio.
+
+[ACCIÓN EN PANTALLA: abrir Terminal, escribir `cd ~/Desktop`, presionar Enter, escribir `python3 cac_calculator.py`, presionar Enter]
+
+El script corre. Muestra la tabla en la terminal. Crea el archivo reporte_cac.csv en el Escritorio.
+
+[ACCIÓN EN PANTALLA: abrir el archivo reporte_cac.csv con doble clic, mostrar los datos en Numbers o Excel]
+
+Esto es lo que ocurrió: le pedí el análisis, lo hice, le pedí el script, lo ejecuté. Cuatro pasos. Diez minutos.
+
+---
+
+## 5. PROMPT DE EXPLICACIÓN: QUÉ HACE EL CÓDIGO
+
+Antes de guardarlo para siempre, quiero entender qué hace. No el código — el comportamiento.
+
+[ACCIÓN EN PANTALLA: volver a la conversación de Claude, escribir el siguiente mensaje]
 
 ```
-claude
+Explícame qué hace este script en términos de negocio, no en términos técnicos.
+
+Quiero entender:
+1. Qué pasa si el CSV tiene filas con inversión 0 — ¿rompe el cálculo?
+2. Qué pasa si hay un canal nuevo que no estaba antes — ¿lo incluye automáticamente?
+3. ¿Qué tendría que cambiar si quisiera calcular ROAS en lugar de CAC? (ROAS = ingresos / inversión — necesitaría una columna "ingresos" en el CSV)
 ```
 
-La primera vez, Claude Code te va a pedir autenticarte. Abre el link que aparece en pantalla, inicia sesión con tu cuenta de claude.ai y autoriza. Eso es todo.
+[ACCIÓN EN PANTALLA: enviar el prompt, mostrar la respuesta de Claude respondiendo cada una de las tres preguntas en lenguaje claro]
+
+Claude explica cada punto sin usar jerga técnica. Ahora sé exactamente qué hace el script y cómo adaptarlo si cambio el CSV.
 
 ---
 
-**Paso 4 — Crear una carpeta de trabajo**
+## 6. ITERAR: AGREGAR UNA MEJORA AL SCRIPT
 
-No es técnico: crea una carpeta en tu computadora donde van a vivir tus herramientas de Growth. Nómbrala `Growth Tools` o como quieras.
+El script funciona pero quiero una cosa más: que me diga qué canal mejoró más su CAC respecto al mes anterior si le paso dos CSVs.
 
-En la Terminal, navega a esa carpeta:
-- Mac: `cd ~/Desktop/Growth\ Tools`
-- Windows: `cd C:\Users\[tuusuario]\Desktop\Growth Tools`
+[ACCIÓN EN PANTALLA: escribir el siguiente mensaje en Claude]
 
-*(Instructor nota: si el estudiante no sabe navegar en Terminal, puede abrir la carpeta en Finder/Explorer, hacer clic derecho y seleccionar "Open in Terminal" o "New Terminal at Folder")*
+```
+Modifica el script para que acepte opcionalmente un segundo argumento: el CSV del mes anterior.
 
----
+Si se ejecuta así: python3 cac_calculator.py campañas_enero.csv campañas_diciembre.csv
 
-**Paso 5 — Primera ejecución**
+El script debe mostrar una tercera columna en la tabla: "Variación CAC vs mes anterior" con el porcentaje de cambio. Positivo = CAC subió (malo). Negativo = CAC bajó (bien).
 
-Escribe `claude` en la Terminal y presiona Enter. Deberías ver el prompt de Claude Code activo. Estás listo.
+Si no se pasa el segundo argumento, el script funciona igual que antes.
+```
 
-*(Pantalla: screenshot de Claude Code activo con el prompt visible)*
+[ACCIÓN EN PANTALLA: mostrar el código nuevo que devuelve Claude, hacer clic en "Copy code", reemplazar el archivo cac_calculator.py con el código nuevo, ejecutar desde la Terminal pasando dos archivos CSV]
 
-Tiempo total para los 5 pasos: **menos de 5 minutos** si no tuviste que instalar Node.js. Menos de 8 si lo instalaste desde cero.
-
----
-
-*(Instructor en cámara)*
-
-Eso es todo. Claude Code está instalado. Sin GitHub. Sin configuración de entorno. Sin entender qué es npm.
-
-A partir de ahora, cada vez que quieras construir una herramienta de Growth, abres Terminal, navegas a tu carpeta de Growth Tools y escribes `claude`.
-
-En el entregable de esta clase tienes los 5 pasos con screenshots y 10 instrucciones de Growth listas para copiar y ejecutar. Guárdalas — son tu punto de partida.
+El script ahora compara dos períodos. Lo construí en cinco minutos de iteración. Sin tocar el código directamente.
 
 ---
 
-### DEMO EN VIVO — Calculadora de CAC/LTV en 10 minutos [9:00–13:00]
+## 7. LO QUE TIENES AL FINAL DE ESTA CLASE
 
-*(Pantalla: pantalla completa — Terminal con Claude Code activo)*
+[ACCIÓN EN PANTALLA: mostrar el Escritorio con los archivos creados: cac_calculator.py, reporte_cac.csv]
 
-*(Instructor ejecuta el demo — ver archivo demo.md para los pasos exactos)*
+Un script que:
+- Lee cualquier CSV con el formato correcto
+- Calcula CAC por canal automáticamente
+- Guarda el reporte
+- Compara con el mes anterior si le pasas un segundo archivo
 
-*(Mientras trabaja en vivo)*
+Lo usas cada vez que bajas datos nuevos. No vuelves a Claude para esto. Ya lo tienes.
 
-Lo que estoy haciendo ahora es exactamente lo que harás tú en los próximos días. Le estoy describiendo a Claude Code qué quiero: una calculadora de CAC/LTV con mis supuestos específicos. No estoy escribiendo código. Estoy describiendo un problema de negocio.
-
-*(Mientras Claude Code genera el resultado)*
-
-Fíjense que Claude no solo escribe el código — lo ejecuta y me muestra el resultado en tiempo real. Si algo no está bien, lo voy a describir en lenguaje natural y Claude lo corrige.
-
-*(Cuando el resultado está listo)*
-
-Esto es una herramienta funcional. La puedo abrir en el navegador, la puedo compartir con mi equipo, la puedo usar hoy.
-
----
-
-### CIERRE — [13:00–14:00]
-
-*(Instructor en cámara. Slide con entregable visible.)*
-
-Tu tarea antes de la próxima clase: instala Claude Code, ejecuta al menos una de las 10 instrucciones de Growth del entregable y trae el resultado a la sesión.
-
-No importa si el primer resultado no es perfecto. El punto es completar el loop: describir, ver el output, iterar.
-
-Una vez que haces ese loop una vez, ya no tienes miedo de Claude Code. Y desde ahí, cada herramienta que necesitas para tu operación de Growth la construyes en minutos, no en días.
-
-Clase 8: construimos algo más complejo — un tracker de experimentos de Growth con Claude Code.
-
----
-
-## NOTAS DE PRODUCCIÓN
-
-| Elemento | Detalle |
-|---|---|
-| Duración objetivo | 14 minutos exactos |
-| Slides necesarios | 5: título, Claude Code vs lo que no es, loop de trabajo, 5 pasos de instalación, entregable |
-| Demo | Terminal pantalla completa — ver demo.md |
-| Ritmo | Desarrollo 1 puede ir más rápido (es conceptual). Desarrollo 2 más lento — hay pasos que el estudiante querrá anotar o pausar el video. |
-| Tono | Desmitificador. El mensaje constante es "esto no es difícil, no requiere ser técnico". Nunca usar jerga de programación sin explicarla inmediatamente. |
-| Énfasis | Remarcar con pausa: "Tú describes. Claude construye. Tú usas." — es el mantra de la clase. |
-| Advertencia técnica | Si hay problemas con permisos de Terminal en Mac (especialmente en Apple Silicon), el estudiante puede necesitar ejecutar `sudo` — incluir esto en el entregable como nota de troubleshooting. |
-| Para el instructor | Practicar el demo al menos 2 veces antes de grabar. Claude Code puede tardar más de lo esperado en la primera ejecución si hay latencia. Tener el prompt de la calculadora ya redactado en un archivo aparte. |
+Tu tarea está en el entregable. Hazla antes de la próxima clase.

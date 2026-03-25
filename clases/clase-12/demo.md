@@ -1,180 +1,121 @@
-# Notas de Coordinación — Showcase en Vivo de los 3 Instructores
-**Clase 12 · Instructores A + B + C · Segmento: 1:00–9:00 del guión**
+# DEMO PASO A PASO — Sistema de Growth completo operando en vivo
+**Clase 12 · Instructores A + B + C · Módulo 04**
 
 ---
 
-## Objetivo del showcase
+## Setup antes de grabar
 
-Esta no es una demo técnica. Es una prueba de realidad.
-
-Los tres instructores muestran sus sistemas reales funcionando — con los outputs del día anterior, sin preparación especial, sin embellecimiento. El estudiante debe ver que lo que aprendió en el curso produce resultados en negocios reales, no en demos controladas.
-
-El efecto que buscamos: el estudiante termina el showcase pensando "esto realmente funciona en negocios como el mío" — no "esto fue una demo muy buena."
-
-**Tiempo total del showcase:** 8 minutos (dividido en los tres instructores)
+- [ ] Cada instructor tiene su tablero de Notion abierto con datos REALES de esta semana
+- [ ] Cada instructor tiene Claude abierto con sus Projects activos
+- [ ] Los outputs que se van a mostrar son de ayer o hoy — sin preparar ni embellecer
+- [ ] Pantalla compartida lista para alternar entre los tres setups
 
 ---
 
-## Reglas del showcase
+## DEMO INSTRUCTOR A — Diagnóstico y decisión en tiempo real
 
-Estas reglas son no negociables. Si algún instructor no las puede cumplir, mejor omitir esa parte que falsear el ejercicio.
+**Paso 1 — Abrir el tablero de Growth OS**
+- Abrir Notion → tablero principal
+- Mostrar el Brief de la Semana en la parte superior
+- Leerlo en voz alta: foco, métrica norte, experimento activo, contexto de la semana pasada
+- *Deberías ver en pantalla: una tabla con 4-5 filas, texto real, sin lorem ipsum*
 
-1. **Outputs reales del día anterior.** No preparar un output especialmente "bueno" para el showcase. Si el output de ayer fue mediocre, se muestra y se explica por qué fue mediocre — eso también es útil para el estudiante.
+**Paso 2 — Abrir el output real del Agente de Análisis**
+- Abrir Claude → Project "Agente de Análisis"
+- Abrir la última conversación (de ayer o esta mañana)
+- Hacer scroll por el diagnóstico sin editar
+- *Deberías ver en pantalla: un output de Claude con diagnosis en puntos numerados y recomendaciones*
 
-2. **Métricas reales.** Si no quieres mostrar tus métricas reales, puedes anonimizar los números (multiplicar todos por un mismo factor), pero la estructura y los órdenes de magnitud deben ser reales.
+**Paso 3 — Mostrar la decisión que tomaste a partir del output**
+- Abrir el Project del Agente de Adquisición
+- Abrir nueva conversación
+- Pegar el prompt de acción derivado del diagnóstico:
 
-3. **Sin demos técnicos.** No vamos a construir prompts en vivo durante el showcase. Mostramos outputs, mostramos sistemas, mostramos decisiones. El aprendizaje técnico ya ocurrió en las clases anteriores.
+```
+El tiempo de activación subió de 4 a 6 días esta semana. Hipótesis: el email de día 1 del onboarding no genera la primera acción. Reescribe el email de día 1 con foco en reducir fricción del primer paso. El primer paso es: [completar la integración con Slack]. Máx 150 palabras. Un solo CTA.
+```
 
-4. **Un solo insight por instructor.** Cada instructor tiene 2-3 minutos. No es suficiente para mostrar todo el sistema — suficiente para mostrar el momento más revelador de la semana.
+- *Deberías ver en pantalla: Claude generando un email reescrito, listo para copiar y pegar en la herramienta de email*
 
----
-
-## Preparación — Lo que cada instructor debe tener listo antes de grabar
-
-### Instructor A — Sistema de Growth individual o equipo pequeño (1-5 personas)
-
-**Preparar y tener abierto:**
-
-- [ ] Tablero de Notion con el brief de la semana actual y los outputs de los agentes (de esta semana real, no de ejemplo)
-- [ ] Claude Projects: el Agente de Análisis con el output del diagnóstico semanal (el de esta semana o el de la semana anterior)
-- [ ] Una decisión real que tomaste basándote en un output de Claude esta semana — con el output visible
-- [ ] El prompt que envíaste + el output que recibiste + la acción que tomaste a partir de ese output
-
-**Métricas que mostrar (preparar en slide o en Notion):**
-Elige 3-4 de estas según lo que más uses:
-- MRR actual y variación semana/semana o mes/mes
-- CAC por canal principal
-- Tasa de activación o retención a 30 días
-- Número de experimentos activos esta semana
-
-**Narrativa (preparar en 3 puntos):**
-1. Qué vio Claude que tú no habrías visto sin el sistema
-2. La decisión que tomaste como resultado
-3. El output que más tiempo te ahorró esta semana
+**Paso 4 — Mostrar que el email ya está en producción**
+- Abrir la herramienta de email (Klaviyo / Customer.io / HubSpot)
+- Mostrar el email de día 1 con la versión actualizada cargada
+- *Deberías ver en pantalla: el email en el flujo de automatización, activo, con la fecha de hoy*
 
 ---
 
-### Instructor B — Sistema de Growth con equipo (3-10 personas)
+## DEMO INSTRUCTOR B — El sistema con equipo
 
-**Preparar y tener abierto:**
+**Paso 5 — Mostrar el tablero compartido del equipo**
+- Abrir Notion → tablero compartido
+- Mostrar las columnas: Agente de Adquisición / Retención / Análisis / Contenido
+- Mostrar que cada columna tiene outputs de esta semana
+- *Deberías ver en pantalla: un tablero con 4 columnas y filas con outputs reales de lunes a hoy*
 
-- [ ] Tablero de Notion con el brief de la semana y los 4 outputs de los agentes (todos visibles en pantalla)
-- [ ] Un skill de la Clase 10 que alguien del equipo usó esta semana — con el output guardado en la tabla
-- [ ] El reporte semanal de stakeholders generado con el Skill 05 (output real, enviado o por enviar)
-- [ ] Captura de pantalla o log de cómo el equipo usó el sistema esta semana (ej: comentarios en Notion, assignments, slack messages referenciando outputs de Claude)
+**Paso 6 — Abrir un Skill en uso**
+- Abrir la biblioteca de Skills en Notion
+- Abrir Skill 03 "Reporte Semanal"
+- Mostrar el output guardado de ayer:
 
-**Métricas que mostrar:**
-- MRR y crecimiento del período
-- Número de experimentos activos
-- La métrica que más se movió esta semana y qué lo causó
+```
+Skill: Reporte Semanal de Growth
+Inputs usados: [métricas de la semana]
+Output: [resumen con CAC por canal, conversión por etapa, top 3 experimentos]
+Tiempo de ejecución: 5 minutos
+```
 
-**Narrativa (preparar en 3 puntos):**
-1. Cómo el equipo usa el sistema sin que Instructor B sea el intermediario
-2. El skill o agente que más usa el equipo (el que más valor genera colectivamente)
-3. La diferencia en velocidad de decisión antes vs. después del sistema
+- *Deberías ver en pantalla: el skill documentado + el output de esta semana pegado debajo*
 
----
-
-### Instructor C — Sistema de Growth como founder solo
-
-**Preparar y tener abierto:**
-
-- [ ] El Project principal (único Project si trabaja con uno solo) con las instrucciones de sistema visibles
-- [ ] 3 prompts que ejecutó esta mañana antes de grabar — con los outputs
-- [ ] El proceso de revisión matutina: qué mira, en qué orden, qué decide
-- [ ] Un ejemplo concreto de "esto que antes tardaba X ahora tarda Y" — con el output que lo prueba
-
-**Métricas que mostrar:**
-Elegir las 2-3 más relevantes para su negocio y foco actual.
-
-**Narrativa (preparar en 3 puntos):**
-1. Cómo se ve el sistema mínimo viable para una persona sola
-2. Cuándo empezar a escalar a agentes especializados (y cuándo no todavía)
-3. El único hábito que hace que el sistema funcione vs. que se abandone
+**Paso 7 — Mostrar cómo el equipo usa el skill sin instrucción**
+- Abrir el Skill desde la perspectiva de un miembro del equipo
+- Ejecutarlo en Claude con los datos de esta semana
+- *Deberías ver en pantalla: el prompt del skill con variables rellenadas + el output de Claude*
 
 ---
 
-## Flujo técnico del showcase
+## DEMO INSTRUCTOR C — El sistema mínimo viable (founder solo)
 
-### Setup antes de grabar
+**Paso 8 — Mostrar el Project único con foco de semana**
+- Abrir Claude → el único Project del sistema
+- Abrir Project Instructions
+- Leer la sección "Foco de esta semana" en voz alta
+- *Deberías ver en pantalla: instrucciones de sistema con una sección destacada que dice "Foco: retención — semana del [fecha]"*
 
-- [ ] Los tres instructores en la misma videollamada (Zoom / Google Meet) con compartición de pantalla lista
-- [ ] Orden de aparición confirmado: A → B → C
-- [ ] Señal de cambio de pantalla definida: el instructor que termina dice "paso a [nombre del siguiente]" — el siguiente comparte pantalla
-- [ ] Resolución de pantalla para los tres: al menos 1080p, interfaz limpia (no dock visible, no notificaciones)
-- [ ] Reloj visible para cada instructor — sin exceder 3 minutos (A y B) o 2 minutos (C)
+**Paso 9 — Mostrar la sesión matutina de hoy (3 prompts, 10 minutos)**
+- Abrir nueva conversación en el Project
+- Pegar el prompt de diagnóstico rápido:
 
----
+```
+Dame el diagnóstico de retención de esta semana basándote en estos datos:
+- Churn rate: 3.2% (vs 2.8% semana pasada)
+- NPS: 42 (vs 45 mes pasado)
+- 3 tickets de cancelación — razón declarada: "precio"
 
-### Segmento de Instructor A [1:00–4:00] — 3 minutos
+¿Es el precio la causa real o hay otra causa detrás? Dame 2 hipótesis y la acción que tomaría hoy para investigar.
+```
 
-**Estructura interna:**
+- Mostrar el output completo
+- *Deberías ver en pantalla: diagnóstico de Claude con 2 hipótesis priorizadas + acción concreta*
 
-| Tiempo | Qué muestra | Qué dice |
-|---|---|---|
-| 0:00–0:30 | Tablero de Notion — vista general | "Este es mi sistema. Brief arriba, outputs de los agentes abajo. Lo que ven es de esta semana." |
-| 0:30–1:30 | Output del Agente de Análisis | Lee los 2-3 puntos más relevantes del diagnóstico — enfatiza la anomalía que detectó |
-| 1:30–2:30 | La decisión y el prompt al Agente de Adquisición | "Esto es lo que hice con esa información. Este fue el prompt. Este fue el output." |
-| 2:30–3:00 | Cierre en cámara | "Ese es mi día. Contexto antes del primer café. Decisiones con datos." |
+**Paso 10 — Mostrar el borrador de mensaje para clientes en riesgo**
+- En la misma conversación, pegar:
 
----
+```
+Basándote en el diagnóstico anterior, escribe el mensaje que enviaría hoy por WhatsApp o email a los 3 clientes que cancelaron esta semana. El objetivo: entender si el precio es la razón real o hay otra fricción. Tono: founder directo, sin scripts de ventas. Máx 80 palabras.
+```
 
-### Segmento de Instructor B [4:00–7:00] — 3 minutos
-
-**Estructura interna:**
-
-| Tiempo | Qué muestra | Qué dice |
-|---|---|---|
-| 0:00–0:30 | Tablero de Notion — columnas de los 4 agentes con outputs de la semana | "Esto es lo que el equipo ve cada lunes. Sin reunión de alineación." |
-| 0:30–1:30 | Un skill usado por alguien del equipo (no por B) esta semana | "Esta persona del equipo usó el Skill X ayer. Este fue el output. Esto es lo que hizo con él." |
-| 1:30–2:30 | Reporte semanal de stakeholders generado | "Este es el reporte que enviamos esta semana. Generado con el Skill 05. Lo revisé 10 minutos." |
-| 2:30–3:00 | Cierre en cámara | "Tres personas. El sistema multiplica la capacidad sin que yo sea el cuello de botella." |
+- *Deberías ver en pantalla: un mensaje conversacional, personalizable, listo para enviar*
 
 ---
 
-### Segmento de Instructor C [7:00–9:00] — 2 minutos
+## DEMO FINAL — El plan de 7 días
 
-**Estructura interna:**
+**Paso 11 — Abrir el entregable de la clase**
+- Abrir el entregable.md de esta clase (o la versión en Notion)
+- Recorrer el plan de 7 días en pantalla
+- *Deberías ver en pantalla: 7 días con criterio de éxito específico para cada uno*
 
-| Tiempo | Qué muestra | Qué dice |
-|---|---|---|
-| 0:00–0:20 | El Project principal — instrucciones de sistema visibles | "Un Project. Un contexto. Mi sistema mínimo viable como founder solo." |
-| 0:20–1:20 | 3 prompts de esta mañana con sus outputs | "Esta mañana antes de grabar. Tres prompts. Diez minutos. Esto es lo que decidí a partir de los tres." |
-| 1:20–2:00 | Cierre en cámara | "No el sistema más sofisticado. El sistema que voy a usar todos los días. Empieza simple. Empieza ahora." |
-
----
-
-## Qué NO hacer en el showcase
-
-| No hacer | Por qué |
-|---|---|
-| Mostrar outputs que preparaste especialmente para el showcase | Rompe la autenticidad — el estudiante lo nota aunque no lo diga |
-| Explicar cómo construiste el sistema en el showcase | Ya lo explicaron en las clases anteriores. El showcase muestra resultados, no proceso |
-| Excederse del tiempo asignado | El ritmo del showcase depende de que cada instructor respete su tiempo |
-| Disculparse si un output no fue perfecto | Un output imperfecto que se usa es más convincente que uno perfecto que parece fabricado |
-| Mostrar más de 3 outputs por instructor | Mejor 1 output real bien comentado que 5 mostrados rápido sin contexto |
-
----
-
-## Señales de que el showcase funcionó
-
-El showcase funcionó si al terminar el estudiante piensa:
-- "Vi negocios reales, no demos controladas"
-- "El sistema de [instructor con negocio similar al mío] es algo que puedo replicar"
-- "Entiendo que el valor no viene de Claude solo — viene de la combinación de contexto + skills + agentes + tablero"
-
-Las tres reacciones: el showcase cumplió.
-
----
-
-## Contingencia — Si algún instructor no puede mostrar su sistema real
-
-Si por alguna razón un instructor no puede mostrar datos reales (NDA, decisión de negocio, problema técnico):
-
-**Opción A:** Anonimiza los números (multiplica todos por el mismo factor) pero mantén la estructura y las proporciones reales.
-
-**Opción B:** Muestra el sistema vacío con la estructura y explica qué va en cada parte — sin datos. Menos poderoso, pero honesto.
-
-**Opción C:** Ese segmento del showcase se omite y el tiempo restante va al Plan de 7 Días.
-
-Lo que no hacemos: inventar outputs o usar datos de un "cliente ficticio" como si fueran del instructor. El showcase vale por su autenticidad.
+**Paso 12 — Cerrar con el tablero operando**
+- Volver al tablero de Notion (Instructor A o B)
+- Mostrar el estado del sistema completo: Brief + Agentes + Skills + Experimento activo
+- *Deberías ver en pantalla: un tablero con todas las secciones activas, datos reales de esta semana*

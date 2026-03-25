@@ -1,263 +1,152 @@
-# Clase 02 — El brief perfecto: cómo hablarle a Claude para obtener outputs de elite
-**Instructor A · 14 minutos · Módulo 01**
+# Clase 02 — El brief perfecto: cómo hablarle a Claude para obtener outputs de elite — GUIÓN EN PANTALLA
 
 ---
 
-## GUIÓN COMPLETO
+## 1. Abro Claude y muestro lo que NO hay que hacer
+
+[ACCIÓN EN PANTALLA: abrir claude.ai, abrir el Project creado en Clase 01, crear una conversación nueva]
+
+Abro Claude. Estoy en mi Project de Growth. Conversación nueva.
+
+Voy a escribir el prompt que me llega el 80% de las veces cuando alguien dice que Claude "no le sirve":
+
+```
+Dame ideas de copy para una campaña de Meta Ads de una empresa SaaS B2B.
+```
+
+[ACCIÓN EN PANTALLA: pegar ese prompt de una línea, presionar Enter, esperar el output completo]
+
+Miren el output. Es correcto. Es razonable. Y es completamente inútil para producción.
+
+Podría ser de cualquier empresa SaaS del planeta. No habla de ningún dolor específico. No tiene ángulos diferenciados. Para subir alguno de estos a producción necesitaría editarlo todo: el tono, el ángulo, el ICP, el CTA.
+
+Ese trabajo de edición es exactamente lo que queremos eliminar.
+
+El problema no es Claude. Es el prompt.
 
 ---
 
-### INTRO — [0:00–1:00]
+## 2. Ahora muestro el brief perfecto con los 5 elementos
 
-*(Pantalla: slide con título de la clase. Instructor en cámara.)*
+[ACCIÓN EN PANTALLA: abrir una segunda conversación nueva en el mismo Project]
 
-En la clase anterior viste que Claude puede producir outputs usables en minutos.
-Hoy vas a entender por qué a veces no lo hace — y cómo corregirlo en segundos.
+Segunda conversación. Mismo producto, mismo canal, mismo objetivo. Brief diferente.
 
-La diferencia entre un output mediocre y un output que copias y pegas directo
-no está en Claude. Está en cómo le hablas.
+Voy a pegar esto:
 
-Hay una estructura. Cinco elementos. Y cuando los dominas,
-el output de Claude cambia de categoría.
+```
+ROL:
+Actúa como un Growth Marketer B2B SaaS con experiencia en adquisición de usuarios mediante Meta Ads y ciclos de venta de menos de 30 días. Especializado en copy orientado a conversión directa, no a awareness.
 
-Catorce minutos. Vamos.
+CONTEXTO:
+Producto: Dataflow ayuda a Sales Managers a eliminar el reporte semanal manual — el equipo registra actividad en Salesforce y Dataflow genera el reporte automáticamente en 20 minutos. Sin IT, sin código.
+ICP: Sales Managers en empresas de 50–200 empleados, equipo de 5–15 reps, que usan Salesforce y pierden entre 3 y 4 horas cada viernes consolidando datos manualmente.
+Situación actual: campaña de prueba gratuita de 14 días activa en Meta. CTR actual: 0.8%. Hipótesis: el copy no está articulando el dolor específico del ICP.
+Lo que ya probé: headlines sobre "automatización de reportes" y "ahorra tiempo". No movieron el CTR en 3 semanas.
 
----
+TAREA:
+Genera 3 variaciones de copy para anuncio de Meta Ads.
+Objetivo: click a página de prueba gratuita de 14 días.
+Cada variación debe usar un ángulo diferente: uno apela al dolor del viernes perdido, uno al riesgo de datos inconsistentes, uno a la identidad del Sales Manager moderno.
 
-### DESARROLLO 1 — La estructura de prompt que separa outputs mediocres de outputs de elite [1:00–5:30]
+FORMATO:
+- 3 variaciones numeradas
+- Cada variación: Headline (máx. 6 palabras) + Texto principal (máx. 3 líneas) + CTA (máx. 4 palabras)
+- Debajo de cada variación: una línea con el ángulo psicológico que usa
 
-*(Pantalla: slide con los 5 elementos — ROL, CONTEXTO, TAREA, FORMATO, RESTRICCIONES)*
+RESTRICCIONES:
+- Sin introducciones ni explicaciones antes del output
+- No usar: automatización, innovador, potente, solución, plataforma
+- Sin jerga técnica que un Sales Manager no diría en una reunión
+- El texto debe sonar como si lo escribiera alguien que conoce la oficina del ICP
+```
 
-Voy a darte la estructura que uso para todo.
-No importa si es copy de campaña, análisis de métricas o emails de onboarding.
-La estructura es siempre la misma.
+[ACCIÓN EN PANTALLA: pegar el brief completo, presionar Enter, esperar el output completo, hacer scroll para mostrar las 3 variaciones con sus ángulos]
 
-Cinco elementos. Ninguno es opcional.
+Miren la diferencia.
 
----
+La variación 1 habla del viernes. Del momento exacto donde el dolor del ICP es más alto. No habla del producto — habla del problema.
 
-**Elemento 1 — ROL**
+La variación 3 habla de cómo se ve el Sales Manager que ya superó esto. Eso es el ángulo de identidad.
 
-Le dices a Claude quién es en este contexto.
+¿Puedo subir alguna hoy? Sí. La 1 y la 3 — directo al equipo de diseño.
 
-No "sé un experto en marketing". Eso es demasiado vago.
-Sino: *"Actúa como un Growth Marketer con experiencia en SaaS B2B de ciclo de venta corto,
-especializado en optimización de conversión en landing pages."*
-
-¿Por qué importa el ROL?
-Porque Claude ajusta su nivel de razonamiento, su vocabulario y sus supuestos
-basándose en el rol que le das.
-Un rol vago produce razonamiento vago.
-
-*(Pantalla: ejemplo visual — prompt sin ROL vs. prompt con ROL específico)*
-
----
-
-**Elemento 2 — CONTEXTO**
-
-Le das la información que necesita para no inventar supuestos.
-
-Tres datos mínimos para Growth:
-- Qué hace tu producto y para quién
-- En qué etapa está el funnel del que hablas
-- Qué ya sabes o ya has probado
-
-Sin CONTEXTO, Claude rellena los huecos con supuestos genéricos.
-Y los supuestos genéricos producen outputs genéricos.
+Mismo producto. Mismo canal. Mismo objetivo. Un prompt de una línea dio basura. Un brief de 5 elementos dio producción.
 
 ---
 
-**Elemento 3 — TAREA**
+## 3. Desgloso los 5 elementos en pantalla mientras los señalo
 
-La instrucción específica de lo que quieres que haga.
+[ACCIÓN EN PANTALLA: desplazarse hacia arriba en el chat para mostrar el brief completo, señalar con el cursor cada sección mientras se habla]
 
-Aquí está el error más común que veo: pedir dos cosas en una tarea.
-"Analiza mis métricas y dime qué hacer" — eso son dos tareas.
-Primero el análisis. Luego la recomendación. Dos prompts separados dan dos outputs más finos.
+Los 5 elementos son: ROL, CONTEXTO, TAREA, FORMATO, RESTRICCIONES.
 
-La TAREA debe ser una sola cosa, formulada con un verbo de acción:
-genera, analiza, reescribe, compara, prioriza.
+Mientras señalo cada sección del brief que acabo de pegar:
 
----
+**ROL.** Le digo quién es en este contexto. No "experto en marketing". Cargo específico, industria específica, especialización específica. Claude ajusta su nivel de razonamiento basándose en el rol. Un rol vago produce razonamiento vago.
 
-**Elemento 4 — FORMATO**
+[ACCIÓN EN PANTALLA: señalar con el cursor la sección ROL del brief visible en pantalla]
 
-Le dices exactamente cómo quieres el output.
+**CONTEXTO.** Le doy los datos que necesita para no inventar supuestos. Producto, ICP, situación actual y — esto es clave — lo que ya probé. Si no le digo qué ya intenté, Claude va a proponer exactamente eso.
 
-¿Bullet points o párrafos? ¿Cuántas opciones? ¿Máximo de palabras?
-¿Tabla o lista numerada? ¿Con o sin explicaciones?
+[ACCIÓN EN PANTALLA: señalar la sección CONTEXTO]
 
-El FORMATO le ahorra a Claude adivinar tu preferencia —
-y te ahorra a ti reformatear el output manualmente.
+**TAREA.** Una sola cosa. Un verbo de acción. "Genera", "analiza", "reescribe". Si pones dos tareas en un prompt, el output mezcla ambas y ninguna queda bien. Dos tareas: dos prompts.
 
-*(Pantalla: ejemplo de prompt con FORMATO especificado vs. sin especificar)*
+[ACCIÓN EN PANTALLA: señalar la sección TAREA]
 
----
+**FORMATO.** Le digo exactamente cómo quiero el output. Cuántas variaciones, qué componentes tiene cada una, límite de palabras. Si no especifico el formato, Claude decide solo. Y cuando decide solo, agrega secciones que no pedí y extensión que no uso.
 
-**Elemento 5 — RESTRICCIONES**
+[ACCIÓN EN PANTALLA: señalar la sección FORMATO]
 
-Le dices qué NO quieres.
+**RESTRICCIONES.** Lo más subestimado de los cinco. Aquí elimino el relleno: qué palabras no quiero, qué tono evitar, qué estructura no usar. Sin restricciones, Claude improvisa safe — que es lo opuesto a útil para Growth.
 
-Esto es lo más subestimado de los cinco.
-Las RESTRICCIONES son donde eliminas el relleno:
-"Sin introducciones", "Sin explicar lo obvio", "Sin usar la palabra 'innovador'",
-"No me des teoría — solo ejemplos accionables".
-
-Un prompt sin RESTRICCIONES le da a Claude permiso para improvisar.
-Y cuando improvisa, improvisa safe — que es lo opuesto a útil para Growth.
+[ACCIÓN EN PANTALLA: señalar la sección RESTRICCIONES, luego desplazarse hacia abajo para mostrar el output]
 
 ---
 
-*(Pantalla: slide con la estructura completa — los 5 elementos en una sola vista)*
+## 4. Muestro cómo itero si el primer output no es perfecto
 
-Eso es el brief perfecto.
-ROL + CONTEXTO + TAREA + FORMATO + RESTRICCIONES.
+[ACCIÓN EN PANTALLA: seguir en la misma conversación del brief completo, desplazarse al campo de texto]
 
-En el entregable tienes una plantilla lista para copiar y llenar.
-Úsala las primeras diez veces hasta que la estructura sea automática.
+El brief perfecto no garantiza perfección en la primera ronda. Garantiza un punto de partida de calidad que se refina rápido.
 
----
+En la misma conversación, escribo esto:
 
-### DESARROLLO 2 — Los 5 errores que cometen Chiefs of Growth al usar Claude [5:30–10:00]
+```
+La variación 2 está bien pero el tono es demasiado formal para el ICP. El Sales Manager que tenemos en mente habla directo en reuniones, no escribe presentaciones. Reescribe el texto principal manteniendo el ángulo de datos inconsistentes pero con un tono más de colega que de consultor. Dame 2 opciones.
+```
 
-*(Pantalla: slide "Los 5 errores — y cómo corregirlos")*
+[ACCIÓN EN PANTALLA: pegar el prompt de iteración, presionar Enter, mostrar las 2 opciones que devuelve Claude]
 
-He visto estas sesiones con equipos de Growth de distintas industrias.
-Los errores son siempre los mismos cinco. Te los doy en orden de frecuencia.
+Dos opciones con el tono ajustado. Una sola instrucción de refinamiento. Sin repetir todo el CONTEXTO. Sin explicar desde cero.
 
----
-
-**Error 1 — El prompt de una línea**
-
-"Dame ideas de copy para mi campaña de Meta."
-
-¿Qué falta? El ROL, el CONTEXTO, el FORMATO y las RESTRICCIONES.
-Solo hay TAREA — y vaga.
-
-La corrección: agrega los otros cuatro elementos.
-No tienes que escribir un ensayo. El brief completo puede ser 10 líneas.
-
-*(Pausa de un segundo.)*
-
-Si tu prompt tiene menos de 5 líneas, probablemente le falta alguno de los cinco elementos.
+Eso es porque Claude mantiene el contexto de la conversación. No repito el ICP. No repito el producto. Solo digo qué ajustar y por qué.
 
 ---
 
-**Error 2 — Confundir cantidad con calidad**
+## 5. El diagnóstico: cómo saber qué elemento le falta a un prompt
 
-"Dame 20 ideas de headlines."
+[ACCIÓN EN PANTALLA: abrir una conversación nueva en Claude, mostrar el campo de texto vacío]
 
-El problema no es pedir 20. Es que Claude va a darte las primeras 5 buenas
-y rellenar las otras 15 con variaciones cada vez más mediocres.
+Hay un truco rápido para diagnosticar qué le falta a un prompt cuando el output no sirve.
 
-La corrección: pide 3 o 5, con criterio diferenciador.
-"Dame 3 headlines. Cada uno con un ángulo diferente: uno apela al miedo,
-uno al beneficio económico, uno a la prueba social."
+Si el output es demasiado genérico, le falta CONTEXTO.
+Si el tono está mal, le falta especificidad en el ROL o en RESTRICCIONES.
+Si es demasiado largo y lleno de explicaciones, le faltan RESTRICCIONES.
+Si las variaciones son todas iguales, la TAREA no especificó ángulos diferentes.
+Si la estructura no es la que necesitas, le falta FORMATO.
 
-Tres outputs con criterio dan más material útil que veinte sin criterio.
-
----
-
-**Error 3 — Aceptar el primer output sin iterar**
-
-El primer output de Claude es el punto de partida, no el destino.
-
-La mayoría de Chiefs of Growth que no sacan valor de Claude lo hacen aquí:
-leen el output, dicen "no está mal" o "no me convence" y cierran la ventana.
-
-La corrección: siempre da una instrucción de refinamiento en la segunda ronda.
-"La opción 2 está bien pero el tono es demasiado formal. Reescríbela manteniendo el mismo ángulo pero con un tono más directo."
-
-Dos rondas de iteración casi siempre producen un output listo para usar.
+El diagnóstico tarda 10 segundos. La corrección tarda 30.
 
 ---
 
-**Error 4 — Cambiar de tema sin cambiar de conversación**
+## 6. Lo que viene en la Clase 3
 
-Están en el mismo chat: analizaron métricas, luego pidieron copy, luego preguntaron por estrategia.
+[ACCIÓN EN PANTALLA: mostrar el sidebar de Claude con las conversaciones de la clase, señalar el nombre del Project]
 
-El problema: Claude acumula contexto de conversación y a veces confunde los marcos.
-El output empieza a mezclar las instrucciones de las distintas tareas.
+Ahora ya sabes cómo construir un brief. El problema es que el campo de CONTEXTO — el que más tarda en escribir — tienes que repetirlo en cada prompt.
 
-La corrección: conversaciones separadas para tareas distintas.
-Un chat para análisis. Un chat para copy. Un chat para estrategia.
-Dentro de tu Project, cada tarea vive en su propia conversación.
+En la Clase 3 lo cargamos en Claude una sola vez. El ICP, las métricas, el tono, la propuesta de valor — todo dentro de tu Project. Desde ese momento, cada respuesta de Claude tiene ese contexto sin que lo pidas.
 
----
-
-**Error 5 — No decirle a Claude cuándo está equivocado**
-
-Claude puede estar equivocado. Sobre tu industria, sobre tus números, sobre tu ICP.
-Y si no lo corriges, el error se propaga en el output.
-
-La corrección: trátalo como tratas a un analista inteligente pero nuevo en tu equipo.
-Si dice algo incorrecto, díselo directamente:
-"Eso no aplica a mi caso. En mi industria, el CAC promedio es X y el ciclo de venta es Y. Ajusta la recomendación."
-
-Claude no se ofende. Y el output siguiente va a ser mucho más preciso.
-
----
-
-*(Pantalla: slide con los 5 errores y sus correcciones en formato tabla)*
-
-Cinco errores. Cinco correcciones.
-Cada uno tarda menos de 30 segundos en aplicar.
-
----
-
-### DEMO EN VIVO — Del prompt vago al brief de elite: comparación lado a lado [10:00–13:00]
-
-*(Pantalla: pantalla completa — claude.ai abierto en el Project del curso)*
-
-Ahora lo vemos en vivo.
-Voy a tomar un prompt real que me ha llegado de Chiefs of Growth —
-tal como lo escribieron — y lo voy a transformar en un brief de elite.
-Después comparo los dos outputs lado a lado.
-
-*(Instructor ejecuta el demo — ver archivo demo.md para los pasos exactos)*
-
-*(Mientras ejecuta)*
-
-Noten la diferencia en el output.
-No es sutil. Es una categoría completamente diferente.
-
-El primer output podría ser de cualquier empresa del planeta.
-El segundo podría ir directamente al equipo de diseño.
-
-Esa diferencia se hizo en menos de dos minutos de trabajo extra.
-Eso es el ROI del brief perfecto.
-
----
-
-### CIERRE — [13:00–14:00]
-
-*(Instructor en cámara. Slide con entregable visible.)*
-
-Tu entregable de esta clase es la Plantilla de Brief Universal para Growth.
-Cinco campos. Quince minutos para llenarla con tu primer caso de uso.
-
-Cuando la uses, vas a notar algo:
-el tiempo que tardas en escribir el brief es menor que el tiempo que tardarías
-revisando un output mediocre.
-
-El brief no es overhead. Es el atajo.
-
-Clase 3: cargamos todo el contexto de tu negocio en Claude de una vez.
-Desde ese momento, no vas a tener que poner el CONTEXTO en cada prompt
-porque Claude ya lo va a tener.
-
-Nos vemos ahí.
-
----
-
-## NOTAS DE PRODUCCIÓN
-
-| Elemento | Detalle |
-|---|---|
-| Duración objetivo | 14 minutos exactos |
-| Slides necesarios | 5: título, los 5 elementos, prompt sin/con formato, los 5 errores + correcciones, entregable |
-| Demo | Pantalla completa — ver demo.md |
-| Ritmo | Denso. Cada error se presenta en 60–75 segundos. Sin explicaciones redundantes. |
-| Tono | Directo, experto, como alguien que ha visto estos errores cien veces |
-| Énfasis | Marcar con pausa el nombre de cada elemento y cada error antes de explicarlo |
-| Transición demo | Antes del demo, tener el prompt vago ya copiado en un archivo de texto listo para pegar |
+Tu tarea ahora: ve al entregable, construye tu primer brief con los 5 elementos para tu caso de uso de mayor impacto. Lo usas en la Clase 3.

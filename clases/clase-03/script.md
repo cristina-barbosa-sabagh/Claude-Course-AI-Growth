@@ -1,251 +1,151 @@
-# Clase 03 — Configura tu cerebro de Growth en Claude: ICP, métricas y contexto
-**Instructor B · 14 minutos · Módulo 01**
+# Clase 03 — Configura tu cerebro de Growth en Claude: ICP, métricas y contexto — GUIÓN EN PANTALLA
 
 ---
 
-## GUIÓN COMPLETO
+## 1. Abro Claude Projects y voy directo a Project Instructions
 
----
+[ACCIÓN EN PANTALLA: abrir claude.ai, hacer clic en "Projects" en el sidebar, abrir el Project de Growth creado en Clase 01, mostrar la pantalla principal del Project]
 
-### INTRO — [0:00–1:00]
+Abro mi Project de Growth. Voy a hacer clic en la configuración del Project — el botón de ajustes arriba a la derecha.
 
-*(Pantalla: slide con título de la clase. Instructor en cámara.)*
+[ACCIÓN EN PANTALLA: hacer clic en el ícono de configuración o en "Edit project" en la parte superior del Project, mostrar el campo "Project Instructions" vacío o con el texto mínimo de Clase 01]
 
-En las dos clases anteriores aprendiste qué hace Claude diferente
-y cómo construir un brief que produce outputs de elite.
+Aquí está el campo de Project Instructions. Esto es lo que Claude lee antes de cada conversación en este Project. Cada respuesta que da parte desde aquí.
 
-Hoy hacemos algo diferente: eliminamos el 80% del trabajo que requiere ese brief.
-
-El campo de CONTEXTO — el que más tardas en escribir —
-va a estar precargado en Claude desde hoy.
-Permanentemente. En cada conversación. Sin repetirlo nunca más.
-
-Catorce minutos. Al final de esta clase, Claude trabaja como si te conociera de años.
-
----
-
-### DESARROLLO 1 — Qué cargar en Claude y por qué [1:00–5:30]
-
-*(Pantalla: slide "El documento de contexto de Growth — 4 bloques")*
-
-Claude Projects tiene una función que muy pocos usan bien: las instrucciones de sistema
-y la base de conocimiento del proyecto.
-
-Cuando cargas un documento de contexto ahí, Claude lo tiene disponible en cada conversación.
-No tienes que repetirlo. No tienes que recordarlo. Solo trabajas.
-
-El documento de contexto de Growth tiene cuatro bloques.
-Te explico cada uno.
-
----
-
-**Bloque 1 — ICP: tu cliente ideal con la precisión que necesita Claude**
-
-El error más común: escribir el ICP como si fuera para una presentación interna.
-"Empresas medianas del sector tecnológico que buscan optimizar sus procesos."
-
-Eso no sirve. Claude necesita el ICP de la misma forma en que lo necesita
-un redactor de copy senior antes de escribir su primer headline.
-
-El ICP para Claude tiene cuatro dimensiones:
-
-- **Quién es:** cargo exacto, tamaño de empresa, sector, herramientas que usa hoy
-- **Qué le duele:** el problema específico que lo quita del sueño — con las palabras que él usaría, no las que usas tú
-- **Qué considera éxito:** la métrica o el resultado concreto que le diría a su jefe el viernes
-- **Por qué no ha resuelto esto todavía:** la objeción real, no la diplomática
-
-*(Pantalla: ejemplo visual — ICP mal escrito vs. ICP escrito para Claude)*
-
-Con ese ICP cargado, cada copy que genera Claude habla el idioma de tu cliente.
-Sin que tengas que explicarlo en cada prompt.
-
----
-
-**Bloque 2 — Propuesta de valor única: la diferencia que importa**
-
-No tu USP de la landing page.
-La diferencia específica que hace que un cliente que probó tres competidores se quede contigo.
-
-Tiene que incluir:
-- Lo que haces que ningún competidor hace igual
-- El resultado cuantificable más fuerte que tienes
-- Las palabras exactas que han usado clientes reales para describir ese valor
-
-*(Pausa de un segundo.)*
-
-Si no tienes testimonios reales todavía, usa el resultado más específico que puedas documentar.
-"Nuestros clientes reducen el tiempo de reporte de 3 horas a 20 minutos" es una propuesta de valor.
-"Somos líderes en automatización de reportes de ventas" no lo es.
-
----
-
-**Bloque 3 — Métricas norte: los números que orientan cada decisión**
-
-Claude necesita saber qué cuenta para ti. Sin eso, optimiza para lo que está en internet —
-que rara vez coincide con lo que importa en tu etapa específica.
-
-Las métricas norte para el documento de contexto son tres:
-- Tu métrica de adquisición clave (CAC, CPL, conversión a trial)
-- Tu métrica de retención clave (churn, NPS, DAU/MAU)
-- Tu métrica de revenue clave (MRR, ARR, LTV, expansión)
-
-Agrega también los benchmarks actuales — aunque sean malos.
-Cuando Claude sabe dónde estás, sus recomendaciones apuntan a moverte de ahí.
-No a lo que sería ideal desde cero.
-
----
-
-**Bloque 4 — Tono de marca: la voz que distingue tu comunicación**
-
-Tres elementos:
-
-- **Cómo SÍ suenas:** tres adjetivos + un ejemplo de frase o headline que lo encarne
-- **Cómo NO suenas:** tres cosas a evitar + por qué no van con tu marca
-- **El estilo de referencia:** si tienes una marca o comunicador cuyo tono es el más cercano al tuyo, nómbralo
-
-*(Pantalla: ejemplo de bloque de tono — bien escrito vs. vago)*
-
-Con el tono cargado, Claude no va a escribirte headlines de startup genérica
-cuando tu marca habla con la voz de un practitioner con años de experiencia.
-
----
-
-### DESARROLLO 2 — Instrucciones de sistema: la configuración que lo cambia todo [5:30–9:30]
-
-*(Pantalla: slide "Project Instructions — la diferencia entre un asistente y un co-piloto")*
-
-Las instrucciones de sistema son el texto que Claude lee antes de cada conversación.
-Viven en el campo "Project Instructions" dentro de tu Project.
-
-No son un documento de bienvenida. Son el briefing operativo de tu co-piloto.
-
-Hay tres cosas que siempre van en las instrucciones de sistema —
-y que son distintas del documento de contexto.
-
----
-
-**Instrucción 1 — Tu rol y el rol de Claude**
-
-Le dices quién eres tú y qué se supone que hace Claude en este Project.
+Voy a pegarlo ahora. Este es el template de instrucciones de sistema completo:
 
 ```
-Soy [tu cargo] de [empresa]. Mi trabajo es [descripción de tu función de Growth en 2 líneas].
+Eres el co-piloto de Growth de Dataflow.
 
-Tu rol en este Project es actuar como mi co-piloto de Growth:
-pensar conmigo en estrategia, generar assets de ejecución y analizar resultados.
-Siempre desde la perspectiva de mover [tu métrica norte] hacia [tu objetivo actual].
-```
+Mi rol: Head of Growth. Mi foco en los próximos 90 días es escalar adquisición — bajar el CAC en Meta y subir la conversión de trial a pago del 22% al 35%.
 
----
+Tienes acceso al documento de contexto de Growth de Dataflow en este Project. Úsalo como referencia activa en cada respuesta cuando sea relevante.
 
-**Instrucción 2 — Cómo quieres que responda**
-
-No das por sentado que Claude sabe cómo operas. Se lo dices explícitamente.
-
-```
 Cuando respondas:
-- Sé directo. La primera línea es la más importante. Sin introducciones.
-- Si tu recomendación requiere contexto que no tienes, pídelo antes de responder.
-- Prioriza lo ejecutable en los próximos 7 días sobre lo óptimo a largo plazo.
-- Si detectas un error en mi razonamiento o en mis datos, dímelo directamente.
-- No uses bullets donde el texto fluido es más claro. Y al revés.
-```
+- La primera línea es lo más importante. Ve directo al punto.
+- Sin introducciones. Sin "Claro, aquí tienes:".
+- Si no tienes suficiente contexto para dar una respuesta útil, pregunta antes de responder.
+- Prioriza lo ejecutable esta semana sobre lo óptimo a largo plazo.
+- Si ves un error en mi razonamiento o en mis datos, dímelo directamente.
 
----
-
-**Instrucción 3 — Las restricciones permanentes**
-
-Las cosas que nunca quieres en ningún output de este Project.
-
-```
 Nunca:
-- Incluyas disclaimers sobre limitaciones de la IA
-- Propongas "hacer A/B testing" como recomendación genérica sin especificar qué testear
-- Uses adjetivos de catálogo: innovador, disruptivo, potente, robusto
+- Incluyas disclaimers sobre limitaciones de IA
+- Propongas "hacer A/B testing" sin especificar qué testear exactamente
+- Uses: innovador, disruptivo, potente, robusto, solución integral, transformación
 - Repitas el brief o la tarea antes de responder
 - Termines con "espero que esto ayude" o variantes
 ```
 
-*(Pantalla: ejemplo de instrucciones de sistema completas — el texto real en un recuadro)*
+[ACCIÓN EN PANTALLA: pegar el texto completo en el campo de Project Instructions, mostrar el texto pegado en pantalla]
 
-Estas tres instrucciones toman 15 minutos en escribir.
-Y eliminan el 80% del ruido en cada respuesta de Claude para siempre.
+Guardo. Estas instrucciones están activas en cada conversación de este Project desde ahora.
 
----
-
-**La diferencia entre instrucciones de sistema y documento de contexto**
-
-*(Pantalla: slide con tabla de diferencias)*
-
-| | Instrucciones de sistema | Documento de contexto |
-|---|---|---|
-| Qué contiene | Cómo debe comportarse Claude | Qué sabe Claude sobre tu negocio |
-| Cuándo aplica | En cada respuesta, siempre | Cuando la tarea lo requiere |
-| Con qué frecuencia cambia | Poco — cada vez que cambia tu forma de operar | Regularmente — cuando cambian ICP, métricas o tono |
-| Dónde vive | Project Instructions | Archivo subido al Project |
-
-Ambos trabajan juntos. Uno define el comportamiento. El otro carga el conocimiento.
+[ACCIÓN EN PANTALLA: hacer clic en guardar o "Save", confirmar que las instrucciones quedaron guardadas]
 
 ---
 
-### DEMO EN VIVO — En 10 minutos, el documento de contexto construido y cargado [9:30–13:00]
+## 2. Subo el documento de contexto de Growth
 
-*(Pantalla: pantalla completa — claude.ai abierto en el Project del curso)*
+[ACCIÓN EN PANTALLA: seguir en la configuración del Project, buscar la sección "Knowledge" o "Add content", mostrar la opción de subir archivos]
 
-Ahora lo hacemos en vivo.
-Voy a construir el documento de contexto de Growth completo y cargarlo en Claude.
-Y al final, voy a hacer una sola pregunta para probar si funciona.
+Ahora el documento de contexto. Esto es diferente a las instrucciones de sistema: las instrucciones le dicen a Claude cómo comportarse, el documento de contexto le dice qué sabe de mi negocio.
 
-*(Instructor ejecuta el demo — ver archivo demo.md para los pasos exactos)*
+Tengo el documento ya preparado. Lo muestro antes de subirlo.
 
-*(Mientras carga el documento)*
+[ACCIÓN EN PANTALLA: abrir el documento en un editor de texto o en el Finder para mostrarlo brevemente, hacer scroll para que se vean los 4 bloques: ICP, Propuesta de Valor, Métricas Norte, Tono de Marca]
 
-Lo que acabo de hacer es la versión mínima viable.
-No tiene que ser perfecta para que funcione.
-Tiene que ser específica.
+Cuatro bloques. ICP, propuesta de valor, métricas norte y tono de marca. Lo construí con la plantilla del entregable de esta clase. Tarda 30 minutos llenarlo la primera vez.
 
-*(Después de la prueba de alineación)*
+Lo subo ahora.
 
-¿Ven la diferencia?
-Claude no me preguntó quién es mi cliente.
-No asumió que soy una empresa grande o pequeña.
-No me propuso lo genérico.
+[ACCIÓN EN PANTALLA: arrastrar el archivo al campo de Knowledge o hacer clic en "Upload file", mostrar el archivo cargándose y procesándose, confirmar que aparece en la lista de archivos del Project]
 
-Habló de mi ICP, usó mis métricas, y habló en mi tono.
-Eso es lo que cambia cuando cargas el contexto.
+Listo. Claude tiene acceso a ese documento en cada conversación de este Project.
 
 ---
 
-### CIERRE — [13:00–14:00]
+## 3. La prueba de alineación — el momento que lo confirma todo
 
-*(Instructor en cámara. Slide con entregable visible.)*
+[ACCIÓN EN PANTALLA: hacer clic en "New chat" dentro del Project, mostrar la conversación nueva en blanco]
 
-Tu entregable de esta clase es la Plantilla de Contexto de Growth para Claude.
-Cuatro bloques. Llénala hoy — en 30 minutos si lo haces con foco.
+Conversación nueva. Voy a hacer la prueba de alineación: un prompt que verifica si Claude entendió todo el contexto que acabo de cargar.
 
-Una vez que la cargues en tu Project, el brief que aprendiste en la Clase 2
-se vuelve el 40% más rápido de escribir.
-Porque el CONTEXTO ya está.
+```
+¿Qué entiendes sobre mi negocio, mi ICP y mis métricas norte basándote en el contexto que tienes? Dame un resumen en formato tabla con tres columnas: "Qué sé", "El detalle específico", "Por qué importa para Growth".
+```
 
-A partir de aquí, el Módulo 01 está completo.
-Tienes Claude configurado. Sabes cómo hablarle. Sabes qué cargarle.
+[ACCIÓN EN PANTALLA: pegar el prompt, presionar Enter, esperar el output completo sin hablar, hacer scroll para mostrar la tabla completa]
 
-El Módulo 02 es donde empieza la ejecución real:
-Copy, campañas, análisis y experimentos.
-Todo con Claude ya configurado para tu negocio.
+Miren la tabla. Claude sabe que el ICP es un Sales Manager que pierde el viernes en reportes. Sabe que la métrica norte es conversión de trial del 22% al 35%. Sabe que el tono es directo, sin condescendencia. Sabe que el vocabulario prohibido incluye "automatización" y "disruptivo".
 
-Nos vemos ahí.
+No le pregunté nada de eso individualmente. Lo tiene todo de una carga de 10 minutos.
 
 ---
 
-## NOTAS DE PRODUCCIÓN
+## 4. Muestro el antes y el después en una tarea real
 
-| Elemento | Detalle |
-|---|---|
-| Duración objetivo | 14 minutos exactos |
-| Slides necesarios | 5: título, los 4 bloques del documento, ICP mal vs. bien escrito, tabla instrucciones vs. contexto, entregable |
-| Demo | Pantalla completa — ver demo.md |
-| Ritmo | El Desarrollo 1 es denso — cada bloque en ~60 segundos. El Desarrollo 2 puede ir más lento — las instrucciones de sistema son nuevas para muchos. |
-| Tono | Directo, experto. Instructor B puede usar más ejemplos conversacionales si su estilo lo permite — el contenido aguanta cualquier ritmo. |
-| Énfasis | Marcar la diferencia entre instrucciones de sistema y documento de contexto — es el punto de mayor confusión potencial |
-| Preparación del demo | El documento de contexto del demo debe estar pre-escrito. No improvisarlo en vivo — el tiempo no da. |
+[ACCIÓN EN PANTALLA: abrir una segunda conversación nueva en el Project]
+
+Ahora le pido algo sin dar nada de CONTEXTO en el prompt. Solo la tarea.
+
+```
+Necesito 2 ángulos de copy para el email de activación que enviamos cuando un usuario se registra a la prueba gratuita pero no conecta Salesforce en las primeras 24 horas.
+```
+
+[ACCIÓN EN PANTALLA: pegar el prompt, presionar Enter, esperar el output, hacer scroll para mostrar los 2 ángulos completos]
+
+No le dije quién es el usuario. No describí el problema. No expliqué el producto ni el tono.
+
+Claude ya lo tenía. El output menciona el viernes, el reporte manual, el setup sin IT — todo lo que está en el documento de contexto.
+
+Comparen esto con lo que habría salido si hubiera hecho ese mismo prompt en una conversación sin el contexto cargado. Sin el contexto: un email genérico de "hola, vemos que no completaste tu registro". Con el contexto: un email que habla exactamente del dolor del Sales Manager.
+
+---
+
+## 5. Actualizo el contexto cuando cambian las métricas
+
+[ACCIÓN EN PANTALLA: volver a la configuración del Project, ir a la sección de Knowledge, mostrar el archivo de contexto ya cargado]
+
+El contexto no es estático. Cuando cambien las métricas — cuando el CTR suba, cuando el trial conversion llegue al 30% — actualizo el documento y lo vuelvo a subir.
+
+[ACCIÓN EN PANTALLA: mostrar el botón de eliminar o reemplazar el archivo en Knowledge, señalarlo con el cursor sin hacer clic]
+
+Un archivo por trimestre. Máximo. No es mantenimiento — es calibración.
+
+---
+
+## 6. El ICP tiene que estar escrito para Claude, no para una presentación
+
+[ACCIÓN EN PANTALLA: abrir una conversación nueva en el Project]
+
+Antes de terminar, voy a mostrar la diferencia entre un ICP inútil y un ICP que sirve.
+
+Pego esto:
+
+```
+Tengo dos versiones del ICP de un producto. Dime cuál es más útil para generar copy específico y por qué.
+
+Versión A: "Empresas medianas del sector tecnológico que buscan optimizar sus procesos de reporting."
+
+Versión B: "Sales Managers en empresas de 50–200 empleados, equipo de 5–15 reps, que usan Salesforce y pierden entre 3 y 4 horas cada viernes consolidando datos en hojas de cálculo. En sus propias palabras: 'Me paso los viernes haciendo el reporte para tenerlo listo el lunes. Son horas que debería estar cerrando deals.' El resultado que quieren: llegar a la reunión del lunes con el reporte del viernes a las 5pm, no del miércoles."
+
+No expliques la respuesta. Solo dime cuál y el motivo en 1 línea.
+```
+
+[ACCIÓN EN PANTALLA: pegar el prompt, presionar Enter, mostrar la respuesta de Claude]
+
+La Versión B. Siempre. La A no tiene dolor, no tiene contexto, no tiene las palabras del cliente. La B tiene todo lo que Claude necesita para hablar en el idioma del ICP sin que yo se lo repita en cada prompt.
+
+Esa es la diferencia que hace que el output de Claude pase de genérico a producción.
+
+---
+
+## 7. Lo que tienes ahora y lo que sigue
+
+[ACCIÓN EN PANTALLA: mostrar el Project configurado con las instrucciones de sistema y el documento de contexto cargado, hacer clic en "New chat" para mostrar que la próxima conversación parte desde ese contexto]
+
+Tienes Claude configurado con tu contexto. Sabes construir briefs con los 5 elementos. Tienes el sistema base funcionando.
+
+Tu tarea: llena la plantilla de contexto del entregable de esta clase con tu negocio real. 30 minutos. Una sola vez. Desde ese momento, Claude trabaja como si te conociera.
+
+El Módulo 02 es ejecución: copy de campañas, análisis de métricas, diseño de experimentos — todo con Claude ya alineado a tu negocio.
